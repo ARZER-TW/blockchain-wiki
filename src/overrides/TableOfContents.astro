@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/TableOfContents.astro'
+import MiniGraph from '../components/MiniGraph'
+
+const { slug } = Astro.params
+const currentPage = slug ? `/${slug}/` : undefined
+const isEthereumPage = currentPage?.startsWith('/ethereum/')
+---
+
+<Default {...Astro.props}><slot /></Default>
+
+{isEthereumPage && currentPage && (
+  <MiniGraph client:idle currentPage={currentPage} />
+)}

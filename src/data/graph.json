@@ -1,0 +1,1790 @@
+{
+  "nodes": [
+    {
+      "id": "/ethereum/accounts/address-derivation/",
+      "label": "地址推導",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/contract-account/",
+      "label": "合約帳戶",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/eip-155/",
+      "label": "EIP-155 重放保護",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/eip-1559/",
+      "label": "EIP-1559 費用市場",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/eip-55/",
+      "label": "EIP-55 地址校驗",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/eoa/",
+      "label": "EOA",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/gas/",
+      "label": "Gas",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/accounts/nonce/",
+      "label": "Nonce",
+      "category": "accounts",
+      "color": "#fbbf24"
+    },
+    {
+      "id": "/ethereum/advanced/eip-4844/",
+      "label": "EIP-4844 Proto-Danksharding",
+      "category": "advanced",
+      "color": "#f472b6"
+    },
+    {
+      "id": "/ethereum/advanced/kzg-commitments/",
+      "label": "KZG Commitments",
+      "category": "advanced",
+      "color": "#f472b6"
+    },
+    {
+      "id": "/ethereum/advanced/precompiled-contracts/",
+      "label": "Precompiled Contracts",
+      "category": "advanced",
+      "color": "#f472b6"
+    },
+    {
+      "id": "/ethereum/advanced/verkle-trees/",
+      "label": "Verkle Trees",
+      "category": "advanced",
+      "color": "#f472b6"
+    },
+    {
+      "id": "/ethereum/advanced/zksnarks/",
+      "label": "zkSNARKs 支援",
+      "category": "advanced",
+      "color": "#f472b6"
+    },
+    {
+      "id": "/ethereum/consensus/attestation/",
+      "label": "Attestation",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/beacon-chain/",
+      "label": "Beacon Chain",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/block-header/",
+      "label": "區塊 Header",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/block-structure/",
+      "label": "區塊結構",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/casper-ffg/",
+      "label": "Casper FFG",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/ethash/",
+      "label": "Ethash",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/lmd-ghost/",
+      "label": "LMD GHOST",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/randao/",
+      "label": "RANDAO",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/slashing/",
+      "label": "Slashing",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/consensus/validators/",
+      "label": "Validators",
+      "category": "consensus",
+      "color": "#f87171"
+    },
+    {
+      "id": "/ethereum/cryptography/bls-signatures/",
+      "label": "BLS Signatures",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/bls12-381/",
+      "label": "BLS12-381",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/csprng/",
+      "label": "CSPRNG",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/digital-signature-overview/",
+      "label": "數位簽章概述",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/ecdsa/",
+      "label": "ECDSA",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/ecrecover/",
+      "label": "ECRECOVER",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "label": "橢圓曲線密碼學",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/hash-function-overview/",
+      "label": "雜湊函數概述",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/keccak-256/",
+      "label": "Keccak-256",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/public-key-cryptography/",
+      "label": "公鑰密碼學",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/secp256k1/",
+      "label": "secp256k1",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/cryptography/sha-256/",
+      "label": "SHA-256",
+      "category": "cryptography",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "/ethereum/data-structures/abi-encoding/",
+      "label": "ABI 編碼",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/bloom-filter/",
+      "label": "Bloom Filter",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/merkle-patricia-trie/",
+      "label": "Merkle Patricia Trie",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/merkle-tree/",
+      "label": "Merkle Tree",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/receipt-trie/",
+      "label": "Receipt Trie",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/rlp-encoding/",
+      "label": "RLP 編碼",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/ssz-encoding/",
+      "label": "SSZ 編碼",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/state-trie/",
+      "label": "State Trie",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/storage-trie/",
+      "label": "Storage Trie",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/data-structures/transaction-trie/",
+      "label": "Transaction Trie",
+      "category": "data-structures",
+      "color": "#22d3ee"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/block-production/",
+      "label": "區塊生產",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "label": "交易廣播與驗證",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "label": "共識與最終性",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/key-generation/",
+      "label": "密鑰生成與帳戶創建",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/mempool/",
+      "label": "記憶池",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/state-transition/",
+      "label": "狀態轉換",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/transaction-construction/",
+      "label": "交易構建",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "label": "交易生命週期",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    },
+    {
+      "id": "/ethereum/transaction-lifecycle/transaction-signing/",
+      "label": "交易簽名",
+      "category": "transaction-lifecycle",
+      "color": "#34d399"
+    }
+  ],
+  "edges": [
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/accounts/eip-55/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/accounts/address-derivation/",
+      "target": "/ethereum/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/accounts/contract-account/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-155/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/consensus/block-header/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/transaction-lifecycle/block-production/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-1559/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-55/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-55/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-55/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/ethereum/accounts/eip-55/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/accounts/eoa/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/transaction-lifecycle/block-production/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/accounts/gas/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/advanced/kzg-commitments/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/consensus/block-header/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/advanced/eip-4844/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/advanced/zksnarks/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/advanced/zksnarks/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/sha-256/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/advanced/precompiled-contracts/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/consensus/block-header/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/consensus/attestation/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/transaction-lifecycle/block-production/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/ethereum/consensus/beacon-chain/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/consensus/ethash/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/ethereum/consensus/block-header/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/consensus/block-structure/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/consensus/casper-ffg/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/casper-ffg/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/casper-ffg/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/ethereum/consensus/casper-ffg/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/ethereum/consensus/ethash/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/consensus/ethash/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/consensus/ethash/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/consensus/ethash/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/consensus/ethash/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/lmd-ghost/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/lmd-ghost/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/consensus/lmd-ghost/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/lmd-ghost/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/cryptography/sha-256/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/ethereum/consensus/randao/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/consensus/slashing/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/consensus/slashing/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/consensus/slashing/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/consensus/validators/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/consensus/validators/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/consensus/validators/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/consensus/validators/",
+      "target": "/ethereum/transaction-lifecycle/block-production/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/ethereum/advanced/kzg-commitments/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls12-381/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls12-381/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/csprng/",
+      "target": "/ethereum/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/ethereum/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/ethereum/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecrecover/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
+      "target": "/ethereum/accounts/address-derivation/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/cryptography/sha-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/accounts/address-derivation/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/ethereum/cryptography/hash-function-overview/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/cryptography/sha-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/ethereum/data-structures/abi-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/accounts/address-derivation/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/cryptography/public-key-cryptography/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/cryptography/secp256k1/",
+      "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/cryptography/sha-256/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/cryptography/sha-256/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/ethereum/cryptography/sha-256/",
+      "target": "/ethereum/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/ethereum/data-structures/abi-encoding/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/abi-encoding/",
+      "target": "/ethereum/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/data-structures/abi-encoding/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/abi-encoding/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/data-structures/bloom-filter/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/bloom-filter/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/data-structures/bloom-filter/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-patricia-trie/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/advanced/kzg-commitments/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/ethereum/data-structures/merkle-tree/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/data-structures/receipt-trie/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/receipt-trie/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/data-structures/receipt-trie/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/data-structures/rlp-encoding/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/rlp-encoding/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/data-structures/ssz-encoding/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/data-structures/ssz-encoding/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/ethereum/data-structures/state-trie/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/state-trie/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/state-trie/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/ethereum/data-structures/state-trie/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/state-trie/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/data-structures/storage-trie/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/storage-trie/",
+      "target": "/ethereum/data-structures/abi-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/ethereum/data-structures/transaction-trie/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/block-production/",
+      "target": "/ethereum/consensus/block-header/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/broadcast-validation/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/consensus-finality/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/ethereum/accounts/eip-55/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/mempool/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/state-transition/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-construction/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-construction/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-construction/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-construction/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
+      "target": "/ethereum/consensus/block-header/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-signing/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-signing/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    }
+  ],
+  "categories": [
+    {
+      "key": "cryptography",
+      "label": "密碼學基礎",
+      "color": "#a78bfa"
+    },
+    {
+      "key": "data-structures",
+      "label": "資料結構",
+      "color": "#22d3ee"
+    },
+    {
+      "key": "accounts",
+      "label": "帳戶與交易",
+      "color": "#fbbf24"
+    },
+    {
+      "key": "transaction-lifecycle",
+      "label": "交易流程",
+      "color": "#34d399"
+    },
+    {
+      "key": "consensus",
+      "label": "區塊與共識",
+      "color": "#f87171"
+    },
+    {
+      "key": "advanced",
+      "label": "進階主題",
+      "color": "#f472b6"
+    }
+  ]
+}
