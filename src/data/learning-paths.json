@@ -64,5 +64,103 @@
       { "title": "Verkle Trees", "href": "/ethereum/advanced/verkle-trees/" },
       { "title": "zkSNARKs 支援", "href": "/ethereum/advanced/zksnarks/" }
     ]
+  },
+  {
+    "id": "bitcoin-fundamentals",
+    "title": "Bitcoin 基礎路徑",
+    "description": "從 UTXO 模型到 Nakamoto 共識的完整基礎",
+    "color": "#f59e0b",
+    "steps": [
+      { "title": "UTXO 模型", "href": "/bitcoin/data-structures/utxo-model/" },
+      { "title": "區塊結構", "href": "/bitcoin/data-structures/bitcoin-block-structure/" },
+      { "title": "SHA-256d", "href": "/bitcoin/cryptography/sha-256d/" },
+      { "title": "Nakamoto 共識", "href": "/bitcoin/consensus/nakamoto-consensus/" },
+      { "title": "PoW / Hashcash", "href": "/bitcoin/consensus/pow-hashcash/" },
+      { "title": "難度調整", "href": "/bitcoin/consensus/difficulty-adjustment/" },
+      { "title": "Bitcoin Script", "href": "/bitcoin/data-structures/bitcoin-script/" },
+      { "title": "P2PKH", "href": "/bitcoin/transactions/p2pkh/" },
+      { "title": "交易生命週期", "href": "/bitcoin/transactions/transaction-lifecycle-btc/" }
+    ]
+  },
+  {
+    "id": "bitcoin-segwit-taproot",
+    "title": "SegWit 到 Taproot 演進路徑",
+    "description": "Bitcoin 協議升級與密碼學演進",
+    "color": "#fb923c",
+    "steps": [
+      { "title": "交易可塑性", "href": "/bitcoin/transactions/transaction-malleability/" },
+      { "title": "SegWit 序列化", "href": "/bitcoin/transactions/segwit-serialization/" },
+      { "title": "Witness Data", "href": "/bitcoin/data-structures/witness-data/" },
+      { "title": "P2WPKH / P2WSH", "href": "/bitcoin/transactions/p2wpkh-p2wsh/" },
+      { "title": "Schnorr Signatures", "href": "/bitcoin/cryptography/schnorr-signatures/" },
+      { "title": "Taproot Key Tweaking", "href": "/bitcoin/cryptography/taproot-key-tweaking/" },
+      { "title": "P2TR", "href": "/bitcoin/transactions/p2tr/" },
+      { "title": "Tapscript", "href": "/bitcoin/advanced/tapscript/" }
+    ]
+  },
+  {
+    "id": "bitcoin-lightning",
+    "title": "Lightning Network 路徑",
+    "description": "Layer 2 與進階 Bitcoin 可程式性",
+    "color": "#ef4444",
+    "steps": [
+      { "title": "Timelocks", "href": "/bitcoin/advanced/timelocks/" },
+      { "title": "Payment Channels", "href": "/bitcoin/advanced/payment-channels/" },
+      { "title": "HTLC", "href": "/bitcoin/advanced/htlc/" },
+      { "title": "Lightning Network", "href": "/bitcoin/advanced/lightning-network/" },
+      { "title": "BOLT 規範", "href": "/bitcoin/advanced/bolt-specifications/" },
+      { "title": "PSBT", "href": "/bitcoin/advanced/psbt/" },
+      { "title": "Miniscript", "href": "/bitcoin/advanced/miniscript/" },
+      { "title": "BitVM", "href": "/bitcoin/advanced/bitvm/" }
+    ]
+  },
+  {
+    "id": "solana-dev",
+    "title": "Solana 開發者路徑",
+    "description": "從 Ethereum 開發者視角理解 Solana",
+    "color": "#14b8a6",
+    "steps": [
+      { "title": "帳戶模型概述", "href": "/solana/account-model/account-model-overview/" },
+      { "title": "Programs", "href": "/solana/account-model/programs/" },
+      { "title": "PDA", "href": "/solana/account-model/pda/" },
+      { "title": "Token Accounts", "href": "/solana/account-model/token-accounts/" },
+      { "title": "交易結構", "href": "/solana/transactions/transaction-anatomy/" },
+      { "title": "Instructions", "href": "/solana/transactions/instructions/" },
+      { "title": "SVM / Sealevel", "href": "/solana/runtime/svm-sealevel/" },
+      { "title": "CPI", "href": "/solana/runtime/cpi/" },
+      { "title": "手續費與優先權", "href": "/solana/transactions/fees-priority/" }
+    ]
+  },
+  {
+    "id": "solana-protocol",
+    "title": "Solana 協議深潛路徑",
+    "description": "從 PoH 到 Tower BFT 的共識全貌",
+    "color": "#059669",
+    "steps": [
+      { "title": "SHA-256 與 PoH", "href": "/solana/cryptography/sha256-poh/" },
+      { "title": "Proof of History", "href": "/solana/consensus/proof-of-history/" },
+      { "title": "Tower BFT", "href": "/solana/consensus/tower-bft/" },
+      { "title": "Leader Schedule", "href": "/solana/consensus/leader-schedule/" },
+      { "title": "Gulf Stream", "href": "/solana/consensus/gulf-stream/" },
+      { "title": "Turbine", "href": "/solana/consensus/turbine/" },
+      { "title": "Validators 與 Staking", "href": "/solana/consensus/validators-staking/" },
+      { "title": "Alpenglow", "href": "/solana/consensus/alpenglow/" }
+    ]
+  },
+  {
+    "id": "solana-scaling",
+    "title": "Solana 擴展與進階路徑",
+    "description": "平行執行、高效能驗證器與前沿技術",
+    "color": "#0891b2",
+    "steps": [
+      { "title": "SVM / Sealevel", "href": "/solana/runtime/svm-sealevel/" },
+      { "title": "BPF / SBF", "href": "/solana/runtime/bpf-sbf/" },
+      { "title": "Compute Units", "href": "/solana/runtime/compute-units/" },
+      { "title": "Banking Stage", "href": "/solana/runtime/banking-stage/" },
+      { "title": "Firedancer", "href": "/solana/advanced/firedancer/" },
+      { "title": "State Compression", "href": "/solana/advanced/state-compression/" },
+      { "title": "ZK Compression", "href": "/solana/advanced/zk-compression/" },
+      { "title": "Token Extensions", "href": "/solana/advanced/token-extensions/" }
+    ]
   }
 ]

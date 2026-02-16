@@ -4,7 +4,8 @@ import MiniGraph from '../components/MiniGraph'
 
 const { slug } = Astro.params
 const currentPage = slug ? `/${slug}/` : undefined
-const isContentPage = currentPage?.startsWith('/ethereum/') || currentPage?.startsWith('/fundamentals/')
+const contentPrefixes = ['/ethereum/', '/fundamentals/', '/bitcoin/', '/solana/', '/comparisons/']
+const isContentPage = contentPrefixes.some(p => currentPage?.startsWith(p))
 ---
 
 <Default {...Astro.props}><slot /></Default>

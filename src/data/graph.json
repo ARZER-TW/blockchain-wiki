@@ -407,6 +407,654 @@
       "label": "交易簽名",
       "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
+    },
+    {
+      "id": "/bitcoin/advanced/bitvm/",
+      "label": "BitVM",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/bolt-specifications/",
+      "label": "BOLT Specifications",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/brc20-runes/",
+      "label": "BRC-20 & Runes",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/covenants-opcat/",
+      "label": "Covenants & OP_CAT",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/htlc/",
+      "label": "HTLC (Hash Time-Locked Contract)",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/lightning-network/",
+      "label": "Lightning Network",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/miniscript/",
+      "label": "Miniscript",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/multisig-musig/",
+      "label": "Multisig & MuSig",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/ordinals-inscriptions/",
+      "label": "Ordinals & Inscriptions",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/payment-channels/",
+      "label": "Payment Channels",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/psbt/",
+      "label": "PSBT (Partially Signed Bitcoin Transaction)",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/tapscript/",
+      "label": "Tapscript",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/advanced/timelocks/",
+      "label": "Timelocks",
+      "category": "bitcoin/advanced",
+      "color": "#f97316"
+    },
+    {
+      "id": "/bitcoin/consensus/bitcoin-forks/",
+      "label": "Bitcoin Forks",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/block-validation/",
+      "label": "Block Validation",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/difficulty-adjustment/",
+      "label": "Difficulty Adjustment",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/halving/",
+      "label": "Halving",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/longest-chain-rule/",
+      "label": "Longest Chain Rule",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/nakamoto-consensus/",
+      "label": "Nakamoto Consensus",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/pow-hashcash/",
+      "label": "Proof-of-Work (Hashcash)",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/consensus/selfish-mining/",
+      "label": "Selfish Mining",
+      "category": "bitcoin/consensus",
+      "color": "#dc2626"
+    },
+    {
+      "id": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "label": "Bitcoin 雜湊函數總覽",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/merkle-root/",
+      "label": "Merkle Root（Bitcoin 交易 Merkle 樹根）",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/schnorr-signatures/",
+      "label": "Schnorr Signatures (BIP-340)",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "label": "secp256k1 在 Bitcoin 中的應用",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/sha-256d/",
+      "label": "SHA-256d (Double SHA-256)",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/sighash-types/",
+      "label": "Sighash Types（簽名雜湊類型）",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "label": "Taproot Key Tweaking (BIP-341)",
+      "category": "bitcoin/cryptography",
+      "color": "#f59e0b"
+    },
+    {
+      "id": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "label": "Bitcoin Block Structure",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/bitcoin-script/",
+      "label": "Bitcoin Script",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/compact-size-encoding/",
+      "label": "Compact Size Encoding",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "label": "區塊中的 Merkle Tree",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/script-opcodes/",
+      "label": "Script Opcodes",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/serialization-formats/",
+      "label": "Serialization Formats（序列化格式）",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/utxo-model/",
+      "label": "UTXO 模型",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/data-structures/witness-data/",
+      "label": "Witness Data",
+      "category": "bitcoin/data-structures",
+      "color": "#fb923c"
+    },
+    {
+      "id": "/bitcoin/network/block-relay/",
+      "label": "Block Relay",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/network/compact-blocks/",
+      "label": "Compact Blocks",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/network/erlay/",
+      "label": "Erlay",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/network/mempool-btc/",
+      "label": "Mempool (BTC)",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/network/peer-discovery/",
+      "label": "Peer Discovery",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/network/spv-light-clients/",
+      "label": "SPV Light Clients",
+      "category": "bitcoin/network",
+      "color": "#b91c1c"
+    },
+    {
+      "id": "/bitcoin/transactions/fee-estimation/",
+      "label": "手續費估算",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/p2pkh/",
+      "label": "P2PKH",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/p2sh/",
+      "label": "P2SH",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/p2tr/",
+      "label": "P2TR",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "label": "P2WPKH / P2WSH",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/rbf-cpfp/",
+      "label": "RBF / CPFP",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/segwit-serialization/",
+      "label": "SegWit 序列化",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "label": "Bitcoin 交易生命週期",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/transaction-malleability/",
+      "label": "交易延展性",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/transaction-signing-btc/",
+      "label": "Bitcoin 交易簽名",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/bitcoin/transactions/utxo-selection/",
+      "label": "UTXO 選擇",
+      "category": "bitcoin/transactions",
+      "color": "#ef4444"
+    },
+    {
+      "id": "/solana/account-model/account-data-serialization/",
+      "label": "Account Data Serialization",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/account-model-overview/",
+      "label": "Solana Account Model",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/address-derivation-solana/",
+      "label": "Solana Address Derivation",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/pda/",
+      "label": "PDA (Program Derived Address)",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/programs/",
+      "label": "Programs (Smart Contracts)",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/rent/",
+      "label": "Rent and Rent Exemption",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/system-program/",
+      "label": "System Program",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/account-model/token-accounts/",
+      "label": "Token Accounts",
+      "category": "solana/account-model",
+      "color": "#14b8a6"
+    },
+    {
+      "id": "/solana/advanced/firedancer/",
+      "label": "Firedancer",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/jito-mev/",
+      "label": "Jito and MEV on Solana",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/network-economics/",
+      "label": "Network Economics",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/solana-program-library/",
+      "label": "Solana Program Library (SPL)",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/solana-vs-ethereum/",
+      "label": "Solana vs Ethereum Architecture Comparison",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/state-compression/",
+      "label": "State Compression",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/token-extensions/",
+      "label": "Token Extensions (Token-2022)",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/advanced/zk-compression/",
+      "label": "ZK Compression",
+      "category": "solana/advanced",
+      "color": "#0891b2"
+    },
+    {
+      "id": "/solana/consensus/alpenglow/",
+      "label": "Alpenglow",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/clock-and-slots/",
+      "label": "Slots, Blocks, and Epochs",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/gulf-stream/",
+      "label": "Gulf Stream",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/leader-schedule/",
+      "label": "Leader Schedule",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/proof-of-history/",
+      "label": "Proof of History (PoH)",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/tower-bft/",
+      "label": "Tower BFT",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/turbine/",
+      "label": "Turbine",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/consensus/validators-staking/",
+      "label": "Validators and Staking",
+      "category": "solana/consensus",
+      "color": "#059669"
+    },
+    {
+      "id": "/solana/cryptography/bls-signatures-solana/",
+      "label": "BLS Signatures in Alpenglow",
+      "category": "solana/cryptography",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "/solana/cryptography/ed25519-precompile/",
+      "label": "Ed25519 Precompile",
+      "category": "solana/cryptography",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "/solana/cryptography/ed25519/",
+      "label": "Ed25519",
+      "category": "solana/cryptography",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "/solana/cryptography/secp256k1-precompile/",
+      "label": "Secp256k1 Precompile",
+      "category": "solana/cryptography",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "/solana/cryptography/sha256-poh/",
+      "label": "SHA-256 in Proof of History",
+      "category": "solana/cryptography",
+      "color": "#06b6d4"
+    },
+    {
+      "id": "/solana/runtime/banking-stage/",
+      "label": "Banking Stage",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/bpf-sbf/",
+      "label": "BPF and SBF Bytecode",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/compute-units/",
+      "label": "Compute Units",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/cpi/",
+      "label": "CPI (Cross-Program Invocation)",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/native-programs/",
+      "label": "Native Programs",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/program-deployment/",
+      "label": "Program Deployment",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/runtime/svm-sealevel/",
+      "label": "SVM and Sealevel",
+      "category": "solana/runtime",
+      "color": "#0d9488"
+    },
+    {
+      "id": "/solana/transactions/fees-priority/",
+      "label": "Transaction Fees and Priority Fees",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/instructions/",
+      "label": "Instructions",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/signing/",
+      "label": "Transaction Signing",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/transaction-anatomy/",
+      "label": "Transaction Anatomy",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/transaction-errors/",
+      "label": "Transaction Errors",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/transaction-lifecycle-solana/",
+      "label": "Solana Transaction Lifecycle",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/solana/transactions/versioned-transactions/",
+      "label": "Versioned Transactions",
+      "category": "solana/transactions",
+      "color": "#10b981"
+    },
+    {
+      "id": "/comparisons/account-models/",
+      "label": "帳戶模型比較：UTXO vs Account-Based vs Solana Account",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/consensus-mechanisms/",
+      "label": "共識機制比較：PoW vs PoS vs PoH",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/data-availability/",
+      "label": "資料可用性方案比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/fee-markets/",
+      "label": "手續費市場機制比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/finality-guarantees/",
+      "label": "最終性保證比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/governance-and-upgrades/",
+      "label": "治理與升級機制比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/networking-and-propagation/",
+      "label": "網路傳播機制比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/scalability-approaches/",
+      "label": "擴容方案比較：L2 vs Sharding vs 平行執行",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/signature-schemes/",
+      "label": "簽名方案比較：ECDSA vs Schnorr vs Ed25519",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/smart-contract-execution/",
+      "label": "智能合約執行環境：Script vs EVM vs SVM",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/state-management/",
+      "label": "狀態管理比較",
+      "category": "comparisons",
+      "color": "#e879f9"
+    },
+    {
+      "id": "/comparisons/transaction-models/",
+      "label": "交易模型比較",
+      "category": "comparisons",
+      "color": "#e879f9"
     }
   ],
   "edges": [
@@ -2025,6 +2673,3430 @@
     {
       "source": "/ethereum/transaction-lifecycle/transaction-signing/",
       "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/advanced/covenants-opcat/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/advanced/bitvm/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/advanced/htlc/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/bolt-specifications/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/advanced/ordinals-inscriptions/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/advanced/brc20-runes/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/data-structures/script-opcodes/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/covenants-opcat/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/htlc/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/lightning-network/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/psbt/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/htlc/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/advanced/covenants-opcat/"
+    },
+    {
+      "source": "/bitcoin/advanced/miniscript/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/advanced/psbt/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/advanced/multisig-musig/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/ordinals-inscriptions/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/advanced/timelocks/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/transactions/rbf-cpfp/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/advanced/payment-channels/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/advanced/psbt/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/advanced/tapscript/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/bitcoin/advanced/timelocks/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/advanced/timelocks/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/advanced/timelocks/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/advanced/timelocks/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/consensus/block-validation/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/consensus/difficulty-adjustment/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/consensus/bitcoin-forks/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/consensus/difficulty-adjustment/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/consensus/halving/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/network/spv-light-clients/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/consensus/block-validation/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/consensus/halving/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/consensus/difficulty-adjustment/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/transactions/fee-estimation/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/bitcoin/transactions/rbf-cpfp/"
+    },
+    {
+      "source": "/bitcoin/consensus/halving/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/bitcoin/network/block-relay/"
+    },
+    {
+      "source": "/bitcoin/consensus/longest-chain-rule/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/consensus/nakamoto-consensus/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/consensus/pow-hashcash/",
+      "target": "/ethereum/consensus/ethash/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/bitcoin/network/block-relay/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/bitcoin/network/compact-blocks/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/bitcoin/consensus/block-validation/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/consensus/selfish-mining/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/cryptography/secp256k1-in-bitcoin/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/cryptography/merkle-root/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/cryptography/hash-functions-in-bitcoin/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/data-structures/merkle-tree-in-blocks/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/network/spv-light-clients/"
+    },
+    {
+      "source": "/bitcoin/cryptography/merkle-root/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/bitcoin/cryptography/secp256k1-in-bitcoin/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/bitcoin/cryptography/sighash-types/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/bitcoin/cryptography/schnorr-signatures/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/ethereum/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/cryptography/secp256k1-in-bitcoin/",
+      "target": "/ethereum/accounts/address-derivation/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sha-256d/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/cryptography/hash-functions-in-bitcoin/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/data-structures/script-opcodes/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/cryptography/sighash-types/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/cryptography/taproot-key-tweaking/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/bitcoin/data-structures/merkle-tree-in-blocks/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-block-structure/",
+      "target": "/bitcoin/data-structures/compact-size-encoding/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/data-structures/script-opcodes/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/bitcoin-script/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/data-structures/compact-size-encoding/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/network/spv-light-clients/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/data-structures/merkle-tree-in-blocks/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/bitcoin/cryptography/hash-functions-in-bitcoin/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/bitcoin/data-structures/script-opcodes/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/serialization-formats/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/bitcoin/data-structures/serialization-formats/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/bitcoin/data-structures/serialization-formats/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/data-structures/serialization-formats/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/serialization-formats/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/data-structures/utxo-model/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/bitcoin/data-structures/utxo-model/",
+      "target": "/bitcoin/transactions/utxo-selection/"
+    },
+    {
+      "source": "/bitcoin/data-structures/utxo-model/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/data-structures/utxo-model/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/bitcoin/data-structures/utxo-model/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/data-structures/witness-data/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/data-structures/witness-data/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/data-structures/witness-data/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/data-structures/witness-data/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/network/compact-blocks/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/network/peer-discovery/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/consensus/block-validation/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/network/erlay/"
+    },
+    {
+      "source": "/bitcoin/network/block-relay/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/bitcoin/network/erlay/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/bitcoin/network/peer-discovery/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/bitcoin/consensus/block-validation/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/network/compact-blocks/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/bitcoin/network/peer-discovery/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/bitcoin/network/spv-light-clients/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/network/erlay/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/bitcoin/network/mempool-btc/",
+      "target": "/bitcoin/transactions/rbf-cpfp/"
+    },
+    {
+      "source": "/bitcoin/network/mempool-btc/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/bitcoin/network/mempool-btc/",
+      "target": "/bitcoin/transactions/fee-estimation/"
+    },
+    {
+      "source": "/bitcoin/network/mempool-btc/",
+      "target": "/bitcoin/network/peer-discovery/"
+    },
+    {
+      "source": "/bitcoin/network/mempool-btc/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/network/peer-discovery/",
+      "target": "/bitcoin/network/spv-light-clients/"
+    },
+    {
+      "source": "/bitcoin/network/peer-discovery/",
+      "target": "/bitcoin/consensus/selfish-mining/"
+    },
+    {
+      "source": "/bitcoin/network/peer-discovery/",
+      "target": "/bitcoin/consensus/block-validation/"
+    },
+    {
+      "source": "/bitcoin/network/peer-discovery/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/network/peer-discovery/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/bitcoin/network/spv-light-clients/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/rbf-cpfp/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/utxo-selection/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/fee-estimation/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2pkh/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/data-structures/serialization-formats/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/advanced/multisig-musig/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2sh/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2tr/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2tr/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2tr/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2tr/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2tr/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/bitcoin/data-structures/witness-data/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/transactions/p2wpkh-p2wsh/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/transactions/segwit-serialization/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/rbf-cpfp/",
+      "target": "/bitcoin/transactions/utxo-selection/"
+    },
+    {
+      "source": "/bitcoin/transactions/segwit-serialization/",
+      "target": "/bitcoin/transactions/transaction-malleability/"
+    },
+    {
+      "source": "/bitcoin/transactions/segwit-serialization/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/segwit-serialization/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/segwit-serialization/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/bitcoin/transactions/segwit-serialization/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/transactions/utxo-selection/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-lifecycle-btc/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/bitcoin/transactions/transaction-signing-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-malleability/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-signing-btc/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-signing-btc/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-signing-btc/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-signing-btc/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/bitcoin/transactions/transaction-signing-btc/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/bitcoin/transactions/utxo-selection/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/bitcoin/transactions/utxo-selection/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/bitcoin/transactions/utxo-selection/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/bitcoin/transactions/utxo-selection/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/bitcoin/transactions/utxo-selection/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/ethereum/data-structures/abi-encoding/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/ethereum/data-structures/rlp-encoding/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/ethereum/data-structures/ssz-encoding/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/account-model/account-data-serialization/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/system-program/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/solana/account-model/account-model-overview/",
+      "target": "/solana/account-model/address-derivation-solana/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/ethereum/accounts/eip-55/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/solana/account-model/system-program/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/ethereum/accounts/address-derivation/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/solana/account-model/address-derivation-solana/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/solana/account-model/system-program/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/solana/account-model/pda/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/runtime/bpf-sbf/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/account-model/system-program/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/programs/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/account-model/system-program/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/solana/account-model/address-derivation-solana/"
+    },
+    {
+      "source": "/solana/account-model/rent/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/solana/account-model/system-program/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/account-model/system-program/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/account-model/system-program/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/account-model/system-program/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/account-model/system-program/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/account-model/token-accounts/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/solana/account-model/token-accounts/",
+      "target": "/solana/advanced/token-extensions/"
+    },
+    {
+      "source": "/solana/account-model/token-accounts/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/runtime/banking-stage/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/consensus/alpenglow/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/runtime/bpf-sbf/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/advanced/solana-vs-ethereum/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/advanced/network-economics/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/advanced/jito-mev/"
+    },
+    {
+      "source": "/solana/advanced/firedancer/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/consensus/leader-schedule/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/runtime/banking-stage/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/advanced/network-economics/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/advanced/jito-mev/",
+      "target": "/solana/advanced/solana-vs-ethereum/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/advanced/solana-vs-ethereum/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/advanced/state-compression/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/solana/advanced/zk-compression/"
+    },
+    {
+      "source": "/solana/advanced/network-economics/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/advanced/token-extensions/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/advanced/state-compression/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/advanced/network-economics/"
+    },
+    {
+      "source": "/solana/advanced/solana-program-library/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/solana/advanced/solana-vs-ethereum/",
+      "target": "/solana/advanced/zk-compression/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/advanced/zk-compression/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/advanced/token-extensions/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/advanced/state-compression/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/advanced/token-extensions/",
+      "target": "/solana/advanced/zk-compression/"
+    },
+    {
+      "source": "/solana/advanced/zk-compression/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/solana/advanced/zk-compression/",
+      "target": "/ethereum/advanced/zksnarks/"
+    },
+    {
+      "source": "/solana/advanced/zk-compression/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/advanced/zk-compression/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/advanced/zk-compression/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/cryptography/bls-signatures-solana/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/leader-schedule/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/clock-and-slots/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/fundamentals/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/solana/consensus/alpenglow/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/leader-schedule/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/consensus/clock-and-slots/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/consensus/leader-schedule/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/gulf-stream/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/leader-schedule/",
+      "target": "/ethereum/consensus/randao/"
+    },
+    {
+      "source": "/solana/consensus/proof-of-history/",
+      "target": "/solana/cryptography/sha256-poh/"
+    },
+    {
+      "source": "/solana/consensus/proof-of-history/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/consensus/proof-of-history/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/proof-of-history/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/proof-of-history/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/solana/consensus/tower-bft/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/tower-bft/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/solana/consensus/tower-bft/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/tower-bft/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/solana/consensus/turbine/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/solana/consensus/turbine/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/consensus/turbine/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/solana/consensus/validators-staking/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/consensus/validators-staking/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/consensus/validators-staking/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/fundamentals/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/fundamentals/cryptography/bls12-381/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/cryptography/bls-signatures-solana/",
+      "target": "/ethereum/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/cryptography/secp256k1-precompile/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519-precompile/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/solana/cryptography/ed25519/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/cryptography/secp256k1-precompile/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/bitcoin/cryptography/sha-256d/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/ethereum/consensus/ethash/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/solana/cryptography/sha256-poh/",
+      "target": "/ethereum/consensus/block-structure/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/solana/runtime/banking-stage/",
+      "target": "/ethereum/transaction-lifecycle/block-production/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/runtime/program-deployment/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/runtime/bpf-sbf/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/runtime/compute-units/",
+      "target": "/solana/advanced/jito-mev/"
+    },
+    {
+      "source": "/solana/runtime/cpi/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/runtime/cpi/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/runtime/cpi/",
+      "target": "/solana/runtime/native-programs/"
+    },
+    {
+      "source": "/solana/runtime/native-programs/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/solana/runtime/native-programs/",
+      "target": "/solana/account-model/token-accounts/"
+    },
+    {
+      "source": "/solana/runtime/native-programs/",
+      "target": "/solana/runtime/program-deployment/"
+    },
+    {
+      "source": "/solana/runtime/native-programs/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/solana/runtime/program-deployment/",
+      "target": "/solana/advanced/solana-program-library/"
+    },
+    {
+      "source": "/solana/runtime/svm-sealevel/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/solana/runtime/svm-sealevel/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/solana/runtime/svm-sealevel/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/runtime/svm-sealevel/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/solana/transactions/signing/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/transactions/fees-priority/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/transactions/signing/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/transactions/versioned-transactions/"
+    },
+    {
+      "source": "/solana/transactions/instructions/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/transactions/versioned-transactions/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/solana/transactions/signing/",
+      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/solana/transactions/versioned-transactions/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/transactions/transaction-anatomy/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/solana/transactions/transaction-errors/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/transactions/transaction-errors/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/transactions/transaction-errors/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/transactions/transaction-errors/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/transactions/transaction-errors/",
+      "target": "/solana/account-model/programs/"
+    },
+    {
+      "source": "/solana/transactions/transaction-lifecycle-solana/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/solana/transactions/transaction-lifecycle-solana/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/solana/transactions/transaction-lifecycle-solana/",
+      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/transactions/transaction-errors/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/transactions/transaction-lifecycle-solana/"
+    },
+    {
+      "source": "/solana/transactions/versioned-transactions/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/accounts/eoa/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/transactions/utxo-selection/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/accounts/contract-account/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/solana/account-model/pda/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/advanced/htlc/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/account-models/",
+      "target": "/comparisons/smart-contract-execution/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/bitcoin/consensus/pow-hashcash/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/bitcoin/consensus/difficulty-adjustment/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/comparisons/consensus-mechanisms/",
+      "target": "/comparisons/finality-guarantees/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/bitcoin/network/compact-blocks/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/bitcoin/data-structures/bitcoin-block-structure/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/ethereum/advanced/kzg-commitments/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/comparisons/scalability-approaches/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/bitcoin/network/block-relay/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/data-availability/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/network/mempool-btc/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/solana/advanced/jito-mev/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/transactions/fee-estimation/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/transactions/rbf-cpfp/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/solana/transactions/fees-priority/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/comparisons/finality-guarantees/"
+    },
+    {
+      "source": "/comparisons/fee-markets/",
+      "target": "/comparisons/smart-contract-execution/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/solana/consensus/tower-bft/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/solana/consensus/proof-of-history/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/solana/consensus/alpenglow/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/bitcoin/consensus/longest-chain-rule/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/consensus/lmd-ghost/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/transaction-lifecycle/consensus-finality/"
+    },
+    {
+      "source": "/comparisons/finality-guarantees/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/solana/advanced/firedancer/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/bitcoin/consensus/bitcoin-forks/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/solana/consensus/alpenglow/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/solana/consensus/validators-staking/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/ethereum/consensus/casper-ffg/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/comparisons/governance-and-upgrades/",
+      "target": "/ethereum/consensus/slashing/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/bitcoin/network/compact-blocks/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/ethereum/consensus/attestation/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/bitcoin/network/peer-discovery/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/bitcoin/network/block-relay/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/ethereum/transaction-lifecycle/mempool/"
+    },
+    {
+      "source": "/comparisons/networking-and-propagation/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/solana/advanced/firedancer/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/solana/consensus/turbine/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/bitcoin/advanced/htlc/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/bitcoin/network/compact-blocks/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/bitcoin/advanced/payment-channels/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/bitcoin/consensus/nakamoto-consensus/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/ethereum/consensus/beacon-chain/"
+    },
+    {
+      "source": "/comparisons/scalability-approaches/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/cryptography/ecdsa/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/fundamentals/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/cryptography/bls12-381/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/consensus/validators/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/cryptography/ecrecover/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/accounts/eip-155/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/solana/cryptography/ed25519-precompile/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/solana/cryptography/secp256k1-precompile/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/cryptography/taproot-key-tweaking/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/bitcoin/cryptography/secp256k1-in-bitcoin/"
+    },
+    {
+      "source": "/comparisons/signature-schemes/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/data-structures/bitcoin-script/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/ethereum/accounts/gas/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/solana/runtime/bpf-sbf/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/solana/runtime/compute-units/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/advanced/tapscript/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/ethereum/transaction-lifecycle/state-transition/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/ethereum/advanced/precompiled-contracts/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/solana/runtime/cpi/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/advanced/lightning-network/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/comparisons/smart-contract-execution/",
+      "target": "/comparisons/consensus-mechanisms/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/ethereum/advanced/verkle-trees/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/solana/account-model/rent/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/solana/account-model/account-model-overview/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/comparisons/account-models/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/ethereum/data-structures/storage-trie/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/comparisons/state-management/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/data-structures/utxo-model/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/solana/transactions/instructions/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/cryptography/schnorr-signatures/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/solana/cryptography/ed25519/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/ethereum/accounts/eip-1559/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/transactions/p2pkh/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/transactions/p2sh/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/transactions/p2wpkh-p2wsh/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/transactions/p2tr/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/bitcoin/transactions/transaction-lifecycle-btc/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/ethereum/transaction-lifecycle/transaction-construction/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/solana/runtime/svm-sealevel/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/solana/consensus/gulf-stream/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/solana/transactions/transaction-anatomy/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/ethereum/advanced/eip-4844/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/comparisons/fee-markets/"
+    },
+    {
+      "source": "/comparisons/transaction-models/",
+      "target": "/comparisons/account-models/"
     }
   ],
   "categories": [
@@ -2075,8 +6147,73 @@
     },
     {
       "key": "ethereum/advanced",
-      "label": "進階主題",
+      "label": "進階主題（ETH）",
       "color": "#f472b6"
+    },
+    {
+      "key": "bitcoin/cryptography",
+      "label": "密碼學（BTC）",
+      "color": "#f59e0b"
+    },
+    {
+      "key": "bitcoin/data-structures",
+      "label": "資料結構（BTC）",
+      "color": "#fb923c"
+    },
+    {
+      "key": "bitcoin/transactions",
+      "label": "交易（BTC）",
+      "color": "#ef4444"
+    },
+    {
+      "key": "bitcoin/consensus",
+      "label": "共識（BTC）",
+      "color": "#dc2626"
+    },
+    {
+      "key": "bitcoin/network",
+      "label": "網路（BTC）",
+      "color": "#b91c1c"
+    },
+    {
+      "key": "bitcoin/advanced",
+      "label": "進階主題（BTC）",
+      "color": "#f97316"
+    },
+    {
+      "key": "solana/cryptography",
+      "label": "密碼學（SOL）",
+      "color": "#06b6d4"
+    },
+    {
+      "key": "solana/account-model",
+      "label": "帳戶模型（SOL）",
+      "color": "#14b8a6"
+    },
+    {
+      "key": "solana/transactions",
+      "label": "交易（SOL）",
+      "color": "#10b981"
+    },
+    {
+      "key": "solana/consensus",
+      "label": "共識（SOL）",
+      "color": "#059669"
+    },
+    {
+      "key": "solana/runtime",
+      "label": "執行環境（SOL）",
+      "color": "#0d9488"
+    },
+    {
+      "key": "solana/advanced",
+      "label": "進階主題（SOL）",
+      "color": "#0891b2"
+    },
+    {
+      "key": "comparisons",
+      "label": "跨鏈比較",
+      "color": "#e879f9"
     }
   ]
 }

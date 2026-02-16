@@ -17,7 +17,7 @@ export default defineConfig({
       TableOfContents: './src/overrides/TableOfContents.astro',
       MarkdownContent: './src/overrides/MarkdownContent.astro',
     },
-    description: 'Interactive blockchain learning wiki with Ethereum deep dives',
+    description: 'Interactive blockchain learning wiki covering Bitcoin, Ethereum, and Solana',
     social: [
       { icon: 'github', label: 'GitHub', href: 'https://github.com/ARZER-TW/blockchain-wiki' },
     ],
@@ -111,6 +111,68 @@ export default defineConfig({
             autogenerate: { directory: 'ethereum/advanced' },
           },
         ],
+      },
+      {
+        label: 'Bitcoin',
+        items: [
+          {
+            label: '密碼學',
+            autogenerate: { directory: 'bitcoin/cryptography' },
+          },
+          {
+            label: '資料結構',
+            autogenerate: { directory: 'bitcoin/data-structures' },
+          },
+          {
+            label: '交易',
+            autogenerate: { directory: 'bitcoin/transactions' },
+          },
+          {
+            label: '共識',
+            autogenerate: { directory: 'bitcoin/consensus' },
+          },
+          {
+            label: '網路',
+            autogenerate: { directory: 'bitcoin/network' },
+          },
+          {
+            label: '進階主題',
+            autogenerate: { directory: 'bitcoin/advanced' },
+          },
+        ],
+      },
+      {
+        label: 'Solana',
+        items: [
+          {
+            label: '密碼學',
+            autogenerate: { directory: 'solana/cryptography' },
+          },
+          {
+            label: '帳戶模型',
+            autogenerate: { directory: 'solana/account-model' },
+          },
+          {
+            label: '交易',
+            autogenerate: { directory: 'solana/transactions' },
+          },
+          {
+            label: '共識',
+            autogenerate: { directory: 'solana/consensus' },
+          },
+          {
+            label: '執行環境',
+            autogenerate: { directory: 'solana/runtime' },
+          },
+          {
+            label: '進階主題',
+            autogenerate: { directory: 'solana/advanced' },
+          },
+        ],
+      },
+      {
+        label: '跨鏈比較',
+        autogenerate: { directory: 'comparisons' },
       },
     ],
   }), react()],
