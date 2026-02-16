@@ -1,0 +1,54 @@
+[
+  {
+    "id": "fundamentals",
+    "title": "基礎路徑",
+    "description": "從密碼學基礎到交易完整流程",
+    "color": "#a78bfa",
+    "steps": [
+      { "title": "公鑰密碼學", "href": "/ethereum/cryptography/public-key-cryptography/" },
+      { "title": "橢圓曲線密碼學", "href": "/ethereum/cryptography/elliptic-curve-cryptography/" },
+      { "title": "secp256k1", "href": "/ethereum/cryptography/secp256k1/" },
+      { "title": "ECDSA", "href": "/ethereum/cryptography/ecdsa/" },
+      { "title": "密鑰生成與帳戶創建", "href": "/ethereum/transaction-lifecycle/key-generation/" },
+      { "title": "交易生命週期", "href": "/ethereum/transaction-lifecycle/transaction-lifecycle/" }
+    ]
+  },
+  {
+    "id": "data-structures",
+    "title": "資料結構路徑",
+    "description": "從編碼格式到狀態樹的完整數據流",
+    "color": "#22d3ee",
+    "steps": [
+      { "title": "RLP 編碼", "href": "/ethereum/data-structures/rlp-encoding/" },
+      { "title": "Merkle Tree", "href": "/ethereum/data-structures/merkle-tree/" },
+      { "title": "Merkle Patricia Trie", "href": "/ethereum/data-structures/merkle-patricia-trie/" },
+      { "title": "State Trie", "href": "/ethereum/data-structures/state-trie/" },
+      { "title": "狀態轉換", "href": "/ethereum/transaction-lifecycle/state-transition/" }
+    ]
+  },
+  {
+    "id": "consensus",
+    "title": "共識路徑",
+    "description": "Proof of Stake 共識機制全貌",
+    "color": "#f87171",
+    "steps": [
+      { "title": "Beacon Chain", "href": "/ethereum/consensus/beacon-chain/" },
+      { "title": "Validators", "href": "/ethereum/consensus/validators/" },
+      { "title": "Casper FFG", "href": "/ethereum/consensus/casper-ffg/" },
+      { "title": "LMD GHOST", "href": "/ethereum/consensus/lmd-ghost/" },
+      { "title": "共識與最終性", "href": "/ethereum/transaction-lifecycle/consensus-finality/" }
+    ]
+  },
+  {
+    "id": "advanced",
+    "title": "進階路徑",
+    "description": "Danksharding 與下一代狀態結構",
+    "color": "#f472b6",
+    "steps": [
+      { "title": "EIP-4844", "href": "/ethereum/advanced/eip-4844/" },
+      { "title": "KZG Commitments", "href": "/ethereum/advanced/kzg-commitments/" },
+      { "title": "Verkle Trees", "href": "/ethereum/advanced/verkle-trees/" },
+      { "title": "zkSNARKs 支援", "href": "/ethereum/advanced/zksnarks/" }
+    ]
+  }
+]

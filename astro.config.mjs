@@ -15,6 +15,7 @@ export default defineConfig({
     title: 'Blockchain Wiki',
     components: {
       TableOfContents: './src/overrides/TableOfContents.astro',
+      MarkdownContent: './src/overrides/MarkdownContent.astro',
     },
     description: 'Interactive blockchain learning wiki with Ethereum deep dives',
     social: [
@@ -60,6 +61,7 @@ export default defineConfig({
     },
     sidebar: [
       { label: '知識圖譜', slug: 'graph' },
+      { label: '學習路徑', slug: 'paths' },
       {
         label: 'Ethereum',
         items: [

@@ -1,0 +1,14 @@
+---
+import Default from '@astrojs/starlight/components/MarkdownContent.astro'
+import PageProgress from '../components/PageProgress'
+
+const { slug } = Astro.params
+const currentPage = slug ? `/${slug}/` : undefined
+const isEthereumPage = currentPage?.startsWith('/ethereum/')
+---
+
+{isEthereumPage && currentPage && (
+  <PageProgress client:idle currentPage={currentPage} />
+)}
+
+<Default {...Astro.props}><slot /></Default>

@@ -14,8 +14,8 @@ hero:
       icon: external
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
 import KnowledgeGraph from '../../components/KnowledgeGraph';
+import LearningPaths from '../../components/LearningPaths';
 
 ## 知識圖譜
 
@@ -23,20 +23,7 @@ import KnowledgeGraph from '../../components/KnowledgeGraph';
 
 ## 學習路徑
 
-<CardGrid stagger>
-  <Card title="基礎路徑" icon="pencil">
-    公鑰密碼學 → 橢圓曲線 → secp256k1 → ECDSA → 密鑰生成 → 交易生命週期
-  </Card>
-  <Card title="資料結構路徑" icon="puzzle">
-    RLP 編碼 → Merkle Tree → Merkle Patricia Trie → State Trie → 狀態轉換
-  </Card>
-  <Card title="共識路徑" icon="approve-check">
-    Beacon Chain → Validators → Casper FFG → LMD GHOST → 共識與最終性
-  </Card>
-  <Card title="進階路徑" icon="rocket">
-    EIP-4844 Proto-Danksharding → KZG Commitments → Verkle Trees → zkSNARKs
-  </Card>
-</CardGrid>
+<LearningPaths client:load />
 
 ## 內容概覽
 
