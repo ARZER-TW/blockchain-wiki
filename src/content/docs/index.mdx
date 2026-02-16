@@ -1,0 +1,43 @@
+---
+title: Blockchain Wiki
+description: 區塊鏈可視化學習知識庫
+template: splash
+hero:
+  tagline: 從密碼學到共識機制，深入理解區塊鏈協議
+  actions:
+    - text: 開始學習
+      link: /ethereum/cryptography/hash-function-overview/
+      icon: right-arrow
+      variant: primary
+    - text: 交易生命週期
+      link: /ethereum/transaction-lifecycle/transaction-lifecycle/
+      icon: external
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## 學習路徑
+
+<CardGrid stagger>
+  <Card title="基礎路徑" icon="pencil">
+    公鑰密碼學 → 橢圓曲線 → secp256k1 → ECDSA → 密鑰生成 → 交易生命週期
+  </Card>
+  <Card title="資料結構路徑" icon="puzzle">
+    RLP 編碼 → Merkle Tree → Merkle Patricia Trie → State Trie → 狀態轉換
+  </Card>
+  <Card title="共識路徑" icon="approve-check">
+    Beacon Chain → Validators → Casper FFG → LMD GHOST → 共識與最終性
+  </Card>
+  <Card title="進階路徑" icon="rocket">
+    EIP-4844 Proto-Danksharding → KZG Commitments → Verkle Trees → zkSNARKs
+  </Card>
+</CardGrid>
+
+## 內容概覽
+
+- **密碼學基礎** - 12 篇：雜湊函數、橢圓曲線、數位簽章
+- **資料結構** - 10 篇：Merkle Trees、RLP/SSZ/ABI 編碼
+- **帳戶與交易** - 8 篇：EOA、Gas、EIP-1559
+- **交易流程** - 9 篇：從密鑰生成到狀態轉換的完整週期
+- **區塊與共識** - 10 篇：Beacon Chain、Casper FFG、Slashing
+- **進階主題** - 5 篇：EIP-4844、KZG、Verkle Trees、zkSNARKs

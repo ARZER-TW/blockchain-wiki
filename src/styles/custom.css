@@ -1,0 +1,36 @@
+/* Blockchain Wiki - Custom Styles */
+
+:root {
+  --sl-color-accent-low: #1a1a4e;
+  --sl-color-accent: #627eea;
+  --sl-color-accent-high: #8da2f0;
+  --sl-font-system: 'Noto Sans TC', system-ui, sans-serif;
+  --sl-font-system-mono: 'JetBrains Mono', monospace;
+}
+
+/* CJK line-height */
+.sl-markdown-content {
+  line-height: 1.8;
+}
+
+/* KaTeX overflow handling */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.5rem 0;
+}
+
+/* Mermaid dark theme */
+.mermaid {
+  background: transparent;
+}
+
+/* Table styling */
+.sl-markdown-content table {
+  font-size: 0.9em;
+}
+
+/* Code block font */
+.sl-markdown-content pre {
+  font-family: var(--sl-font-system-mono);
+}
