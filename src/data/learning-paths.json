@@ -1,15 +1,29 @@
 [
   {
-    "id": "fundamentals",
-    "title": "基礎路徑",
-    "description": "從密碼學基礎到交易完整流程",
-    "color": "#a78bfa",
+    "id": "crypto-fundamentals",
+    "title": "密碼學基礎路徑",
+    "description": "從通用密碼學原理到數位簽名",
+    "color": "#818cf8",
     "steps": [
-      { "title": "公鑰密碼學", "href": "/ethereum/cryptography/public-key-cryptography/" },
-      { "title": "橢圓曲線密碼學", "href": "/ethereum/cryptography/elliptic-curve-cryptography/" },
-      { "title": "secp256k1", "href": "/ethereum/cryptography/secp256k1/" },
-      { "title": "ECDSA", "href": "/ethereum/cryptography/ecdsa/" },
-      { "title": "密鑰生成與帳戶創建", "href": "/ethereum/transaction-lifecycle/key-generation/" },
+      { "title": "公鑰密碼學", "href": "/fundamentals/cryptography/public-key-cryptography/" },
+      { "title": "橢圓曲線密碼學", "href": "/fundamentals/cryptography/elliptic-curve-cryptography/" },
+      { "title": "secp256k1", "href": "/fundamentals/cryptography/secp256k1/" },
+      { "title": "數位簽名概述", "href": "/fundamentals/cryptography/digital-signature-overview/" },
+      { "title": "ECDSA", "href": "/fundamentals/cryptography/ecdsa/" },
+      { "title": "BLS Signatures", "href": "/fundamentals/cryptography/bls-signatures/" }
+    ]
+  },
+  {
+    "id": "ethereum-tx",
+    "title": "Ethereum 交易路徑",
+    "description": "從密鑰生成到交易完整流程",
+    "color": "#34d399",
+    "steps": [
+      { "title": "密鑰生成", "href": "/ethereum/transaction-lifecycle/key-generation/" },
+      { "title": "地址推導", "href": "/ethereum/accounts/address-derivation/" },
+      { "title": "交易構建", "href": "/ethereum/transaction-lifecycle/transaction-construction/" },
+      { "title": "交易簽名", "href": "/ethereum/transaction-lifecycle/transaction-signing/" },
+      { "title": "廣播與驗證", "href": "/ethereum/transaction-lifecycle/broadcast-validation/" },
       { "title": "交易生命週期", "href": "/ethereum/transaction-lifecycle/transaction-lifecycle/" }
     ]
   },
@@ -19,8 +33,8 @@
     "description": "從編碼格式到狀態樹的完整數據流",
     "color": "#22d3ee",
     "steps": [
+      { "title": "Merkle Tree", "href": "/fundamentals/data-structures/merkle-tree/" },
       { "title": "RLP 編碼", "href": "/ethereum/data-structures/rlp-encoding/" },
-      { "title": "Merkle Tree", "href": "/ethereum/data-structures/merkle-tree/" },
       { "title": "Merkle Patricia Trie", "href": "/ethereum/data-structures/merkle-patricia-trie/" },
       { "title": "State Trie", "href": "/ethereum/data-structures/state-trie/" },
       { "title": "狀態轉換", "href": "/ethereum/transaction-lifecycle/state-transition/" }

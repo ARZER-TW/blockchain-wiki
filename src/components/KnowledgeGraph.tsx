@@ -9,23 +9,14 @@ interface Props {
   mini?: boolean
 }
 
-const CATEGORY_COLORS: Record<string, string> = {
-  cryptography: '#a78bfa',
-  'data-structures': '#22d3ee',
-  accounts: '#fbbf24',
-  'transaction-lifecycle': '#34d399',
-  consensus: '#f87171',
-  advanced: '#f472b6',
-}
+// Read categories from graph.json data
+const CATEGORY_COLORS: Record<string, string> = Object.fromEntries(
+  graphData.categories.map((c: any) => [c.key, c.color])
+)
 
-const CATEGORY_LABELS: Record<string, string> = {
-  cryptography: '密碼學',
-  'data-structures': '資料結構',
-  accounts: '帳戶與交易',
-  'transaction-lifecycle': '交易流程',
-  consensus: '共識',
-  advanced: '進階',
-}
+const CATEGORY_LABELS: Record<string, string> = Object.fromEntries(
+  graphData.categories.map((c: any) => [c.key, c.label])
+)
 
 export default function KnowledgeGraph({ currentPage, mini = false }: Props) {
   const containerRef = useRef<HTMLDivElement>(null)

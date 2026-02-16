@@ -257,7 +257,7 @@ print(f"Match: {original_address == recovered_address}")
 
 - [ECDSA](/ethereum/cryptography/ecdsa/) - ECRECOVER 是 ECDSA 驗證的反向操作
 - [secp256k1](/ethereum/cryptography/secp256k1/) - ECRECOVER 在此曲線上運算
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - 底層數學原理
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - 底層數學原理
 - [數位簽章概述](/ethereum/cryptography/digital-signature-overview/) - 數位簽章的通用概念
 - [Keccak-256](/ethereum/cryptography/keccak-256/) - 訊息雜湊和地址推導
 - [地址推導](/ethereum/accounts/address-derivation/) - 從恢復的公鑰推導地址

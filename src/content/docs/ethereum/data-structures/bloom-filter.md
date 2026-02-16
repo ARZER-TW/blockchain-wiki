@@ -4,33 +4,23 @@ description: "Bloom Filter, Logs Bloom, logsBloom, 布隆過濾器"
 tags: [ethereum, data-structure, bloom-filter, probabilistic]
 ---
 
-# Bloom Filter
+# Bloom Filter 在 Ethereum 中的應用
+
+> 本文聚焦 Ethereum 特定的實現細節。通用理論請參見 [Bloom Filter 布隆過濾器](/fundamentals/data-structures/bloom-filter/)。
 
 ## 概述
 
-Bloom Filter 是一種空間效率極高的機率型資料結構，用於判斷「某元素是否可能在集合中」。Ethereum 使用 2048-bit（256 bytes）的 Bloom filter 搭配 3 個 hash 函數，儲存在 [Receipt](/ethereum/data-structures/receipt-trie/) 和[區塊 Header](/ethereum/consensus/block-header/)中，用於快速過濾包含特定 event log 的區塊和交易，避免逐一掃描所有 log。
+Ethereum 使用 2048-bit（256 bytes）的 Bloom filter 搭配 3 個 hash 函數，儲存在 [Receipt](/ethereum/data-structures/receipt-trie/) 和[區塊 Header](/ethereum/consensus/block-header/) 中，用於快速過濾包含特定 event log 的區塊和交易，避免逐一掃描所有 log。
 
-## 核心原理
+## Ethereum 的 Bloom Filter 規格
 
-### 基本性質
+根據 Yellow Paper Section 4.3.1 定義：
 
-- **False positive**：可能誤報（說有但其實沒有）
-- **No false negative**：不會漏報（說沒有就一定沒有）
-- 所以 Bloom filter 適合做「快速排除」——如果 filter 說不包含，就一定不包含
+- **大小**：$m = 2048$ bit（256 bytes）
+- **Hash 函數數量**：$k = 3$
+- **Hash 函數**：基於 [Keccak-256](/ethereum/cryptography/keccak-256/)
 
-### 數學
-
-對一個 $m$-bit 的 Bloom filter，使用 $k$ 個 hash 函數，插入 $n$ 個元素後：
-
-$$P(\text{false positive}) \approx \left(1 - e^{-kn/m}\right)^k$$
-
-Ethereum 的參數：$m = 2048$, $k = 3$。
-
-### Ethereum 的 Bloom Filter 實作
-
-Ethereum 的 Bloom filter（定義在 Yellow Paper Section 4.3.1）：
-
-#### 加入元素
+### 加入元素
 
 對一個 byte sequence $b$：
 
@@ -41,32 +31,33 @@ $$\text{bit}_i = (h[2i] \times 256 + h[2i+1]) \mod 2048, \quad i \in \{0, 1, 2\}
 
 3. 在 2048-bit filter 中設置這 3 個位置為 1
 
-#### 加入 Log
+### 加入 Log
 
 對每個 Log entry，Bloom filter 加入：
 - Log 的 `address`（20 bytes）
 - Log 的每個 `topic`（32 bytes each）
 
-#### 區塊級 Bloom
+注意：Log 的 `data` 欄位不加入 Bloom filter，只有 address 和 indexed topics。
+
+### 區塊級 Bloom
 
 區塊 header 的 `logsBloom` 是所有 Receipt 的 `logsBloom` 的 bitwise OR：
 
 $$\text{block.logsBloom} = \bigvee_{i=0}^{n-1} \text{receipt}_i.\text{logsBloom}$$
 
-### 查詢流程
+## 三層過濾查詢流程
 
 當 DApp 查詢特定 event（例如 ERC-20 Transfer）：
 
-1. 計算目標 topic 的 Bloom 位元位置
-2. 檢查區塊的 `logsBloom`：
-   - 3 個 bit 都是 1 → 可能包含，需進一步檢查
-   - 任一 bit 是 0 → 確定不包含，跳過此區塊
-3. 對「可能包含」的區塊，進一步檢查各 Receipt 的 `logsBloom`
-4. 最後讀取實際 log 資料確認
+1. **Block Bloom 過濾**：計算目標 topic 的 Bloom 位元位置，檢查區塊的 `logsBloom`
+   - 3 個 bit 都是 1 -- 可能包含，進入下一層
+   - 任一 bit 是 0 -- 確定不包含，跳過此區塊
+2. **Receipt Bloom 過濾**：對「可能包含」的區塊，檢查各 Receipt 的 `logsBloom`
+3. **實際 Log 確認**：讀取實際 log 資料，排除 false positive
 
-這個三層過濾（block bloom → receipt bloom → actual log）大幅減少了 I/O。
+這個三層過濾（block bloom -> receipt bloom -> actual log）大幅減少了 I/O 操作。
 
-## 在 Ethereum 中的應用
+## 應用場景
 
 - **[區塊 Header](/ethereum/consensus/block-header/)**：`logsBloom` 欄位（256 bytes）
 - **[Receipt](/ethereum/data-structures/receipt-trie/)**：每個 Receipt 有自己的 `logsBloom`
@@ -80,6 +71,7 @@ $$\text{block.logsBloom} = \bigvee_{i=0}^{n-1} \text{receipt}_i.\text{logsBloom}
 - 單一元素查詢：$O(k) = O(3)$，極快
 - False positive 率隨同一區塊的 log 數量增加而上升
 - 對大範圍區塊掃描（如數萬個區塊），Bloom filter 能跳過大部分不相關區塊
+- 在 log 密集的區塊中（如 DeFi 活躍期），false positive 率可能較高，實際過濾效果下降
 
 ## 程式碼範例
 
@@ -153,7 +145,7 @@ console.log('contains Approval:', testBloom(bloom, getBytes(approvalSig)));
 from eth_utils import keccak
 
 def bloom_bits(data: bytes) -> list[int]:
-    """計算 3 個 bit 位置"""
+    """計算 Ethereum Bloom filter 的 3 個 bit 位置"""
     h = keccak(data)
     bits = []
     for i in range(0, 6, 2):
@@ -197,15 +189,17 @@ print(f"contains contract: {test_bloom(bloom, contract)}")
 approval_topic = keccak(b'Approval(address,address,uint256)')
 print(f"contains Approval: {test_bloom(bloom, approval_topic)}")
 
-# 計算 false positive 概率
+# Ethereum 參數下的 false positive 概率
 import math
-m, k, n = 2048, 3, 2
-fp = (1 - math.exp(-k * n / m)) ** k
-print(f"false positive rate ({n} elements): {fp:.6f}")
+m, k = 2048, 3
+for n in [5, 10, 20, 50]:
+    fp = (1 - math.exp(-k * n / m)) ** k
+    print(f"  {n} elements: FP rate = {fp:.6f}")
 ```
 
 ## 相關概念
 
+- [Bloom Filter 通用理論](/fundamentals/data-structures/bloom-filter/) - 數學分析、最佳參數、與其他機率型結構的比較
 - [Keccak-256](/ethereum/cryptography/keccak-256/) - Bloom filter 使用 keccak256 計算 bit 位置
 - [Receipt Trie](/ethereum/data-structures/receipt-trie/) - 每個 Receipt 包含 logsBloom
 - [區塊 Header](/ethereum/consensus/block-header/) - 包含區塊級 logsBloom

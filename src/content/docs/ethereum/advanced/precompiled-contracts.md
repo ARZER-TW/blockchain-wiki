@@ -345,7 +345,7 @@ contract PrecompileExamples {
 - [ECRECOVER](/ethereum/cryptography/ecrecover/) - ecRecover precompile 的詳細說明
 - [ECDSA](/ethereum/cryptography/ecdsa/) - ecRecover 驗證的簽名方案
 - [SHA-256](/ethereum/cryptography/sha-256/) - 0x02 precompile 的 hash function
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - BN254 相關 precompile 的數學基礎
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - BN254 相關 precompile 的數學基礎
 - [zkSNARKs 支援](/ethereum/advanced/zksnarks/) - ecAdd/ecMul/ecPairing 的主要用途
 - [KZG Commitments](/ethereum/advanced/kzg-commitments/) - Point evaluation precompile 的應用
 - [EIP-4844 Proto-Danksharding](/ethereum/advanced/eip-4844/) - 0x0A precompile 的來源

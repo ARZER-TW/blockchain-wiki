@@ -1,14 +1,14 @@
 ---
 title: "CSPRNG"
 description: "Cryptographically Secure Pseudo-Random Number Generator, 安全隨機數生成器, CSPRNG"
-tags: [ethereum, cryptography, random-number, CSPRNG]
+tags: [fundamentals, cryptography, random-number, CSPRNG]
 ---
 
 # CSPRNG
 
 ## 概述
 
-CSPRNG（Cryptographically Secure Pseudo-Random Number Generator）是滿足密碼學安全要求的偽隨機數生成器。在 Ethereum 中，CSPRNG 用於生成私鑰、[ECDSA](/ethereum/cryptography/ecdsa/) 簽名的隨機數 $k$、以及任何需要不可預測性的場景。一個弱隨機數生成器可以直接導致私鑰洩漏——歷史上已有大量因此造成的資金損失案例。
+CSPRNG（Cryptographically Secure Pseudo-Random Number Generator）是滿足密碼學安全要求的偽隨機數生成器。在區塊鏈中，CSPRNG 用於生成私鑰、[ECDSA](/fundamentals/cryptography/ecdsa/) 簽名的隨機數 $k$、以及任何需要不可預測性的場景。一個弱隨機數生成器可以直接導致私鑰洩漏——歷史上已有大量因此造成的資金損失案例（如 2013 年 Android SecureRandom bug 導致 Bitcoin 被盜）。
 
 ## 核心原理
 
@@ -86,7 +86,7 @@ NIST SP 800-90A 定義，基於 HMAC：
 2. 每次生成：$V = \text{HMAC}_K(V)$，輸出 $V$
 3. 定期 re-seed
 
-RFC 6979 使用 HMAC-DRBG 為 [ECDSA](/ethereum/cryptography/ecdsa/) 生成確定性 $k$。
+RFC 6979 使用 HMAC-DRBG 為 [ECDSA](/fundamentals/cryptography/ecdsa/) 生成確定性 $k$。
 
 **ChaCha20-based：**
 
@@ -98,7 +98,7 @@ Linux kernel、OpenBSD `arc4random`、Rust `rand::OsRng` 使用。
 
 ### 私鑰生成的安全要求
 
-Ethereum 私鑰是 256-bit 整數 $d \in [1, n-1]$，其中 $n$ 是 [secp256k1](/ethereum/cryptography/secp256k1/) 群的階。
+區塊鏈私鑰通常是 256-bit 整數 $d \in [1, n-1]$，其中 $n$ 是橢圓曲線群的階。以 [secp256k1](/fundamentals/cryptography/secp256k1/) 為例：
 
 安全的生成方式：
 
@@ -118,7 +118,7 @@ while d == 0 or d >= n:               # 機率極低，但必須處理
 
 ### ECDSA 隨機數 $k$ 的安全性
 
-[ECDSA](/ethereum/cryptography/ecdsa/) 簽名中的 $k$ 與私鑰安全性等級相同。若 $k$ 有任何可預測性：
+[ECDSA](/fundamentals/cryptography/ecdsa/) 簽名中的 $k$ 與私鑰安全性等級相同。若 $k$ 有任何可預測性：
 
 - $k$ 重用：直接計算出私鑰（Sony PS3 事件）
 - $k$ 的部分 bit 洩漏：lattice attack 可恢復私鑰（已有對 3-bit 洩漏的實際攻擊）
@@ -126,18 +126,20 @@ while d == 0 or d >= n:               # 機率極低，但必須處理
 
 RFC 6979 的確定性 $k$ 是防禦措施：$k = \text{HMAC-DRBG}(\text{private\_key}, \text{message\_hash})$。
 
-## 在 Ethereum 中的應用
+## 在區塊鏈中的應用
 
-- **[密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/)**：生成 secp256k1 私鑰需要 CSPRNG
-- **[ECDSA](/ethereum/cryptography/ecdsa/) 簽名**：每次簽名需要隨機數 $k$（或確定性 RFC 6979）
-- **BLS 金鑰生成**：[Validators](/ethereum/consensus/validators/) 的 [BLS12-381](/ethereum/cryptography/bls12-381/) 私鑰
-- **[RANDAO](/ethereum/consensus/randao/)**：與鏈上隨機性相關但不直接使用 CSPRNG——鏈上無可信隨機源，使用 BLS 簽名的確定性作為替代
-- **Salt 生成**：CREATE2 的 salt、commitments 的 nonce 等
+- **私鑰生成**：所有區塊鏈帳戶的私鑰都需要 CSPRNG
+- **[ECDSA](/fundamentals/cryptography/ecdsa/) 簽名**：每次簽名需要隨機數 $k$（或確定性 RFC 6979）
+- **[BLS](/fundamentals/cryptography/bls-signatures/) 金鑰生成**：驗證者的 BLS 私鑰
 - **HD Wallet**：BIP-39 助記詞的初始熵需要 CSPRNG
+- **Salt / Nonce**：各種 commitment scheme 的隨機值
 
 ### 鏈上隨機數問題
 
-EVM 中沒有 CSPRNG。`block.prevrandao`（原 `block.difficulty`）提供偽隨機性，但可被 validator 操控。對於需要安全隨機數的合約，應使用 Chainlink VRF 等 oracle 方案。
+區塊鏈的確定性執行環境中沒有 CSPRNG。各鏈的解決方案：
+- **Ethereum**：`block.prevrandao` 提供偽隨機性，但可被 validator 操控
+- **Solana**：SlotHashes sysvar 提供近期 slot 的雜湊值
+- **通用**：VRF oracle（如 Chainlink VRF）提供可驗證的鏈上隨機數
 
 ## 程式碼範例
 
@@ -242,11 +244,10 @@ print(f"\nEntropy of 10KB CSPRNG output: {ent:.4f} bits/byte (max: 8.0)")
 
 ## 相關概念
 
-- [密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/) - CSPRNG 生成 Ethereum 私鑰
-- [ECDSA](/ethereum/cryptography/ecdsa/) - 簽名隨機數 $k$ 需要 CSPRNG 或 RFC 6979
-- [secp256k1](/ethereum/cryptography/secp256k1/) - 私鑰的有效範圍由群的階 $n$ 決定
-- [BLS12-381](/ethereum/cryptography/bls12-381/) - BLS 私鑰也需要 CSPRNG
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - 私鑰是橢圓曲線群上的純量
-- [公鑰密碼學](/ethereum/cryptography/public-key-cryptography/) - 金鑰對生成的基礎
-- [RANDAO](/ethereum/consensus/randao/) - 鏈上偽隨機性方案（不使用 CSPRNG）
-- [BLS Signatures](/ethereum/cryptography/bls-signatures/) - BLS 是確定性簽名，降低了對 CSPRNG 的依賴
+- [ECDSA](/fundamentals/cryptography/ecdsa/) - 簽名隨機數 $k$ 需要 CSPRNG 或 RFC 6979
+- [secp256k1](/fundamentals/cryptography/secp256k1/) - 私鑰的有效範圍由群的階 $n$ 決定
+- [BLS12-381](/fundamentals/cryptography/bls12-381/) - BLS 私鑰也需要 CSPRNG
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - 私鑰是橢圓曲線群上的純量
+- [公鑰密碼學](/fundamentals/cryptography/public-key-cryptography/) - 金鑰對生成的基礎
+- [雜湊函數概述](/fundamentals/cryptography/hash-function-overview/) - HMAC-DRBG 基於雜湊函數
+- [BLS Signatures](/fundamentals/cryptography/bls-signatures/) - BLS 是確定性簽名，降低了對 CSPRNG 的依賴

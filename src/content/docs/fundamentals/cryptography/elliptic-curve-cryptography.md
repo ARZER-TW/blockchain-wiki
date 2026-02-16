@@ -1,14 +1,14 @@
 ---
 title: "橢圓曲線密碼學"
 description: "ECC, Elliptic Curve Cryptography, 橢圓曲線"
-tags: [ethereum, cryptography, elliptic-curve, ECC]
+tags: [fundamentals, cryptography, elliptic-curve, ECC]
 ---
 
 # 橢圓曲線密碼學
 
 ## 概述
 
-橢圓曲線密碼學（Elliptic Curve Cryptography, ECC）是 Ethereum 簽名系統的數學基礎。相較於 RSA，ECC 用更短的金鑰達到同等安全強度（256-bit ECC 約等於 3072-bit RSA）。Ethereum 執行層使用 [secp256k1](/ethereum/cryptography/secp256k1/) 曲線搭配 [ECDSA](/ethereum/cryptography/ecdsa/) 簽名，共識層使用 [BLS12-381](/ethereum/cryptography/bls12-381/) 曲線搭配 [BLS Signatures](/ethereum/cryptography/bls-signatures/)。
+橢圓曲線密碼學（Elliptic Curve Cryptography, ECC）是現代區塊鏈簽名系統的數學基礎。相較於 RSA，ECC 用更短的金鑰達到同等安全強度（256-bit ECC 約等於 3072-bit RSA）。主流區塊鏈使用的曲線包括 [secp256k1](/fundamentals/cryptography/secp256k1/)（Bitcoin、Ethereum 執行層）、[BLS12-381](/fundamentals/cryptography/bls12-381/)（Ethereum 共識層）、Ed25519（Solana）等。
 
 ## 核心原理
 
@@ -93,7 +93,7 @@ return Q
    - $G$：基點（generator point）
    - $n$：$G$ 的階（$nG = \mathcal{O}$）
    - $h$：cofactor = $|E(\mathbb{F}_p)| / n$
-2. 隨機選取私鑰 $d \in [1, n-1]$（需要 [CSPRNG](/ethereum/cryptography/csprng/)）
+2. 隨機選取私鑰 $d \in [1, n-1]$（需要 [CSPRNG](/fundamentals/cryptography/csprng/)）
 3. 計算公鑰 $Q = dG$
 
 ### 公鑰表示
@@ -115,26 +115,22 @@ $$|N - (p + 1)| \le 2\sqrt{p}$$
 
 這保證了群的大小與 $p$ 在同一數量級，適合密碼學使用。
 
-## 在 Ethereum 中的應用
+## 在區塊鏈中的應用
 
-### 執行層
+ECC 是幾乎所有區塊鏈的密碼學基石：
 
-- **曲線**：[secp256k1](/ethereum/cryptography/secp256k1/)（$y^2 = x^3 + 7$）
-- **簽名**：[ECDSA](/ethereum/cryptography/ecdsa/) 用於交易簽名和驗證
-- **密鑰與帳戶**：[密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/) 基於 ECC
-- **公鑰恢復**：[ECRECOVER](/ethereum/cryptography/ecrecover/) 從簽名反推公鑰
-- **Precompile**：`ecrecover`（0x01）、`ecAdd`（0x06）、`ecMul`（0x07）、`ecPairing`（0x08）
+| 區塊鏈 | 曲線 | 簽名方案 | 用途 |
+|--------|------|---------|------|
+| Bitcoin | [secp256k1](/fundamentals/cryptography/secp256k1/) | [ECDSA](/fundamentals/cryptography/ecdsa/) + Schnorr (BIP-340) | 交易簽名 |
+| Ethereum (EL) | [secp256k1](/fundamentals/cryptography/secp256k1/) | [ECDSA](/fundamentals/cryptography/ecdsa/) | 交易簽名 |
+| Ethereum (CL) | [BLS12-381](/fundamentals/cryptography/bls12-381/) | [BLS Signatures](/fundamentals/cryptography/bls-signatures/) | 驗證者聚合簽名 |
+| Solana | Ed25519 (Curve25519) | EdDSA | 交易簽名 |
 
-### 共識層
+### 進階應用
 
-- **曲線**：[BLS12-381](/ethereum/cryptography/bls12-381/)（pairing-friendly curve）
-- **簽名**：[BLS Signatures](/ethereum/cryptography/bls-signatures/) 用於 [Validators](/ethereum/consensus/validators/) 的 [Attestation](/ethereum/consensus/attestation/)
-- **聚合**：BLS 允許將數千個簽名聚合為一個，大幅降低驗證成本
-
-### 進階
-
-- **zkSNARKs**：[zkSNARKs 支援](/ethereum/advanced/zksnarks/) 使用橢圓曲線配對
-- **KZG**：[KZG Commitments](/ethereum/advanced/kzg-commitments/) 基於 [BLS12-381](/ethereum/cryptography/bls12-381/) 的配對運算
+- **零知識證明**：[zkSNARKs](/fundamentals/zero-knowledge/zksnarks/) 使用橢圓曲線配對（bilinear pairing）
+- **多項式承諾**：[KZG Commitments](/fundamentals/cryptography/kzg-commitments/) 基於 pairing-friendly curve
+- **門限簽名**：MuSig、FROST 等協議利用 ECC 的代數結構實現多方簽名
 
 ## 程式碼範例
 
@@ -215,14 +211,13 @@ print(f"Public key (lib): {pk.to_string().hex()}")
 
 ## 相關概念
 
-- [secp256k1](/ethereum/cryptography/secp256k1/) - Ethereum 執行層使用的特定橢圓曲線
-- [BLS12-381](/ethereum/cryptography/bls12-381/) - Ethereum 共識層使用的 pairing-friendly 曲線
-- [ECDSA](/ethereum/cryptography/ecdsa/) - 基於 ECC 的數位簽章演算法
-- [BLS Signatures](/ethereum/cryptography/bls-signatures/) - 基於配對的簽章方案
-- [公鑰密碼學](/ethereum/cryptography/public-key-cryptography/) - ECC 是公鑰密碼學的一種實現
-- [數位簽章概述](/ethereum/cryptography/digital-signature-overview/) - 簽章的通用概念
-- [CSPRNG](/ethereum/cryptography/csprng/) - 私鑰生成需要安全隨機數
-- [密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/) - ECC 金鑰生成的應用流程
-- [地址推導](/ethereum/accounts/address-derivation/) - 從公鑰推導 Ethereum 地址
-- [zkSNARKs 支援](/ethereum/advanced/zksnarks/) - 使用橢圓曲線配對的零知識證明
-- [KZG Commitments](/ethereum/advanced/kzg-commitments/) - 基於 BLS12-381 配對的多項式承諾
+- [secp256k1](/fundamentals/cryptography/secp256k1/) - Bitcoin/Ethereum 使用的 Koblitz 曲線
+- [BLS12-381](/fundamentals/cryptography/bls12-381/) - Pairing-friendly 曲線
+- [ECDSA](/fundamentals/cryptography/ecdsa/) - 基於 ECC 的數位簽章演算法
+- [BLS Signatures](/fundamentals/cryptography/bls-signatures/) - 基於配對的簽章方案
+- [公鑰密碼學](/fundamentals/cryptography/public-key-cryptography/) - ECC 是公鑰密碼學的一種實現
+- [數位簽章概述](/fundamentals/cryptography/digital-signature-overview/) - 簽章的通用概念
+- [CSPRNG](/fundamentals/cryptography/csprng/) - 私鑰生成需要安全隨機數
+- [雜湊函數概述](/fundamentals/cryptography/hash-function-overview/) - 簽章中使用的雜湊函數
+- [zkSNARKs](/fundamentals/zero-knowledge/zksnarks/) - 使用橢圓曲線配對的零知識證明
+- [KZG Commitments](/fundamentals/cryptography/kzg-commitments/) - 基於配對的多項式承諾

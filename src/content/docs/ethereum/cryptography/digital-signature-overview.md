@@ -6,65 +6,20 @@ tags: [ethereum, cryptography, digital-signature]
 
 # 數位簽章概述
 
+> 本文聚焦 Ethereum 特定的實現細節。通用理論請參見 [數位簽章概述](/fundamentals/cryptography/digital-signature-overview/)。
+
 ## 概述
 
-數位簽章是一種密碼學原語，提供訊息的身份認證（Authentication）、完整性（Integrity）和不可否認性（Non-repudiation）。在 Ethereum 中，每筆交易都必須包含有效的數位簽章，證明發送者持有對應帳戶的私鑰。
+Ethereum 使用雙簽章系統：執行層採用 [ECDSA](/ethereum/cryptography/ecdsa/)，共識層採用 [BLS Signatures](/ethereum/cryptography/bls-signatures/)。每筆交易都必須包含有效的數位簽章，證明發送者持有對應帳戶的私鑰。關於數位簽章的形式定義、EUF-CMA 安全模型和方案比較，請參見 [通用理論](/fundamentals/cryptography/digital-signature-overview/)。
 
-## 核心原理
-
-### 形式定義
-
-一個數位簽章方案由三個演算法組成：
-
-**1. KeyGen（金鑰生成）**
-
-$$(\text{sk}, \text{pk}) \leftarrow \text{KeyGen}(1^\lambda)$$
-
-輸入安全參數 $\lambda$，輸出私鑰 $\text{sk}$ 和公鑰 $\text{pk}$。
-
-**2. Sign（簽名）**
-
-$$\sigma \leftarrow \text{Sign}(\text{sk}, m)$$
-
-使用私鑰對訊息 $m$ 產生簽名 $\sigma$。
-
-**3. Verify（驗證）**
-
-$$\{0, 1\} \leftarrow \text{Verify}(\text{pk}, m, \sigma)$$
-
-使用公鑰驗證簽名，輸出 accept（1）或 reject（0）。
-
-### 安全性質
-
-**正確性（Correctness）：**
-
-$$\text{Verify}(\text{pk}, m, \text{Sign}(\text{sk}, m)) = 1$$
-
-合法簽名一定通過驗證。
-
-**不可偽造性（EUF-CMA, Existential Unforgeability under Chosen Message Attack）：**
-
-即使攻擊者可以取得任意訊息的合法簽名（chosen message oracle），仍無法為一個未曾請求過簽名的訊息偽造有效簽名。
-
-### 簽名流程
-
-通常不直接簽訊息本身，而是簽訊息的雜湊值：
-
-$$\sigma = \text{Sign}(\text{sk}, H(m))$$
-
-原因：
-1. 雜湊值長度固定，效率更高
-2. 提供 collision resistance 的額外保護
-3. 避免 chosen-message attack 中的某些弱點
-
-### Ethereum 使用的簽章方案
+## Ethereum 雙簽章系統
 
 | 層 | 方案 | 曲線 | 特性 |
 |----|------|------|------|
 | 執行層 | [ECDSA](/ethereum/cryptography/ecdsa/) | [secp256k1](/ethereum/cryptography/secp256k1/) | 公鑰恢復（[ECRECOVER](/ethereum/cryptography/ecrecover/)） |
 | 共識層 | [BLS Signatures](/ethereum/cryptography/bls-signatures/) | [BLS12-381](/ethereum/cryptography/bls12-381/) | 聚合簽名 |
 
-### ECDSA vs BLS 比較
+### ECDSA vs BLS 在 Ethereum 中的比較
 
 | 性質 | [ECDSA](/ethereum/cryptography/ecdsa/) | [BLS Signatures](/ethereum/cryptography/bls-signatures/) |
 |------|----------|-------------------|
@@ -75,9 +30,15 @@ $$\sigma = \text{Sign}(\text{sk}, H(m))$$
 | 確定性 | 非確定性（需隨機 $k$） | 確定性 |
 | 公鑰恢復 | 支援 | 不支援 |
 
-### Schnorr 簽名（補充）
+### 歷史演進
 
-Schnorr 簽名比 ECDSA 更簡潔且支援原生多簽聚合，但因專利限制歷史因素，Bitcoin 和 Ethereum 當初選擇了 ECDSA。Bitcoin 後來透過 Taproot 引入 Schnorr，Ethereum 則在共識層直接跳到 BLS。
+Ethereum 選擇 ECDSA + secp256k1 是因為 Bitcoin 已驗證其安全性。在設計 Beacon Chain 時，為了解決大規模共識簽名的效率問題，選擇了 BLS 簽名方案。
+
+### 未來發展
+
+- **Pectra 升級**（2025/5）：EIP-2537 引入 BLS12-381 預編譯合約，執行層可原生驗證 BLS 簽名
+- **Fusaka 升級**（2025/12）：EIP-7951 引入 secp256r1 預編譯合約，支援 Passkey/WebAuthn 簽名驗證
+- **帳戶抽象**：允許合約帳戶使用任意簽章方案，不再限於 ECDSA
 
 ## 在 Ethereum 中的應用
 
@@ -88,69 +49,15 @@ Schnorr 簽名比 ECDSA 更簡潔且支援原生多簽聚合，但因專利限�
 - **[Casper FFG](/ethereum/consensus/casper-ffg/)**：finality 投票使用 BLS 簽名
 - **合約層**：`ecrecover` precompile 允許合約驗證鏈下簽名（meta-transaction、permit 等）
 
-## 程式碼範例
-
-```python
-from ecdsa import SigningKey, SECP256k1, BadSignatureError
-from Crypto.Hash import keccak
-import secrets
-
-# === 完整的簽名/驗證流程 ===
-
-# 1. KeyGen
-sk = SigningKey.generate(curve=SECP256k1)
-pk = sk.get_verifying_key()
-
-# 2. 準備訊息（先雜湊）
-message = b"Transfer 1 ETH to 0xdead..."
-h = keccak.new(digest_bits=256)
-h.update(message)
-msg_hash = h.digest()
-
-# 3. Sign
-signature = sk.sign_digest(msg_hash)
-print(f"Message: {message.decode()}")
-print(f"Hash:    0x{msg_hash.hex()}")
-print(f"Sig:     0x{signature.hex()}")
-
-# 4. Verify
-try:
-    pk.verify_digest(signature, msg_hash)
-    print("[OK] Signature valid")
-except BadSignatureError:
-    print("[FAIL] Invalid signature")
-
-# 5. 篡改訊息後驗證失敗
-tampered = b"Transfer 100 ETH to 0xdead..."
-h2 = keccak.new(digest_bits=256)
-h2.update(tampered)
-tampered_hash = h2.digest()
-
-try:
-    pk.verify_digest(signature, tampered_hash)
-    print("[FAIL] Should not verify")
-except BadSignatureError:
-    print("[OK] Tampered message rejected")
-
-# 6. 錯誤公鑰驗證失敗
-wrong_sk = SigningKey.generate(curve=SECP256k1)
-wrong_pk = wrong_sk.get_verifying_key()
-
-try:
-    wrong_pk.verify_digest(signature, msg_hash)
-    print("[FAIL] Should not verify")
-except BadSignatureError:
-    print("[OK] Wrong public key rejected")
-```
-
 ## 相關概念
 
+- [數位簽章原理](/fundamentals/cryptography/digital-signature-overview/) - 通用理論（形式定義、EUF-CMA 安全模型、方案比較表）
 - [ECDSA](/ethereum/cryptography/ecdsa/) - Ethereum 執行層的簽章演算法
 - [BLS Signatures](/ethereum/cryptography/bls-signatures/) - Ethereum 共識層的簽章演算法
 - [ECRECOVER](/ethereum/cryptography/ecrecover/) - 從 ECDSA 簽名恢復公鑰
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - 簽章演算法的數學基礎
-- [公鑰密碼學](/ethereum/cryptography/public-key-cryptography/) - 數位簽章是公鑰密碼學的核心應用
-- [雜湊函數概述](/ethereum/cryptography/hash-function-overview/) - 簽名前先雜湊訊息
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - 簽章演算法的數學基礎
+- [公鑰密碼學](/fundamentals/cryptography/public-key-cryptography/) - 數位簽章是公鑰密碼學的核心應用
+- [雜湊函數概述](/fundamentals/cryptography/hash-function-overview/) - 簽名前先雜湊訊息
 - [交易簽名](/ethereum/transaction-lifecycle/transaction-signing/) - 數位簽章在交易中的應用
 - [交易廣播與驗證](/ethereum/transaction-lifecycle/broadcast-validation/) - 簽名驗證是交易驗證的一環
 - [EIP-155 重放保護](/ethereum/accounts/eip-155/) - 簽名中加入 chain ID

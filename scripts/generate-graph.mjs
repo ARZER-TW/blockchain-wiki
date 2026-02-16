@@ -1,87 +1,113 @@
-import { readFileSync, writeFileSync, readdirSync } from 'fs'
+import { readFileSync, writeFileSync, readdirSync, existsSync } from 'fs'
 import { join } from 'path'
 
-const DOCS = '/home/james/hackathons/blockchain-wiki/src/content/docs/ethereum'
+const BASE = '/home/james/hackathons/blockchain-wiki/src/content/docs'
 const OUT = '/home/james/hackathons/blockchain-wiki/src/data/graph.json'
 
-// Category colors (matching plan: Purple, Cyan, Amber, Emerald, Red, Pink)
+// All content sections to scan
+const SECTIONS = [
+  { dir: 'fundamentals', prefix: '/fundamentals' },
+  { dir: 'ethereum', prefix: '/ethereum' },
+]
+
+// Category colors
 const CATEGORY_COLORS = {
-  cryptography: '#a78bfa',
-  'data-structures': '#22d3ee',
-  accounts: '#fbbf24',
-  'transaction-lifecycle': '#34d399',
-  consensus: '#f87171',
-  advanced: '#f472b6',
+  // Fundamentals categories
+  'fundamentals/cryptography': '#818cf8',
+  'fundamentals/data-structures': '#67e8f9',
+  'fundamentals/zero-knowledge': '#c084fc',
+  'fundamentals/concepts': '#a3e635',
+  // Ethereum categories
+  'ethereum/cryptography': '#a78bfa',
+  'ethereum/data-structures': '#22d3ee',
+  'ethereum/accounts': '#fbbf24',
+  'ethereum/transaction-lifecycle': '#34d399',
+  'ethereum/consensus': '#f87171',
+  'ethereum/advanced': '#f472b6',
 }
 
 const CATEGORY_LABELS = {
-  cryptography: '密碼學基礎',
-  'data-structures': '資料結構',
-  accounts: '帳戶與交易',
-  'transaction-lifecycle': '交易流程',
-  consensus: '區塊與共識',
-  advanced: '進階主題',
+  'fundamentals/cryptography': '密碼學（通用）',
+  'fundamentals/data-structures': '資料結構（通用）',
+  'fundamentals/zero-knowledge': '零知識證明',
+  'fundamentals/concepts': '通用概念',
+  'ethereum/cryptography': '密碼學（ETH）',
+  'ethereum/data-structures': '資料結構（ETH）',
+  'ethereum/accounts': '帳戶與交易',
+  'ethereum/transaction-lifecycle': '交易流程',
+  'ethereum/consensus': '區塊與共識',
+  'ethereum/advanced': '進階主題',
 }
 
 // Collect all nodes
 const nodes = []
-const slugToId = {}
+const validIds = new Set()
 
-const categories = readdirSync(DOCS, { withFileTypes: true })
-  .filter(d => d.isDirectory())
-  .map(d => d.name)
+for (const section of SECTIONS) {
+  const sectionDir = join(BASE, section.dir)
+  if (!existsSync(sectionDir)) continue
 
-for (const cat of categories) {
-  const catDir = join(DOCS, cat)
-  const files = readdirSync(catDir).filter(f => f.endsWith('.md'))
+  const categories = readdirSync(sectionDir, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
 
-  for (const file of files) {
-    const slug = file.replace('.md', '')
-    const filePath = join(catDir, file)
-    const content = readFileSync(filePath, 'utf-8')
+  for (const cat of categories) {
+    const catDir = join(sectionDir, cat)
+    const files = readdirSync(catDir).filter(f => f.endsWith('.md'))
+    const catKey = `${section.dir}/${cat}`
 
-    // Extract title from frontmatter
-    const titleMatch = content.match(/^title:\s*"(.+)"$/m)
-    const title = titleMatch ? titleMatch[1] : slug
+    for (const file of files) {
+      const slug = file.replace('.md', '')
+      const filePath = join(catDir, file)
+      const content = readFileSync(filePath, 'utf-8')
 
-    const id = `/ethereum/${cat}/${slug}/`
-    slugToId[id] = id
-    nodes.push({
-      id,
-      label: title,
-      category: cat,
-      color: CATEGORY_COLORS[cat],
-    })
+      const titleMatch = content.match(/^title:\s*"(.+)"$/m)
+      const title = titleMatch ? titleMatch[1] : slug
+
+      const id = `${section.prefix}/${cat}/${slug}/`
+      validIds.add(id)
+      nodes.push({
+        id,
+        label: title,
+        category: catKey,
+        color: CATEGORY_COLORS[catKey] || '#94a3b8',
+      })
+    }
   }
 }
-
-// Build a set of valid node IDs for quick lookup
-const validIds = new Set(nodes.map(n => n.id))
 
 // Collect edges by scanning markdown links
 const edges = []
 const edgeSet = new Set()
 
-for (const cat of categories) {
-  const catDir = join(DOCS, cat)
-  const files = readdirSync(catDir).filter(f => f.endsWith('.md'))
+for (const section of SECTIONS) {
+  const sectionDir = join(BASE, section.dir)
+  if (!existsSync(sectionDir)) continue
 
-  for (const file of files) {
-    const slug = file.replace('.md', '')
-    const sourceId = `/ethereum/${cat}/${slug}/`
-    const content = readFileSync(join(catDir, file), 'utf-8')
+  const categories = readdirSync(sectionDir, { withFileTypes: true })
+    .filter(d => d.isDirectory())
+    .map(d => d.name)
 
-    // Find all markdown links to internal paths
-    const linkRegex = /\[([^\]]+)\]\((\/ethereum\/[^)]+)\)/g
-    let match
-    while ((match = linkRegex.exec(content)) !== null) {
-      const targetId = match[2]
-      if (validIds.has(targetId) && targetId !== sourceId) {
-        // Deduplicate: only keep one edge per pair (undirected)
-        const edgeKey = [sourceId, targetId].sort().join('|')
-        if (!edgeSet.has(edgeKey)) {
-          edgeSet.add(edgeKey)
-          edges.push({ source: sourceId, target: targetId })
+  for (const cat of categories) {
+    const catDir = join(sectionDir, cat)
+    const files = readdirSync(catDir).filter(f => f.endsWith('.md'))
+
+    for (const file of files) {
+      const slug = file.replace('.md', '')
+      const sourceId = `${section.prefix}/${cat}/${slug}/`
+      const content = readFileSync(join(catDir, file), 'utf-8')
+
+      // Find all markdown links to internal paths (both /ethereum/ and /fundamentals/)
+      const linkRegex = /\[([^\]]+)\]\((\/(ethereum|fundamentals)\/[^)]+)\)/g
+      let match
+      while ((match = linkRegex.exec(content)) !== null) {
+        const targetId = match[2]
+        if (validIds.has(targetId) && targetId !== sourceId) {
+          const edgeKey = [sourceId, targetId].sort().join('|')
+          if (!edgeSet.has(edgeKey)) {
+            edgeSet.add(edgeKey)
+            edges.push({ source: sourceId, target: targetId })
+          }
         }
       }
     }
@@ -100,4 +126,5 @@ const graph = {
 
 writeFileSync(OUT, JSON.stringify(graph, null, 2))
 console.log(`Graph: ${nodes.length} nodes, ${edges.length} edges`)
-console.log('Categories:', categories.join(', '))
+console.log(`Sections: ${SECTIONS.map(s => s.dir).join(', ')}`)
+console.log(`Categories: ${Object.keys(CATEGORY_LABELS).join(', ')}`)

@@ -8,7 +8,7 @@ tags: [ethereum, data-structure, trie, merkle-patricia-trie, mpt]
 
 ## 概述
 
-Merkle Patricia Trie（MPT）是 Ethereum 執行層的核心資料結構，結合了 [Merkle Tree](/ethereum/data-structures/merkle-tree/) 的密碼學驗證能力和 Patricia Trie（radix tree）的路徑壓縮效率。Ethereum 的 [State Trie](/ethereum/data-structures/state-trie/)、[Storage Trie](/ethereum/data-structures/storage-trie/)、[Transaction Trie](/ethereum/data-structures/transaction-trie/)、[Receipt Trie](/ethereum/data-structures/receipt-trie/) 全部基於 MPT。
+Merkle Patricia Trie（MPT）是 Ethereum 執行層的核心資料結構，結合了 [Merkle Tree](/fundamentals/data-structures/merkle-tree/) 的密碼學驗證能力和 Patricia Trie（radix tree）的路徑壓縮效率。Ethereum 的 [State Trie](/ethereum/data-structures/state-trie/)、[Storage Trie](/ethereum/data-structures/storage-trie/)、[Transaction Trie](/ethereum/data-structures/transaction-trie/)、[Receipt Trie](/ethereum/data-structures/receipt-trie/) 全部基於 MPT。
 
 ## 核心原理
 
@@ -199,7 +199,7 @@ print(hex_prefix_encode([0, 1, 2, 3, 4, 5], True).hex()) # 200123 45
 
 ## 相關概念
 
-- [Merkle Tree](/ethereum/data-structures/merkle-tree/) - MPT 的基礎密碼學結構
+- [Merkle Tree](/fundamentals/data-structures/merkle-tree/) - MPT 的基礎密碼學結構
 - [RLP 編碼](/ethereum/data-structures/rlp-encoding/) - MPT 節點的序列化格式
 - [Keccak-256](/ethereum/cryptography/keccak-256/) - 節點 hash 和 key 的 hash 函數
 - [State Trie](/ethereum/data-structures/state-trie/) - 全域帳戶狀態 Trie

@@ -1,331 +1,699 @@
 {
   "nodes": [
     {
+      "id": "/fundamentals/concepts/key-generation/",
+      "label": "密鑰生成",
+      "category": "fundamentals/concepts",
+      "color": "#a3e635"
+    },
+    {
+      "id": "/fundamentals/concepts/nonce/",
+      "label": "Nonce",
+      "category": "fundamentals/concepts",
+      "color": "#a3e635"
+    },
+    {
+      "id": "/fundamentals/concepts/transaction-signing/",
+      "label": "交易簽名",
+      "category": "fundamentals/concepts",
+      "color": "#a3e635"
+    },
+    {
+      "id": "/fundamentals/cryptography/bls-signatures/",
+      "label": "BLS Signatures",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/bls12-381/",
+      "label": "BLS12-381",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/csprng/",
+      "label": "CSPRNG",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/digital-signature-overview/",
+      "label": "數位簽章概述",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/ecdsa/",
+      "label": "ECDSA",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "label": "橢圓曲線密碼學",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/hash-function-overview/",
+      "label": "雜湊函數概述",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/keccak-256/",
+      "label": "Keccak-256 雜湊函數",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/kzg-commitments/",
+      "label": "KZG Commitments（多項式承諾）",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/public-key-cryptography/",
+      "label": "公鑰密碼學",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/secp256k1/",
+      "label": "secp256k1",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/cryptography/sha-256/",
+      "label": "SHA-256 雜湊函數",
+      "category": "fundamentals/cryptography",
+      "color": "#818cf8"
+    },
+    {
+      "id": "/fundamentals/data-structures/bloom-filter/",
+      "label": "Bloom Filter（布隆過濾器）",
+      "category": "fundamentals/data-structures",
+      "color": "#67e8f9"
+    },
+    {
+      "id": "/fundamentals/data-structures/merkle-tree/",
+      "label": "Merkle Tree",
+      "category": "fundamentals/data-structures",
+      "color": "#67e8f9"
+    },
+    {
+      "id": "/fundamentals/data-structures/verkle-trees/",
+      "label": "Verkle Trees（向量承諾樹）",
+      "category": "fundamentals/data-structures",
+      "color": "#67e8f9"
+    },
+    {
+      "id": "/fundamentals/zero-knowledge/zksnarks/",
+      "label": "zkSNARKs",
+      "category": "fundamentals/zero-knowledge",
+      "color": "#c084fc"
+    },
+    {
       "id": "/ethereum/accounts/address-derivation/",
       "label": "地址推導",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/contract-account/",
       "label": "合約帳戶",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/eip-155/",
       "label": "EIP-155 重放保護",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/eip-1559/",
       "label": "EIP-1559 費用市場",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/eip-55/",
       "label": "EIP-55 地址校驗",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/eoa/",
       "label": "EOA",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/gas/",
       "label": "Gas",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/accounts/nonce/",
       "label": "Nonce",
-      "category": "accounts",
+      "category": "ethereum/accounts",
       "color": "#fbbf24"
     },
     {
       "id": "/ethereum/advanced/eip-4844/",
       "label": "EIP-4844 Proto-Danksharding",
-      "category": "advanced",
+      "category": "ethereum/advanced",
       "color": "#f472b6"
     },
     {
       "id": "/ethereum/advanced/kzg-commitments/",
       "label": "KZG Commitments",
-      "category": "advanced",
+      "category": "ethereum/advanced",
       "color": "#f472b6"
     },
     {
       "id": "/ethereum/advanced/precompiled-contracts/",
       "label": "Precompiled Contracts",
-      "category": "advanced",
+      "category": "ethereum/advanced",
       "color": "#f472b6"
     },
     {
       "id": "/ethereum/advanced/verkle-trees/",
       "label": "Verkle Trees",
-      "category": "advanced",
+      "category": "ethereum/advanced",
       "color": "#f472b6"
     },
     {
       "id": "/ethereum/advanced/zksnarks/",
       "label": "zkSNARKs 支援",
-      "category": "advanced",
+      "category": "ethereum/advanced",
       "color": "#f472b6"
     },
     {
       "id": "/ethereum/consensus/attestation/",
       "label": "Attestation",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/beacon-chain/",
       "label": "Beacon Chain",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/block-header/",
       "label": "區塊 Header",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/block-structure/",
       "label": "區塊結構",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/casper-ffg/",
       "label": "Casper FFG",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/ethash/",
       "label": "Ethash",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/lmd-ghost/",
       "label": "LMD GHOST",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/randao/",
       "label": "RANDAO",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/slashing/",
       "label": "Slashing",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/consensus/validators/",
       "label": "Validators",
-      "category": "consensus",
+      "category": "ethereum/consensus",
       "color": "#f87171"
     },
     {
       "id": "/ethereum/cryptography/bls-signatures/",
       "label": "BLS Signatures",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/bls12-381/",
       "label": "BLS12-381",
-      "category": "cryptography",
-      "color": "#a78bfa"
-    },
-    {
-      "id": "/ethereum/cryptography/csprng/",
-      "label": "CSPRNG",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/digital-signature-overview/",
       "label": "數位簽章概述",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/ecdsa/",
       "label": "ECDSA",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/ecrecover/",
       "label": "ECRECOVER",
-      "category": "cryptography",
-      "color": "#a78bfa"
-    },
-    {
-      "id": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "label": "橢圓曲線密碼學",
-      "category": "cryptography",
-      "color": "#a78bfa"
-    },
-    {
-      "id": "/ethereum/cryptography/hash-function-overview/",
-      "label": "雜湊函數概述",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/keccak-256/",
       "label": "Keccak-256",
-      "category": "cryptography",
-      "color": "#a78bfa"
-    },
-    {
-      "id": "/ethereum/cryptography/public-key-cryptography/",
-      "label": "公鑰密碼學",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/secp256k1/",
       "label": "secp256k1",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/cryptography/sha-256/",
       "label": "SHA-256",
-      "category": "cryptography",
+      "category": "ethereum/cryptography",
       "color": "#a78bfa"
     },
     {
       "id": "/ethereum/data-structures/abi-encoding/",
       "label": "ABI 編碼",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/bloom-filter/",
       "label": "Bloom Filter",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/merkle-patricia-trie/",
       "label": "Merkle Patricia Trie",
-      "category": "data-structures",
-      "color": "#22d3ee"
-    },
-    {
-      "id": "/ethereum/data-structures/merkle-tree/",
-      "label": "Merkle Tree",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/receipt-trie/",
       "label": "Receipt Trie",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/rlp-encoding/",
       "label": "RLP 編碼",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/ssz-encoding/",
       "label": "SSZ 編碼",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/state-trie/",
       "label": "State Trie",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/storage-trie/",
       "label": "Storage Trie",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/data-structures/transaction-trie/",
       "label": "Transaction Trie",
-      "category": "data-structures",
+      "category": "ethereum/data-structures",
       "color": "#22d3ee"
     },
     {
       "id": "/ethereum/transaction-lifecycle/block-production/",
       "label": "區塊生產",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/broadcast-validation/",
       "label": "交易廣播與驗證",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/consensus-finality/",
       "label": "共識與最終性",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/key-generation/",
       "label": "密鑰生成與帳戶創建",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/mempool/",
       "label": "記憶池",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/state-transition/",
       "label": "狀態轉換",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/transaction-construction/",
       "label": "交易構建",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
       "label": "交易生命週期",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     },
     {
       "id": "/ethereum/transaction-lifecycle/transaction-signing/",
       "label": "交易簽名",
-      "category": "transaction-lifecycle",
+      "category": "ethereum/transaction-lifecycle",
       "color": "#34d399"
     }
   ],
   "edges": [
+    {
+      "source": "/fundamentals/concepts/key-generation/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/fundamentals/concepts/key-generation/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/concepts/key-generation/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/concepts/key-generation/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/concepts/key-generation/",
+      "target": "/fundamentals/concepts/transaction-signing/"
+    },
+    {
+      "source": "/fundamentals/concepts/nonce/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/concepts/nonce/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/concepts/nonce/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/fundamentals/concepts/nonce/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/concepts/transaction-signing/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/concepts/transaction-signing/",
+      "target": "/fundamentals/concepts/nonce/"
+    },
+    {
+      "source": "/fundamentals/concepts/transaction-signing/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/concepts/transaction-signing/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/concepts/transaction-signing/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/bls12-381/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls12-381/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls12-381/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls12-381/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/bls12-381/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/bls12-381/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/csprng/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/ecdsa/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/fundamentals/cryptography/ecdsa/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/ecdsa/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/ecdsa/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/ecdsa/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "target": "/fundamentals/zero-knowledge/zksnarks/"
+    },
+    {
+      "source": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "target": "/fundamentals/cryptography/kzg-commitments/"
+    },
+    {
+      "source": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/elliptic-curve-cryptography/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/hash-function-overview/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/cryptography/hash-function-overview/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/fundamentals/cryptography/hash-function-overview/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/fundamentals/cryptography/keccak-256/",
+      "target": "/fundamentals/cryptography/sha-256/"
+    },
+    {
+      "source": "/fundamentals/cryptography/keccak-256/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/cryptography/keccak-256/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/cryptography/kzg-commitments/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/kzg-commitments/",
+      "target": "/fundamentals/data-structures/verkle-trees/"
+    },
+    {
+      "source": "/fundamentals/cryptography/kzg-commitments/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/cryptography/public-key-cryptography/",
+      "target": "/fundamentals/cryptography/secp256k1/"
+    },
+    {
+      "source": "/fundamentals/cryptography/public-key-cryptography/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/cryptography/sha-256/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/cryptography/sha-256/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
+    {
+      "source": "/fundamentals/data-structures/bloom-filter/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/data-structures/bloom-filter/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
+    },
+    {
+      "source": "/fundamentals/data-structures/bloom-filter/",
+      "target": "/fundamentals/cryptography/keccak-256/"
+    },
+    {
+      "source": "/fundamentals/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/merkle-patricia-trie/"
+    },
+    {
+      "source": "/fundamentals/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/state-trie/"
+    },
+    {
+      "source": "/fundamentals/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/transaction-trie/"
+    },
+    {
+      "source": "/fundamentals/data-structures/merkle-tree/",
+      "target": "/ethereum/data-structures/receipt-trie/"
+    },
+    {
+      "source": "/fundamentals/data-structures/merkle-tree/",
+      "target": "/fundamentals/data-structures/verkle-trees/"
+    },
+    {
+      "source": "/fundamentals/data-structures/verkle-trees/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/fundamentals/data-structures/verkle-trees/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/data-structures/verkle-trees/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/fundamentals/zero-knowledge/zksnarks/",
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/fundamentals/zero-knowledge/zksnarks/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
+    },
     {
       "source": "/ethereum/accounts/address-derivation/",
       "target": "/ethereum/accounts/eoa/"
@@ -376,7 +744,7 @@
     },
     {
       "source": "/ethereum/accounts/address-derivation/",
-      "target": "/ethereum/cryptography/csprng/"
+      "target": "/fundamentals/cryptography/csprng/"
     },
     {
       "source": "/ethereum/accounts/contract-account/",
@@ -500,7 +868,7 @@
     },
     {
       "source": "/ethereum/accounts/eoa/",
-      "target": "/ethereum/cryptography/csprng/"
+      "target": "/fundamentals/cryptography/csprng/"
     },
     {
       "source": "/ethereum/accounts/eoa/",
@@ -561,6 +929,10 @@
     {
       "source": "/ethereum/accounts/gas/",
       "target": "/ethereum/accounts/nonce/"
+    },
+    {
+      "source": "/ethereum/accounts/nonce/",
+      "target": "/fundamentals/concepts/nonce/"
     },
     {
       "source": "/ethereum/accounts/nonce/",
@@ -628,6 +1000,10 @@
     },
     {
       "source": "/ethereum/advanced/kzg-commitments/",
+      "target": "/fundamentals/cryptography/kzg-commitments/"
+    },
+    {
+      "source": "/ethereum/advanced/kzg-commitments/",
       "target": "/ethereum/advanced/verkle-trees/"
     },
     {
@@ -636,7 +1012,7 @@
     },
     {
       "source": "/ethereum/advanced/kzg-commitments/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/advanced/kzg-commitments/",
@@ -680,7 +1056,11 @@
     },
     {
       "source": "/ethereum/advanced/precompiled-contracts/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/verkle-trees/",
+      "target": "/fundamentals/data-structures/verkle-trees/"
     },
     {
       "source": "/ethereum/advanced/verkle-trees/",
@@ -708,7 +1088,11 @@
     },
     {
       "source": "/ethereum/advanced/verkle-trees/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/advanced/zksnarks/",
+      "target": "/fundamentals/zero-knowledge/zksnarks/"
     },
     {
       "source": "/ethereum/advanced/zksnarks/",
@@ -724,7 +1108,7 @@
     },
     {
       "source": "/ethereum/advanced/zksnarks/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/advanced/zksnarks/",
@@ -1024,15 +1408,11 @@
     },
     {
       "source": "/ethereum/cryptography/bls-signatures/",
+      "target": "/fundamentals/cryptography/bls-signatures/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls-signatures/",
       "target": "/ethereum/cryptography/bls12-381/"
-    },
-    {
-      "source": "/ethereum/cryptography/bls-signatures/",
-      "target": "/ethereum/cryptography/csprng/"
-    },
-    {
-      "source": "/ethereum/cryptography/bls-signatures/",
-      "target": "/ethereum/cryptography/ecdsa/"
     },
     {
       "source": "/ethereum/cryptography/bls-signatures/",
@@ -1044,7 +1424,7 @@
     },
     {
       "source": "/ethereum/cryptography/bls-signatures/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/ethereum/cryptography/ecdsa/"
     },
     {
       "source": "/ethereum/cryptography/bls-signatures/",
@@ -1052,43 +1432,19 @@
     },
     {
       "source": "/ethereum/cryptography/bls12-381/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/bls12-381/"
+    },
+    {
+      "source": "/ethereum/cryptography/bls12-381/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/bls12-381/",
       "target": "/ethereum/cryptography/secp256k1/"
     },
     {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/cryptography/ecdsa/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/cryptography/secp256k1/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/transaction-lifecycle/key-generation/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/consensus/validators/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/cryptography/bls12-381/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/consensus/randao/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
-    },
-    {
-      "source": "/ethereum/cryptography/csprng/",
-      "target": "/ethereum/cryptography/public-key-cryptography/"
+      "source": "/ethereum/cryptography/digital-signature-overview/",
+      "target": "/fundamentals/cryptography/digital-signature-overview/"
     },
     {
       "source": "/ethereum/cryptography/digital-signature-overview/",
@@ -1128,23 +1484,23 @@
     },
     {
       "source": "/ethereum/cryptography/digital-signature-overview/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/digital-signature-overview/",
-      "target": "/ethereum/cryptography/public-key-cryptography/"
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/digital-signature-overview/",
-      "target": "/ethereum/cryptography/hash-function-overview/"
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/ethereum/cryptography/ecdsa/",
+      "target": "/fundamentals/cryptography/ecdsa/"
     },
     {
       "source": "/ethereum/cryptography/ecdsa/",
       "target": "/ethereum/cryptography/secp256k1/"
-    },
-    {
-      "source": "/ethereum/cryptography/ecdsa/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/ecdsa/",
@@ -1169,10 +1525,6 @@
     {
       "source": "/ethereum/cryptography/ecdsa/",
       "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
-    },
-    {
-      "source": "/ethereum/cryptography/ecdsa/",
-      "target": "/ethereum/cryptography/public-key-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/ecrecover/",
@@ -1196,7 +1548,7 @@
     },
     {
       "source": "/ethereum/cryptography/ecrecover/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
     },
     {
       "source": "/ethereum/cryptography/ecrecover/",
@@ -1207,64 +1559,8 @@
       "target": "/ethereum/transaction-lifecycle/broadcast-validation/"
     },
     {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/cryptography/secp256k1/"
-    },
-    {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/transaction-lifecycle/key-generation/"
-    },
-    {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/consensus/validators/"
-    },
-    {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/consensus/attestation/"
-    },
-    {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/cryptography/public-key-cryptography/"
-    },
-    {
-      "source": "/ethereum/cryptography/elliptic-curve-cryptography/",
-      "target": "/ethereum/accounts/address-derivation/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/cryptography/sha-256/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/cryptography/keccak-256/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/accounts/address-derivation/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/data-structures/rlp-encoding/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/data-structures/merkle-patricia-trie/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/consensus/beacon-chain/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/data-structures/merkle-tree/"
-    },
-    {
-      "source": "/ethereum/cryptography/hash-function-overview/",
-      "target": "/ethereum/cryptography/ecdsa/"
+      "source": "/ethereum/cryptography/keccak-256/",
+      "target": "/fundamentals/cryptography/keccak-256/"
     },
     {
       "source": "/ethereum/cryptography/keccak-256/",
@@ -1292,55 +1588,39 @@
     },
     {
       "source": "/ethereum/cryptography/keccak-256/",
-      "target": "/ethereum/cryptography/sha-256/"
+      "target": "/fundamentals/cryptography/hash-function-overview/"
     },
     {
       "source": "/ethereum/cryptography/keccak-256/",
-      "target": "/ethereum/cryptography/elliptic-curve-cryptography/"
+      "target": "/ethereum/cryptography/sha-256/"
     },
     {
       "source": "/ethereum/cryptography/keccak-256/",
       "target": "/ethereum/data-structures/abi-encoding/"
     },
     {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/accounts/eoa/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/cryptography/secp256k1/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/cryptography/bls-signatures/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/transaction-lifecycle/key-generation/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/transaction-lifecycle/transaction-signing/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/cryptography/ecrecover/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/accounts/address-derivation/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/consensus/validators/"
-    },
-    {
-      "source": "/ethereum/cryptography/public-key-cryptography/",
-      "target": "/ethereum/cryptography/bls12-381/"
+      "source": "/ethereum/cryptography/secp256k1/",
+      "target": "/fundamentals/cryptography/secp256k1/"
     },
     {
       "source": "/ethereum/cryptography/secp256k1/",
       "target": "/ethereum/transaction-lifecycle/key-generation/"
+    },
+    {
+      "source": "/ethereum/cryptography/secp256k1/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/cryptography/secp256k1/",
+      "target": "/ethereum/cryptography/keccak-256/"
+    },
+    {
+      "source": "/ethereum/cryptography/secp256k1/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/cryptography/sha-256/",
+      "target": "/fundamentals/cryptography/sha-256/"
     },
     {
       "source": "/ethereum/cryptography/sha-256/",
@@ -1352,7 +1632,11 @@
     },
     {
       "source": "/ethereum/cryptography/sha-256/",
-      "target": "/ethereum/data-structures/merkle-tree/"
+      "target": "/fundamentals/cryptography/hash-function-overview/"
+    },
+    {
+      "source": "/ethereum/cryptography/sha-256/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
     },
     {
       "source": "/ethereum/data-structures/abi-encoding/",
@@ -1372,6 +1656,10 @@
     },
     {
       "source": "/ethereum/data-structures/bloom-filter/",
+      "target": "/fundamentals/data-structures/bloom-filter/"
+    },
+    {
+      "source": "/ethereum/data-structures/bloom-filter/",
       "target": "/ethereum/data-structures/receipt-trie/"
     },
     {
@@ -1381,10 +1669,6 @@
     {
       "source": "/ethereum/data-structures/bloom-filter/",
       "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-patricia-trie/",
-      "target": "/ethereum/data-structures/merkle-tree/"
     },
     {
       "source": "/ethereum/data-structures/merkle-patricia-trie/",
@@ -1405,42 +1689,6 @@
     {
       "source": "/ethereum/data-structures/merkle-patricia-trie/",
       "target": "/ethereum/data-structures/rlp-encoding/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/data-structures/transaction-trie/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/data-structures/receipt-trie/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/data-structures/state-trie/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/data-structures/ssz-encoding/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/consensus/beacon-chain/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/advanced/eip-4844/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/advanced/kzg-commitments/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/advanced/verkle-trees/"
-    },
-    {
-      "source": "/ethereum/data-structures/merkle-tree/",
-      "target": "/ethereum/cryptography/keccak-256/"
     },
     {
       "source": "/ethereum/data-structures/receipt-trie/",
@@ -1461,6 +1709,10 @@
     {
       "source": "/ethereum/data-structures/rlp-encoding/",
       "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/data-structures/ssz-encoding/",
+      "target": "/fundamentals/data-structures/merkle-tree/"
     },
     {
       "source": "/ethereum/data-structures/ssz-encoding/",
@@ -1604,6 +1856,14 @@
     },
     {
       "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/fundamentals/concepts/key-generation/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/fundamentals/cryptography/csprng/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
       "target": "/ethereum/cryptography/keccak-256/"
     },
     {
@@ -1617,6 +1877,14 @@
     {
       "source": "/ethereum/transaction-lifecycle/key-generation/",
       "target": "/ethereum/transaction-lifecycle/transaction-lifecycle/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/fundamentals/cryptography/elliptic-curve-cryptography/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/key-generation/",
+      "target": "/fundamentals/cryptography/public-key-cryptography/"
     },
     {
       "source": "/ethereum/transaction-lifecycle/key-generation/",
@@ -1692,7 +1960,7 @@
     },
     {
       "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
-      "target": "/ethereum/cryptography/csprng/"
+      "target": "/fundamentals/cryptography/csprng/"
     },
     {
       "source": "/ethereum/transaction-lifecycle/transaction-lifecycle/",
@@ -1748,6 +2016,10 @@
     },
     {
       "source": "/ethereum/transaction-lifecycle/transaction-signing/",
+      "target": "/fundamentals/concepts/transaction-signing/"
+    },
+    {
+      "source": "/ethereum/transaction-lifecycle/transaction-signing/",
       "target": "/ethereum/cryptography/secp256k1/"
     },
     {
@@ -1757,32 +2029,52 @@
   ],
   "categories": [
     {
-      "key": "cryptography",
-      "label": "密碼學基礎",
+      "key": "fundamentals/cryptography",
+      "label": "密碼學（通用）",
+      "color": "#818cf8"
+    },
+    {
+      "key": "fundamentals/data-structures",
+      "label": "資料結構（通用）",
+      "color": "#67e8f9"
+    },
+    {
+      "key": "fundamentals/zero-knowledge",
+      "label": "零知識證明",
+      "color": "#c084fc"
+    },
+    {
+      "key": "fundamentals/concepts",
+      "label": "通用概念",
+      "color": "#a3e635"
+    },
+    {
+      "key": "ethereum/cryptography",
+      "label": "密碼學（ETH）",
       "color": "#a78bfa"
     },
     {
-      "key": "data-structures",
-      "label": "資料結構",
+      "key": "ethereum/data-structures",
+      "label": "資料結構（ETH）",
       "color": "#22d3ee"
     },
     {
-      "key": "accounts",
+      "key": "ethereum/accounts",
       "label": "帳戶與交易",
       "color": "#fbbf24"
     },
     {
-      "key": "transaction-lifecycle",
+      "key": "ethereum/transaction-lifecycle",
       "label": "交易流程",
       "color": "#34d399"
     },
     {
-      "key": "consensus",
+      "key": "ethereum/consensus",
       "label": "區塊與共識",
       "color": "#f87171"
     },
     {
-      "key": "advanced",
+      "key": "ethereum/advanced",
       "label": "進階主題",
       "color": "#f472b6"
     }

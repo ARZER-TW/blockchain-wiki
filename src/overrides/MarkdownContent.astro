@@ -4,10 +4,10 @@ import PageProgress from '../components/PageProgress'
 
 const { slug } = Astro.params
 const currentPage = slug ? `/${slug}/` : undefined
-const isEthereumPage = currentPage?.startsWith('/ethereum/')
+const isContentPage = currentPage?.startsWith('/ethereum/') || currentPage?.startsWith('/fundamentals/')
 ---
 
-{isEthereumPage && currentPage && (
+{isContentPage && currentPage && (
   <PageProgress client:idle currentPage={currentPage} />
 )}
 

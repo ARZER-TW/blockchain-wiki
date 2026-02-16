@@ -34,7 +34,7 @@ EOA 由 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線上的一對�
 ```
 
 完整的[地址推導](/ethereum/accounts/address-derivation/)流程：
-1. 隨機生成 256-bit 私鑰（透過 [CSPRNG](/ethereum/cryptography/csprng/)）
+1. 隨機生成 256-bit 私鑰（透過 [CSPRNG](/fundamentals/cryptography/csprng/)）
 2. 橢圓曲線乘法得到公鑰：$P = k \cdot G$
 3. 取公鑰的 [Keccak-256](/ethereum/cryptography/keccak-256/) hash 後 20 bytes 為地址
 

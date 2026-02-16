@@ -6,13 +6,13 @@ tags: [ethereum, account, nonce, transaction, replay-protection]
 
 # Nonce
 
+> 本文聚焦 Ethereum 特定的實現細節。通用 nonce 概念請參見 [Nonce](/fundamentals/concepts/nonce/)。
+
 ## 概述
 
-Nonce（Number used Once）在 Ethereum 中是每個帳戶的交易計數器。[EOA](/ethereum/accounts/eoa/) 的 nonce 代表已發送的交易數量；[合約帳戶](/ethereum/accounts/contract-account/)的 nonce 代表透過 `CREATE` opcode 建立的合約數量。Nonce 是 replay protection 的核心機制，同時也參與 CREATE 地址計算。
+在 Ethereum 中，nonce 是每個帳戶的交易計數器。[EOA](/ethereum/accounts/eoa/) 的 nonce 代表已發送的交易數量；[合約帳戶](/ethereum/accounts/contract-account/)的 nonce 代表透過 `CREATE` opcode 建立的合約數量。Nonce 是 replay protection 的核心機制，同時也參與 CREATE 地址計算。
 
-## 核心原理
-
-### Nonce 規則
+## Ethereum Nonce 規則
 
 1. **初始值**：帳戶建立時 nonce = 0
 2. **遞增**：每發送一筆交易（EOA）或 CREATE 一個合約（合約帳戶），nonce + 1
@@ -20,17 +20,9 @@ Nonce（Number used Once）在 Ethereum 中是每個帳戶的交易計數器。[
 4. **不可跳過**：nonce = 5 的交易必須在 nonce = 4 之後執行
 5. **不可重複**：同一 nonce 的交易只能成功一次
 
-### Replay Protection
+### EIP-155 跨鏈重放保護
 
-Nonce 防止兩種重放攻擊：
-
-#### 同鏈重放
-攻擊者截獲你的簽名交易並重新廣播：
-- 第一次執行 nonce = 5 → 成功，帳戶 nonce 變成 6
-- 重播同一交易（nonce = 5）→ 失敗，因為帳戶 nonce 已經是 6
-
-#### 跨鏈重放
-在 fork 鏈上重播交易——這需要靠 [EIP-155 重放保護](/ethereum/accounts/eip-155/)（chainId）來防止，nonce 不夠。
+Nonce 能防止同鏈重放，但跨鏈重放需要靠 [EIP-155 重放保護](/ethereum/accounts/eip-155/)（chainId）來防止。
 
 ### Nonce Gap 問題
 
@@ -49,8 +41,8 @@ tx(nonce=5) → 現在可以執行了
 
 同一 nonce 可以發送多筆交易，但只有一筆能被收入區塊。利用這個特性：
 
-- **加速**：同 nonce，更高 gas price，相同內容 → 礦工/驗證者優先處理
-- **取消**：同 nonce，更高 gas price，`to = self, value = 0` → 空交易取代原交易
+- **加速**：同 nonce，更高 gas price，相同內容 -- 礦工/驗證者優先處理
+- **取消**：同 nonce，更高 gas price，`to = self, value = 0` -- 空交易取代原交易
 
 替換交易的 gas price 通常需要比原交易高 10% 以上。
 
@@ -70,6 +62,13 @@ State Trie
                              第一個欄位
 ```
 
+### Pending Nonce vs Confirmed Nonce
+
+- `eth_getTransactionCount(address, 'latest')`：最新確認區塊的 nonce
+- `eth_getTransactionCount(address, 'pending')`：包含 mempool 中交易的 nonce
+
+建議使用 `pending` 來構建新交易，避免 nonce 衝突。
+
 ## 在 Ethereum 中的應用
 
 - **[交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/)**：nonce 決定交易執行順序
@@ -79,13 +78,6 @@ State Trie
 - **[交易廣播與驗證](/ethereum/transaction-lifecycle/broadcast-validation/)**：node 驗證 nonce 是否正確
 - **[Gas](/ethereum/accounts/gas/)**：stuck transaction 問題常與 gas price 和 nonce 相關
 - **MEV**：Searcher 需要精確管理 nonce 以確保 bundle 中交易順序
-
-### Pending Nonce vs Confirmed Nonce
-
-- `eth_getTransactionCount(address, 'latest')`：最新確認區塊的 nonce
-- `eth_getTransactionCount(address, 'pending')`：包含 mempool 中交易的 nonce
-
-建議使用 `pending` 來構建新交易，避免 nonce 衝突。
 
 ## 程式碼範例
 
@@ -183,11 +175,12 @@ def predict_contract_address(deployer: str, nonce: int) -> str:
 # nonce 0, 1, 2 分別部署的合約地址
 for n in range(3):
     addr = predict_contract_address(address, n)
-    print(f"nonce {n} → contract: {addr}")
+    print(f"nonce {n} -> contract: {addr}")
 ```
 
 ## 相關概念
 
+- [Nonce（通用概念）](/fundamentals/concepts/nonce/) - 跨鏈通用的 nonce 概念
 - [EOA](/ethereum/accounts/eoa/) - EOA 的 nonce 是交易計數器
 - [合約帳戶](/ethereum/accounts/contract-account/) - 合約的 nonce 是 CREATE 計數器
 - [EIP-155 重放保護](/ethereum/accounts/eip-155/) - chainId 補充 nonce 的跨鏈保護不足

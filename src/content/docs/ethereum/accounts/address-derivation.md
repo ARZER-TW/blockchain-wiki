@@ -220,4 +220,4 @@ print(f"CREATE2: {addr}")
 - [ECDSA](/ethereum/cryptography/ecdsa/) - 橢圓曲線數位簽章，使用相同的密鑰對
 - [ECRECOVER](/ethereum/cryptography/ecrecover/) - 從簽名恢復地址
 - [密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/) - 完整的帳戶建立流程
-- [CSPRNG](/ethereum/cryptography/csprng/) - 安全的私鑰隨機生成
+- [CSPRNG](/fundamentals/cryptography/csprng/) - 安全的私鑰隨機生成

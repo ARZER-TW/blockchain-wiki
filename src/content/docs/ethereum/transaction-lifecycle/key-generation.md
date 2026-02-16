@@ -6,13 +6,15 @@ tags: [ethereum, keys, account, cryptography]
 
 # 密鑰生成與帳戶創建
 
+> 本文聚焦 Ethereum 特定的實現細節。通用密鑰生成理論請參見 [密鑰生成](/fundamentals/concepts/key-generation/)。
+
 ## 概述
 
-Ethereum 帳戶的建立完全是離線密碼學操作：使用 [CSPRNG](/ethereum/cryptography/csprng/) 產生 256-bit 隨機私鑰，透過 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線標量乘法得到公鑰，再經 [Keccak-256](/ethereum/cryptography/keccak-256/) 雜湊取最後 20 bytes 作為地址。帳戶不需要鏈上註冊，任何人都能獨立產生。
+Ethereum 帳戶的建立完全是離線密碼學操作：使用 [CSPRNG](/fundamentals/cryptography/csprng/) 產生 256-bit 隨機私鑰，透過 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線標量乘法得到公鑰，再經 [Keccak-256](/ethereum/cryptography/keccak-256/) 雜湊取最後 20 bytes 作為地址。帳戶不需要鏈上註冊，任何人都能獨立產生。
 
-## 核心原理
+## Ethereum 密鑰推導
 
-### 私鑰生成
+### 私鑰
 
 私鑰 $k$ 是一個 256-bit 整數，滿足：
 
@@ -22,23 +24,19 @@ $$1 \leq k < n$$
 
 $$n = \texttt{0xFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEBAAEDCE6AF48A03BBFD25E8CD0364141}$$
 
-約為 $2^{256} - 4.3 \times 10^{38}$。私鑰必須由 [CSPRNG](/ethereum/cryptography/csprng/) 產生，使用 `Math.random()` 或弱隨機源將導致私鑰可預測。
-
 ### 公鑰推導
 
 公鑰 $K$ 透過橢圓曲線標量乘法計算：
 
 $$K = k \cdot G$$
 
-其中 $G$ 是 [secp256k1](/ethereum/cryptography/secp256k1/) 的生成點（generator point）。結果是曲線上一個點 $(x, y)$，非壓縮格式為 65 bytes：
+其中 $G$ 是 [secp256k1](/ethereum/cryptography/secp256k1/) 的生成點。結果是曲線上一個點 $(x, y)$，非壓縮格式為 65 bytes：
 
 $$K_{uncompressed} = \texttt{0x04} \| x \| y$$
 
-前綴 `0x04` 表示非壓縮格式。壓縮格式為 33 bytes，只保留 $x$ 和 $y$ 的奇偶性。
-
 Ethereum 使用非壓縮公鑰（去掉 `0x04` 前綴的 64 bytes）進行地址推導。
 
-### 地址推導
+### Keccak-256 地址推導
 
 ```
 地址 = Keccak-256(公鑰的 64 bytes)[12:32]
@@ -62,12 +60,21 @@ CSPRNG → 私鑰(32B) → secp256k1 → 公鑰(64B) → Keccak-256 → 取後 2
 
 [EIP-55 地址校驗](/ethereum/accounts/eip-55/) 在地址的十六進位表示中混合大小寫作為 checksum。對地址的小寫 hex 取 Keccak-256，若雜湊的第 $i$ 個半位元組 $\geq 8$，則地址第 $i$ 個字元大寫。這提供了約 99.986% 的錯誤偵測率。
 
+### HD Wallet Ethereum 路徑
+
+Ethereum 的 BIP-44 標準衍生路徑為：
+
+```
+m/44'/60'/0'/0/index
+```
+
+其中 `60` 是 Ethereum 的 coin type。MetaMask 等錢包預設使用此路徑，`index` 從 0 開始遞增產生多個帳戶。
+
 ## 在 Ethereum 中的應用
 
 - **[EOA](/ethereum/accounts/eoa/)**：外部擁有帳戶由密鑰對控制，私鑰 = 完全控制權
 - **[合約帳戶](/ethereum/accounts/contract-account/)**：地址由 deployer 地址和 nonce 計算（`CREATE`）或由 deployer、salt、init code 計算（`CREATE2`），不涉及密鑰對
 - **[地址推導](/ethereum/accounts/address-derivation/)**：EOA 用上述流程；合約用 `Keccak-256(RLP([sender, nonce]))[12:32]`
-- **HD Wallet（BIP-32/44）**：從單一 seed 推導出樹狀結構的密鑰對，Ethereum 路徑為 `m/44'/60'/0'/0/index`
 
 ## 程式碼範例
 
@@ -116,12 +123,13 @@ console.log('Is valid address:', ethers.isAddress('0xf39Fd6e51aad88F6F4ce6aB8827
 
 ## 相關概念
 
+- [密鑰生成（通用概念）](/fundamentals/concepts/key-generation/) - 跨鏈通用的密鑰生成理論
 - [交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/) - 本筆記是流程第一步
-- [CSPRNG](/ethereum/cryptography/csprng/) - 私鑰的隨機數來源
+- [CSPRNG](/fundamentals/cryptography/csprng/) - 私鑰的隨機數來源
 - [secp256k1](/ethereum/cryptography/secp256k1/) - 公鑰推導使用的橢圓曲線
 - [Keccak-256](/ethereum/cryptography/keccak-256/) - 地址推導的雜湊函數
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - ECC 數學基礎
-- [公鑰密碼學](/ethereum/cryptography/public-key-cryptography/) - 非對稱加密通用概念
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - ECC 數學基礎
+- [公鑰密碼學](/fundamentals/cryptography/public-key-cryptography/) - 非對稱加密通用概念
 - [地址推導](/ethereum/accounts/address-derivation/) - 完整的地址推導規格
 - [EIP-55 地址校驗](/ethereum/accounts/eip-55/) - 地址的 checksum 編碼
 - [EOA](/ethereum/accounts/eoa/) - 由密鑰對控制的帳戶類型

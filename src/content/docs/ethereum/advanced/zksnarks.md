@@ -6,96 +6,23 @@ tags: [ethereum, cryptography, zero-knowledge, zk-snark, proof-system]
 
 # zkSNARKs 支援
 
+> 本文聚焦 Ethereum 特定的實現細節。通用 zkSNARK 理論請參見 [zkSNARKs](/fundamentals/zero-knowledge/zksnarks/)。
+
 ## 概述
 
-zkSNARK（Zero-Knowledge Succinct Non-interactive Argument of Knowledge）是一種密碼學證明系統，允許 prover 在不揭露任何額外資訊的情況下，向 verifier 證明某個計算結果是正確的。Ethereum 透過 BN254 曲線的 [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/)（ecAdd/ecMul/ecPairing）原生支援 Groth16 等 proof system 的鏈上驗證，為 ZK Rollup、隱私交易、身份證明等應用提供基礎設施。
+Ethereum 透過 BN254 曲線的 [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/)（ecAdd/ecMul/ecPairing）原生支援 Groth16 等 proof system 的鏈上驗證，為 ZK Rollup、隱私交易、身份證明等應用提供基礎設施。
 
-## 核心原理
+## BN254 Precompile
 
-### zk-SNARK 的特性
+Ethereum 的 precompile 使用 BN254 曲線（也稱 alt_bn128），自 Genesis 起即可用：
 
-- **Zero-Knowledge**：verifier 除了知道 statement 為真，學不到任何額外資訊
-- **Succinct**：proof 大小是常數（與計算複雜度無關），驗證時間也是常數
-- **Non-interactive**：只需要 prover 發送一個 proof，不需要多輪互動
-- **Argument of Knowledge**：prover 確實「知道」某個 witness，而非僅知道 statement 為真
-
-### 算術電路（Arithmetic Circuit）
-
-任何計算問題都可以表示為在有限域 $\mathbb{F}_p$ 上的算術電路：
-
-- **Gate**：加法或乘法
-- **Wire**：連接 gate 的值
-- **Input wire**：public input（verifier 知道）和 private input（witness，只有 prover 知道）
-- **Output wire**：計算結果
-
-例如，證明「我知道 $x$ 使得 $x^3 + x + 5 = 35$」：
-
-```
-Gate 1: a = x * x       (x^2)
-Gate 2: b = a * x       (x^3)
-Gate 3: c = b + x       (x^3 + x)
-Gate 4: d = c + 5       (x^3 + x + 5)
-Assert: d == 35
-```
-
-### R1CS（Rank-1 Constraint System）
-
-算術電路轉化為 R1CS，每個乘法 gate 對應一個約束：
-
-$$\vec{a}_i \cdot \vec{s} \times \vec{b}_i \cdot \vec{s} = \vec{c}_i \cdot \vec{s}$$
-
-其中 $\vec{s} = [1, \text{out}, x, x^2, x^3, ...]$ 是 witness vector。
-
-$\vec{a}_i, \vec{b}_i, \vec{c}_i$ 是由電路結構決定的係數向量。
-
-整個 R1CS 可以寫成矩陣形式：
-
-$$(A \cdot \vec{s}) \circ (B \cdot \vec{s}) = C \cdot \vec{s}$$
-
-其中 $\circ$ 是逐元素乘法（Hadamard product）。
-
-### QAP（Quadratic Arithmetic Program）
-
-R1CS 透過 Lagrange 插值轉化為 QAP：將矩陣的每一列轉成多項式。
-
-定義多項式 $A_j(x), B_j(x), C_j(x)$，使得對每個約束 $i$：
-
-$$A_j(r_i) = a_{i,j}, \quad B_j(r_i) = b_{i,j}, \quad C_j(r_i) = c_{i,j}$$
-
-QAP 滿足條件：
-
-$$\left(\sum_j s_j A_j(x)\right) \cdot \left(\sum_j s_j B_j(x)\right) - \left(\sum_j s_j C_j(x)\right) = H(x) \cdot T(x)$$
-
-其中 $T(x) = \prod_i (x - r_i)$ 是 vanishing polynomial，$H(x)$ 是商多項式。
-
-### Groth16
-
-Groth16 是目前最廣泛使用的 zk-SNARK 系統，也是 Ethereum precompile 直接支援的方案。
-
-**Trusted Setup**（per-circuit）：
-1. 選擇 toxic waste $\tau, \alpha, \beta, \gamma, \delta$
-2. 在 $\mathbb{G}_1, \mathbb{G}_2$ 上計算 SRS（Structured Reference String）
-3. 銷毀 toxic waste
-
-**Proof 結構**：
-$$\pi = (A \in \mathbb{G}_1, B \in \mathbb{G}_2, C \in \mathbb{G}_1)$$
-
-Proof 大小固定：192 bytes（BN254 上：$A$ 64B, $B$ 128B, $C$ 64B）。
-
-**Verification**：
-$$e(A, B) = e(\alpha, \beta) \cdot e(\sum_{i=0}^{l} x_i \cdot IC_i, \gamma) \cdot e(C, \delta)$$
-
-其中：
-- $e$ 是 bilinear pairing
-- $x_0, ..., x_l$ 是 public input
-- $IC_i$ 是 verification key 中的常數（$\mathbb{G}_1$ 點）
-- $\alpha, \beta, \gamma, \delta$ 是 verification key 中的常數
-
-驗證只需 3-4 次 pairing 運算，正好對應 ecPairing precompile。
+| Precompile | 地址 | 功能 | Gas Cost |
+|------------|------|------|----------|
+| ecAdd | 0x06 | BN254 G1 點加法 | 150 |
+| ecMul | 0x07 | BN254 G1 標量乘法 | 6,000 |
+| ecPairing | 0x08 | BN254 pairing check | 34,000 * k + 45,000 |
 
 ### BN254 vs BLS12-381
-
-Ethereum 的 precompile 使用 BN254 曲線（也稱 alt_bn128）：
 
 | 特性 | BN254 | [BLS12-381](/ethereum/cryptography/bls12-381/) |
 |------|-------|--------------|
@@ -111,8 +38,6 @@ BN254 的安全等級低於推薦的 128 bits（Kim-Barbulescu 攻擊），但�
 
 EIP-2537 在 Pectra 升級（2025/5/7）正式上線，新增了 9 個 [BLS12-381](/ethereum/cryptography/bls12-381/) 曲線操作的 [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/)（地址 0x0B-0x13），包括 G1/G2 的加法、乘法、multi-scalar multiplication、pairing 和 map-to-curve。
 
-這對 ZK 生態系的影響是根本性的：
-
 **直接影響**：
 - ZK proof system 可以直接基於 BLS12-381（~128 bit 安全）而非 BN254（~100 bit 安全）
 - PLONK、Groth16 等 proof 的鏈上驗證可以使用更安全的曲線
@@ -127,7 +52,7 @@ EIP-2537 在 Pectra 升級（2025/5/7）正式上線，新增了 9 個 [BLS12-38
 - 基於 BLS12-381 的遞迴 SNARK 變得可行（Bandersnatch 嵌入 BLS12-381）
 - 與 [Verkle Trees](/ethereum/advanced/verkle-trees/) 的 IPA proof（使用 Bandersnatch 曲線）整合更自然
 
-### 在 EVM 上的驗證流程
+### 在 EVM 上的 Groth16 驗證流程
 
 ```
 1. 合約接收 proof (A, B, C) 和 public inputs
@@ -138,9 +63,7 @@ EIP-2537 在 Pectra 升級（2025/5/7）正式上線，新增了 9 個 [BLS12-38
 5. 返回驗證結果
 ```
 
-## 在 Ethereum 中的應用
-
-### ZK Rollup
+## ZK Rollup 生態系
 
 ZK Rollup 是 zkSNARK 在 Ethereum 上最重要的應用：
 
@@ -368,8 +291,9 @@ async function generateAndVerifyProof() {
 
 ## 相關概念
 
+- [zkSNARKs（通用理論）](/fundamentals/zero-knowledge/zksnarks/) - 跨鏈通用的 zkSNARK 理論
 - [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/) - ecAdd/ecMul/ecPairing precompile
-- [橢圓曲線密碼學](/ethereum/cryptography/elliptic-curve-cryptography/) - BN254 配對運算的數學基礎
+- [橢圓曲線密碼學](/fundamentals/cryptography/elliptic-curve-cryptography/) - BN254 配對運算的數學基礎
 - [BLS12-381](/ethereum/cryptography/bls12-381/) - 未來可能取代 BN254 的曲線（EIP-2537）
 - [KZG Commitments](/ethereum/advanced/kzg-commitments/) - 基於 pairing 的 polynomial commitment（PLONK 等使用）
 - [EIP-4844 Proto-Danksharding](/ethereum/advanced/eip-4844/) - Point evaluation precompile 支援 blob 驗證

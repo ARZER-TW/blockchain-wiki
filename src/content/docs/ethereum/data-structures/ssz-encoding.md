@@ -83,7 +83,7 @@ SSZ 的核心能力——每個型別都能計算出一個 `hash_tree_root`：
 
 1. 將序列化資料切成 32-byte chunks
 2. 不足 32 bytes 的 chunk 補零
-3. 以這些 chunks 為葉子建立 [Merkle Tree](/ethereum/data-structures/merkle-tree/)
+3. 以這些 chunks 為葉子建立 [Merkle Tree](/fundamentals/data-structures/merkle-tree/)
 4. 根節點即為 `hash_tree_root`
 
 對 Container 來說，每個欄位的 `hash_tree_root` 作為葉子：
@@ -182,7 +182,7 @@ print(f"epoch: {decoded.epoch}")
 ## 相關概念
 
 - [RLP 編碼](/ethereum/data-structures/rlp-encoding/) - 執行層序列化格式，SSZ 在共識層取代了它
-- [Merkle Tree](/ethereum/data-structures/merkle-tree/) - SSZ Merkleization 的基礎結構
+- [Merkle Tree](/fundamentals/data-structures/merkle-tree/) - SSZ Merkleization 的基礎結構
 - [SHA-256](/ethereum/cryptography/sha-256/) - SSZ Merkleization 使用的 hash 函數（非 Keccak）
 - [Beacon Chain](/ethereum/consensus/beacon-chain/) - SSZ 的主要使用場景
 - [Validators](/ethereum/consensus/validators/) - 驗證者狀態以 SSZ 格式儲存

@@ -4,11 +4,11 @@ import MiniGraph from '../components/MiniGraph'
 
 const { slug } = Astro.params
 const currentPage = slug ? `/${slug}/` : undefined
-const isEthereumPage = currentPage?.startsWith('/ethereum/')
+const isContentPage = currentPage?.startsWith('/ethereum/') || currentPage?.startsWith('/fundamentals/')
 ---
 
 <Default {...Astro.props}><slot /></Default>
 
-{isEthereumPage && currentPage && (
+{isContentPage && currentPage && (
   <MiniGraph client:idle currentPage={currentPage} />
 )}

@@ -1,7 +1,7 @@
 ---
 title: "Merkle Tree"
 description: "Merkle Tree, Hash Tree, 默克爾樹"
-tags: [ethereum, data-structure, merkle-tree, cryptography]
+tags: [fundamentals, data-structure, merkle-tree, cryptography]
 ---
 
 # Merkle Tree
@@ -60,18 +60,24 @@ Proof 大小為 $O(\log_2 n)$，對 $n = 2^{20}$（約 100 萬筆資料），只
 
 普通 hash chain（如 `H(A || B || C || D)`）驗證任一元素都需要所有資料。Merkle Tree 把驗證成本從 $O(n)$ 降到 $O(\log n)$。
 
-## 在 Ethereum 中的應用
+## 在區塊鏈中的應用
 
-Ethereum 大量使用 Merkle Tree 及其變體：
+Merkle Tree 是幾乎所有區塊鏈的核心資料結構：
 
-- **[Merkle Patricia Trie](/ethereum/data-structures/merkle-patricia-trie/)**：Ethereum 的核心 Trie 結構，結合 Merkle Tree 和 Patricia Trie
-- **[Transaction Trie](/ethereum/data-structures/transaction-trie/)**：同一區塊所有交易的 Merkle root 存於 block header
-- **[Receipt Trie](/ethereum/data-structures/receipt-trie/)**：交易收據的 Merkle root
-- **[State Trie](/ethereum/data-structures/state-trie/)**：全域狀態的 Merkle root（stateRoot）
-- **[SSZ Merkleization](/ethereum/data-structures/ssz-encoding/)**：Beacon Chain 用二元 Merkle Tree 計算 `hash_tree_root`
-- **[Beacon Chain](/ethereum/consensus/beacon-chain/)** 中 validator set 的 Merkleization
-- **[EIP-4844 Proto-Danksharding](/ethereum/advanced/eip-4844/)** 和 [KZG Commitments](/ethereum/advanced/kzg-commitments/) — 用於 blob 的 commitment 驗證
-- **[Verkle Trees](/ethereum/advanced/verkle-trees/)** — 下一代替代方案，用 vector commitment 取代 Merkle proof
+### Bitcoin
+- **交易 Merkle Tree**：區塊內所有交易的 Merkle root 存於 block header（使用 SHA-256d）
+- **SPV 驗證**：輕節點用 Merkle proof 驗證交易是否包含在區塊中
+- **Witness Merkle Tree**：SegWit 引入的 wtxid 基 Merkle tree
+
+### Ethereum
+- **[Merkle Patricia Trie](/ethereum/data-structures/merkle-patricia-trie/)**：結合 Merkle Tree 和 Patricia Trie 的進階結構
+- **三棵 Trie**：[State Trie](/ethereum/data-structures/state-trie/)、[Transaction Trie](/ethereum/data-structures/transaction-trie/)、[Receipt Trie](/ethereum/data-structures/receipt-trie/)
+- **SSZ Merkleization**：Beacon Chain 用二元 Merkle Tree 計算 `hash_tree_root`
+- **[Verkle Trees](/fundamentals/data-structures/verkle-trees/)**：下一代替代方案，用 vector commitment 取代 Merkle proof
+
+### Solana
+- **Transaction Merkle Tree**：每個 entry 的交易構成 Merkle tree
+- **Account State**：使用 append-only Merkle tree 驗證帳戶狀態
 
 ## 程式碼範例
 
@@ -197,11 +203,9 @@ print(f"proof length: {len(proof)}")
 
 ## 相關概念
 
-- [Merkle Patricia Trie](/ethereum/data-structures/merkle-patricia-trie/) - Ethereum 的進階 Merkle Trie，結合 path 壓縮
-- [Keccak-256](/ethereum/cryptography/keccak-256/) - Ethereum 執行層 Merkle Tree 使用的 hash 函數
-- [SHA-256](/ethereum/cryptography/sha-256/) - Beacon Chain SSZ Merkleization 使用的 hash 函數
-- [Transaction Trie](/ethereum/data-structures/transaction-trie/) - 交易的 Merkle root 存在 block header
-- [Receipt Trie](/ethereum/data-structures/receipt-trie/) - 收據的 Merkle root
-- [State Trie](/ethereum/data-structures/state-trie/) - 全域狀態的 Merkle root
-- [Verkle Trees](/ethereum/advanced/verkle-trees/) - 用 vector commitment 取代 hash-based Merkle proof 的下一代結構
-- [KZG Commitments](/ethereum/advanced/kzg-commitments/) - 多項式承諾方案，用於 blob 資料驗證
+- [雜湊函數概述](/fundamentals/cryptography/hash-function-overview/) - Merkle Tree 的基礎建構元件
+- [Keccak-256](/fundamentals/cryptography/keccak-256/) - Ethereum Merkle Tree 使用的 hash 函數
+- [SHA-256](/fundamentals/cryptography/sha-256/) - Bitcoin Merkle Tree 使用的 hash 函數
+- [Bloom Filter](/fundamentals/data-structures/bloom-filter/) - 另一種機率型資料結構
+- [Verkle Trees](/fundamentals/data-structures/verkle-trees/) - 用 vector commitment 取代 hash-based proof 的下一代結構
+- [KZG Commitments](/fundamentals/cryptography/kzg-commitments/) - 多項式承諾方案

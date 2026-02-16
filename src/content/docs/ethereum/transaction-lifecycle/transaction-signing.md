@@ -6,11 +6,13 @@ tags: [ethereum, transaction, signature, ECDSA]
 
 # 交易簽名
 
+> 本文聚焦 Ethereum 特定的實現細節。通用交易簽名理論請參見 [交易簽名](/fundamentals/concepts/transaction-signing/)。
+
 ## 概述
 
-交易簽名使用 [ECDSA](/ethereum/cryptography/ecdsa/) 演算法在 [secp256k1](/ethereum/cryptography/secp256k1/) 曲線上對交易雜湊進行簽章，產生 `(v, r, s)` 三個值。簽名同時證明了發送者的身份（authentication）和交易內容的完整性（integrity）。驗證者可以用 [ECRECOVER](/ethereum/cryptography/ecrecover/) 從簽名反推公鑰，進而推導出發送者地址 -- Ethereum 不需要在交易中顯式包含 `from` 欄位。
+Ethereum 交易簽名使用 [ECDSA](/ethereum/cryptography/ecdsa/) 演算法在 [secp256k1](/ethereum/cryptography/secp256k1/) 曲線上對交易雜湊進行簽章，產生 `(v, r, s)` 三個值。驗證者可以用 [ECRECOVER](/ethereum/cryptography/ecrecover/) 從簽名反推公鑰，進而推導出發送者地址 -- Ethereum 不需要在交易中顯式包含 `from` 欄位。
 
-## 核心原理
+## Ethereum 簽名細節
 
 ### ECDSA 簽章流程
 
@@ -23,7 +25,7 @@ tags: [ethereum, transaction, signature, ECDSA]
 
 簽章結果為 $(r, s)$，各 32 bytes。
 
-### 訊息雜湊的計算
+### 訊息雜湊的計算（RLP 編碼）
 
 依交易類型不同，待簽雜湊的輸入不同：
 
@@ -33,12 +35,12 @@ $$z = \text{Keccak-256}(\text{RLP}([\text{nonce}, \text{gasPrice}, \text{gasLimi
 **Legacy（EIP-155）**：
 $$z = \text{Keccak-256}(\text{RLP}([\text{nonce}, \text{gasPrice}, \text{gasLimit}, \text{to}, \text{value}, \text{data}, \text{chainId}, 0, 0]))$$
 
-**Typed Transaction（Type 2）**：
+**Typed Transaction（Type 2, EIP-1559）**：
 $$z = \text{Keccak-256}(\texttt{0x02} \| \text{RLP}([\text{chainId}, \text{nonce}, ...]))$$
 
 ### v 值的含義
 
-`v` 值（也叫 recovery ID）讓驗證者能從 `(r, s)` 唯一確定公鑰。一個 `r` 值對應兩個可能的公鑰（橢圓曲線的 $y$ 和 $-y$），`v` 指定是哪一個。
+`v` 值（recovery ID）讓驗證者能從 `(r, s)` 唯一確定公鑰。一個 `r` 值對應兩個可能的公鑰（橢圓曲線的 $y$ 和 $-y$），`v` 指定是哪一個。
 
 | 場景 | v 值 | 說明 |
 |------|------|------|
@@ -51,19 +53,28 @@ $$v = \text{recoveryId} + \text{chainId} \times 2 + 35$$
 
 Mainnet（chainId = 1）的 `v` 值為 37 或 38。
 
-### Signature Malleability
+### EIP-2718 Typed Transactions
+
+EIP-2718 定義了交易的 envelope 格式，使新的交易類型可以擴展而不破壞向後相容：
+
+- **Type 0**（Legacy）：傳統 RLP 編碼
+- **Type 1**（EIP-2930）：Access list transaction
+- **Type 2**（EIP-1559）：動態手續費交易
+- **Type 3**（EIP-4844）：Blob transaction
+
+Typed transaction 的簽名格式為 `TransactionType || RLP(...)`，chain ID 是交易欄位的一部分，不再編碼在 `v` 中。
+
+### Signature Malleability（EIP-2）
 
 [ECDSA](/ethereum/cryptography/ecdsa/) 簽章存在 malleability 問題：對於有效簽章 $(r, s)$，$(r, n - s)$ 也是有效簽章。Ethereum 透過 EIP-2 規定 $s$ 必須在曲線階的下半部分（$s \leq n/2$），消除這個問題。
 
-$$s_{low} = \begin{cases} s & \text{if } s \leq n/2 \\ n - s & \text{if } s > n/2 \end{cases}$$
-
 ### RFC 6979 確定性 k 值
 
-為避免 $r_k$ 的隨機數品質問題（PlayStation 3 破解事件的教訓），現代實作使用 RFC 6979：
+為避免 $r_k$ 的隨機數品質問題，現代實作使用 RFC 6979：
 
 $$r_k = \text{HMAC-DRBG}(k, z)$$
 
-從私鑰和訊息雜湊確定性地推導 $r_k$，同一筆交易永遠產生相同簽章，且不洩露私鑰資訊。
+從私鑰和訊息雜湊確定性地推導 $r_k$，同一筆交易永遠產生相同簽章。
 
 ## 在 Ethereum 中的應用
 
@@ -147,6 +158,7 @@ console.log('EIP-712 Signer:', typedSigner);
 
 ## 相關概念
 
+- [交易簽名（通用概念）](/fundamentals/concepts/transaction-signing/) - 跨鏈通用的簽名理論
 - [交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/) - 本筆記是流程第三步
 - [交易構建](/ethereum/transaction-lifecycle/transaction-construction/) - 流程上一步：產生待簽資料
 - [交易廣播與驗證](/ethereum/transaction-lifecycle/broadcast-validation/) - 流程下一步：簽好的交易送出

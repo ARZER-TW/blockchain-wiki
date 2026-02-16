@@ -63,10 +63,31 @@ export default defineConfig({
       { label: '知識圖譜', slug: 'graph' },
       { label: '學習路徑', slug: 'paths' },
       {
+        label: '通用基礎',
+        items: [
+          {
+            label: '密碼學',
+            autogenerate: { directory: 'fundamentals/cryptography' },
+          },
+          {
+            label: '資料結構',
+            autogenerate: { directory: 'fundamentals/data-structures' },
+          },
+          {
+            label: '零知識證明',
+            autogenerate: { directory: 'fundamentals/zero-knowledge' },
+          },
+          {
+            label: '通用概念',
+            autogenerate: { directory: 'fundamentals/concepts' },
+          },
+        ],
+      },
+      {
         label: 'Ethereum',
         items: [
           {
-            label: '密碼學基礎',
+            label: '密碼學',
             autogenerate: { directory: 'ethereum/cryptography' },
           },
           {

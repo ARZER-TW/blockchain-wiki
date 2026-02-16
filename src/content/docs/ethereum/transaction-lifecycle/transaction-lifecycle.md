@@ -47,7 +47,7 @@ flowchart TD
 
 ### 1. 密鑰生成與帳戶創建
 
-使用 [CSPRNG](/ethereum/cryptography/csprng/) 產生 256-bit 私鑰，透過 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線乘法推導公鑰，再經 [Keccak-256](/ethereum/cryptography/keccak-256/) 雜湊取後 20 bytes 得到地址。整個過程不需要鏈上操作 -- 帳戶在第一筆交易時才「實體化」到 [State Trie](/ethereum/data-structures/state-trie/) 中。
+使用 [CSPRNG](/fundamentals/cryptography/csprng/) 產生 256-bit 私鑰，透過 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線乘法推導公鑰，再經 [Keccak-256](/ethereum/cryptography/keccak-256/) 雜湊取後 20 bytes 得到地址。整個過程不需要鏈上操作 -- 帳戶在第一筆交易時才「實體化」到 [State Trie](/ethereum/data-structures/state-trie/) 中。
 
 詳見：[密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/)
 
