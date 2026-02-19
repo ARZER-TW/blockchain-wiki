@@ -1,0 +1,88 @@
+EIP-1559 Fee Simulator
+EIP-1559 Fee Simulator
+Section titled “EIP-1559 Fee Simulator”
+
+模擬 EIP-1559 base fee 動態調整機制。Base fee 根據區塊 gas 使用率自動調整：超過 15M target 則上升，低於則下降，每個區塊最多變動 12.5%。Base fee 被銷毀（burned），只有 priority fee（tip）歸驗證者。可透過預設情境觀察壅塞高峰、穩態運行與恢復過程中 base fee 的變化趨勢。
+
+EIP-1559 Fee Simulator
+Base Fee Dynamics
+London Fork
++ High Gas Block
++ Low Gas Block
+Auto Simulate
+Reset
+Congestion Spike
+Sudden demand surge drives base fee up rapidly
+Steady State
+Blocks hover near 50% target, stable base fee
+Recovery
+After congestion, demand drops and base fee decreases
+CURRENT BASE FEE
+20.00 Gwei
+BLOCKS SIMULATED
+0
+TOTAL BURNED
+0.000 ETH*
+TOTAL TIPS
+0.000 ETH*
+BASE FEE TREND (GWEI)
+0
+10
+20
+30
+40
+BLOCK GAS USAGE (VS 15M TARGET)
+50%
+MEMPOOL (SORTED BY EFFECTIVE PRIORITY FEE AT BASE=20.0 GWEI)
+Bridge Deposit
+max=38.3
+tip=6.4
+200k gas
+INCLUDABLE
+Contract Deploy
+max=28.9
+tip=5.1
+800k gas
+INCLUDABLE
+NFT Mint
+max=34.2
+tip=5.0
+120k gas
+INCLUDABLE
+Uniswap Swap
+max=28.8
+tip=4.4
+150k gas
+INCLUDABLE
+Multisig Exec
+max=33.4
+tip=3.2
+95k gas
+INCLUDABLE
+Aave Borrow
+max=28.3
+tip=2.6
+350k gas
+INCLUDABLE
+ETH Transfer
+max=28.1
+tip=2.3
+21k gas
+INCLUDABLE
+ERC-20 Transfer
+max=25.0
+tip=1.3
+65k gas
+INCLUDABLE
+newBaseFee = baseFee * (1 + (gasUsed - gasTarget) / gasTarget / 8)
+* ETH values are approximate (gasUsed x fee / 1e9)
+Base Fee Burned
+Base fee is destroyed, making ETH deflationary under high demand
+Priority Fee (Tip)
+Incentive for validators to include your transaction
+12.5% Max Change
+Base fee can only change +/-12.5% per block (1/8 of delta)
+上一页
+RLP Encoding
+下一页
+Transaction Signing Flow
