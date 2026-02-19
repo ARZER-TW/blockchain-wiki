@@ -2,6 +2,8 @@
 title: "Precompiled Contracts"
 description: "Precompiled Contracts, Precompile, 預編譯合約"
 tags: [ethereum, evm, precompile, cryptography]
+sidebar:
+  order: 1
 ---
 
 # Precompiled Contracts

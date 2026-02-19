@@ -5,10 +5,11 @@ import remarkMath from 'remark-math'
 import rehypeKatex from 'rehype-katex'
 
 import react from '@astrojs/react';
+import { remarkMermaid } from './src/plugins/remark-mermaid.mjs'
 
 export default defineConfig({
   markdown: {
-    remarkPlugins: [remarkMath],
+    remarkPlugins: [remarkMermaid, remarkMath],
     rehypePlugins: [rehypeKatex],
   },
   integrations: [starlight({
@@ -17,7 +18,7 @@ export default defineConfig({
       TableOfContents: './src/overrides/TableOfContents.astro',
       MarkdownContent: './src/overrides/MarkdownContent.astro',
     },
-    description: 'Interactive blockchain learning wiki covering Bitcoin, Ethereum, and Solana',
+    description: 'Ethereum 互動式視覺化學習平台',
     social: [
       { icon: 'github', label: 'GitHub', href: 'https://github.com/ARZER-TW/blockchain-wiki' },
     ],
@@ -31,25 +32,11 @@ export default defineConfig({
       },
       {
         tag: 'script',
-        attrs: {
-          type: 'module',
-          src: 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs',
-        },
+        attrs: { src: 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.min.js' },
       },
       {
         tag: 'script',
-        content: `
-          document.addEventListener('DOMContentLoaded', () => {
-            if (window.mermaid) {
-              window.mermaid.initialize({ startOnLoad: true, theme: 'dark' });
-            }
-          });
-          document.addEventListener('astro:page-load', () => {
-            if (window.mermaid) {
-              window.mermaid.run();
-            }
-          });
-        `,
+        content: 'mermaid.initialize({startOnLoad:true,theme:"dark"});',
       },
     ],
     customCss: [
@@ -60,29 +47,12 @@ export default defineConfig({
       root: { label: '繁體中文', lang: 'zh-TW' },
     },
     sidebar: [
+      {
+        label: '互動式視覺化',
+        autogenerate: { directory: 'ethereum/visualize' },
+      },
       { label: '知識圖譜', slug: 'graph' },
       { label: '學習路徑', slug: 'paths' },
-      {
-        label: '通用基礎',
-        items: [
-          {
-            label: '密碼學',
-            autogenerate: { directory: 'fundamentals/cryptography' },
-          },
-          {
-            label: '資料結構',
-            autogenerate: { directory: 'fundamentals/data-structures' },
-          },
-          {
-            label: '零知識證明',
-            autogenerate: { directory: 'fundamentals/zero-knowledge' },
-          },
-          {
-            label: '通用概念',
-            autogenerate: { directory: 'fundamentals/concepts' },
-          },
-        ],
-      },
       {
         label: 'Ethereum',
         items: [
@@ -111,68 +81,6 @@ export default defineConfig({
             autogenerate: { directory: 'ethereum/advanced' },
           },
         ],
-      },
-      {
-        label: 'Bitcoin',
-        items: [
-          {
-            label: '密碼學',
-            autogenerate: { directory: 'bitcoin/cryptography' },
-          },
-          {
-            label: '資料結構',
-            autogenerate: { directory: 'bitcoin/data-structures' },
-          },
-          {
-            label: '交易',
-            autogenerate: { directory: 'bitcoin/transactions' },
-          },
-          {
-            label: '共識',
-            autogenerate: { directory: 'bitcoin/consensus' },
-          },
-          {
-            label: '網路',
-            autogenerate: { directory: 'bitcoin/network' },
-          },
-          {
-            label: '進階主題',
-            autogenerate: { directory: 'bitcoin/advanced' },
-          },
-        ],
-      },
-      {
-        label: 'Solana',
-        items: [
-          {
-            label: '密碼學',
-            autogenerate: { directory: 'solana/cryptography' },
-          },
-          {
-            label: '帳戶模型',
-            autogenerate: { directory: 'solana/account-model' },
-          },
-          {
-            label: '交易',
-            autogenerate: { directory: 'solana/transactions' },
-          },
-          {
-            label: '共識',
-            autogenerate: { directory: 'solana/consensus' },
-          },
-          {
-            label: '執行環境',
-            autogenerate: { directory: 'solana/runtime' },
-          },
-          {
-            label: '進階主題',
-            autogenerate: { directory: 'solana/advanced' },
-          },
-        ],
-      },
-      {
-        label: '跨鏈比較',
-        autogenerate: { directory: 'comparisons' },
       },
     ],
   }), react()],

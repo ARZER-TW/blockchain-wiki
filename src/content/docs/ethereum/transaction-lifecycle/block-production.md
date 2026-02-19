@@ -2,6 +2,8 @@
 title: "區塊生產"
 description: "Block Production, 區塊打包, 出塊"
 tags: [ethereum, block-production, proposer, PoS]
+sidebar:
+  order: 7
 ---
 
 # 區塊生產

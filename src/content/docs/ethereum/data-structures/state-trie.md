@@ -2,6 +2,8 @@
 title: "State Trie"
 description: "State Trie, World State Trie, Global State Trie, stateRoot"
 tags: [ethereum, data-structure, trie, state, world-state]
+sidebar:
+  order: 5
 ---
 
 # State Trie

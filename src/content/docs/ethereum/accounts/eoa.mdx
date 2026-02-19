@@ -1,0 +1,209 @@
+---
+title: "EOA"
+description: "EOA, Externally Owned Account, 外部擁有帳戶"
+tags: [ethereum, account, eoa, wallet]
+sidebar:
+  order: 1
+---
+
+# EOA
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作 Wallet 節點，觀察外部帳戶（EOA）的地址生成與交易簽名流程。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZMONAVPEgcSDxIVsaW5rxIvEjQRrwqXEh8SJc8KRwovCosSMxI5TwqR0eXBlwq5NxIh1bGVzL1dhbMSvdMKjcG9zwpLDjMKqxL3CpHNpemXCgsKhMMOMwrLCoTHDjMKmwqVmxIJnc8KAwqVvcsSJcgDCpG3EiGUAwqbElXB1dHPClsKDwqRuYW1lwqpwcml2YXRla2V5xKbEqMWdwqTElMSWw4DFpsWoxarConRvxbfEqcWZxbtrxb3Fp8WpZcKkZMWxYcaExbnGh8aJxb9lwqhnxINMaW1pdMaRxobElcaIxb7Gi8KlxbBsdcaMxKfGhcW6xqHGlMaLxYBlbmTGn8asxbzCp2_FosWhxaPCl8ajxarCqmJsb2NrY2hhxJXGn8Klxodzxq7FqsKnYWRkcsSwc8eJx4vHjWXCp2LEtGFuY8apxbgAx4rGoceMxr1lwqNVU0THlsekx5jGgXjHrMSWx6XGiseOx5PHn2lwxp7GqsWdx6PHsseYwqhjb250cmFjx7rHoce9a8eMxaxyb8SpcnRpxLDCg8KnxrFhx4BlZMODwqXIknTEr8KmxLPEtWV0wqXIgceBcsKmZTkxZTYzwqhzdWJnyIVwaMSAxILEhMSGxZzEmMSOUsSRyLvGh8i-BF3EnMWcc8OcADzCisSixI0BC8aRwq9DcsSoxoIvS8W1IFDHh3LEuMS6wpLDjQISxI5AxYDFgsWExYbDikNTwpnCmsWKQsWOxZDFksWUxZZlchDFmsWcxZ7FoMWixLvHpsKtW8Wtxa_FsWUgxbR5XcaRwqbEhMWubmfGtWvDjQRRx6bGl8axybfKhcaRw7_KkcOAxrfGucm-wpPHpsKryoPFsMWyyofFtcqLyo3ElWfIisSfyaI3x6bFrMizxJRjyqjFtse7yozIhMqsyq7HmMePx5HHk3PHlcq5yqvKj8quwpTJoibJoinJoi7JoljIjciPybfIksSwwoDCicmOxI4MxpHCrcSsZMSuxLAvSW7GusmfxLvDjMOmyaXJp8WDxYXFh8OSxYomybJhxZHFk8WVxZfFmcWbxIkAyp90xrrEn8qyyqXKhcqIyp3KrsKRypNRy5HIkMuUc8KBx7TFq8yAxbLKiMuXxKMBDcaRxKvErcSvxLFPyqDEt8S5xLvDjQM-yaJsy6plxLzCtCjLscuzybXFlxzJusu5xZ_Lo8m-wpHHpsKgxrTGh8miJMyIy5PIk8yLzI3Gv8eBx4PHhceHbsmNzJMOyZJXZWIzL0LNgceEx4bElculyaECHMmiworMpcusw4zLrsWLwpLMqsm0y7XJtxHMr8WdzLHLvcy0zI3CrFvHgMeCzZHNhMqKy4TKu8qPypHJoiXLu8u9xrzMv82tzYLNkm7Kqs2zyq3Hi82VJMmiNsemwqnHm8SCx55lKCnGkcKoZnXHnsiSyILMhMmiJ8emwqfEh86Mzo7OkM6SzpRpzpbHl8qAzbxrTnVtYsm3zp7Hu86RzpPIh86ibs6XAmLKgMiEx51zyIbOlW7OrcW4zq_Ooc6jx6TMhQJIx6bKjMaxZM6-xKnPgM6xz4LHss-ERc6Ix7Zlx7h0z4vGls6gz47Os8eLz4RLzLvIkcy9woLKv8eSx5TCoMKoxa1vdsSMybfCu2h0y7xzOi8vcnBjLsikaC5idWlsZDo0NjIzNMySyY8PxpHCsENvbcS5bsaxxaMvQ82-zZRGyaLCgMylyaEBwpBkzaDLtMm2cgHNpcu6xrjLvMyzzLXOgMqOzoLPg822z6DMisKDyJ3GncSvwqXQlc2Ewq1zZcSvyIfImlbEtMaoz67PsHDPss-0z7bPuM-6z7zPvtCA0ILQhNCGxqXRgGXRgs-xz7PPtc-3z7l0z7vPvc-_0IHQg9CF0IfLmAHJuce7zJfLnsyZL8yb0KjMncmgzKDChMSOLNCbw4zMqNCgzKzJtxrQpc2n0KnMjcy2x7vGoMSWy4nQsMy9zIzGlc-ky4FzzYbJj82k0aRVyJJsxLFGzrDOvM2UypPDmMSOXs2axYbLp8mw0bTNonId0bjJvcWjyqLRu86f0pHOss21As6ZzI3CpGPEtMykx7vKnMy4AijOmseQz6XLgtCryqzSqCnNuMm-wpLHptGQxqfHoMaFzrQr0KrSsMq90oHEsMKCzI3HmseczozCqWFyZ86p0JJzwpDSiMSOEsaRwqzLosa6zY7FosaCbtKTBNKVAcKa0bHDiDLNoMKBwqnIp8SC0YTImsic0p3Tm8u4zabSocu-0qTSsNKoKtK9xaPSv9O6xbjDv8600rTUgcSpx5pvb8Svx53Tic-pzInMvdCyxqbGqMiAyrVrIMWq0LPIn2XCpkLToc6WyIHOk3TLi9OZARPLm9CNyIPIjmwvVMabybfSkwUexI7CrtKYxYfCjMWKGtOs067UitOw0LrIm9G1cgLQpdO-xJ_ChNONyIJfyJLHg8qbzrQqx4rImNC7wqYzMNWUbXPTinPCgsKoxJXFsnLGpsONC8K4wqVldtCSxKZpx4PCqGJveMinxZXCpCMy1bLUpBTMltKMz7_Sj8iObSDNimnUsMOwxI7CkNS1w4zCoNS40pzQoiPSoMyyxaPNqcaVwqXSocqLbs6pzqty0qgr1YTWjcaLwqbQp8a61pHWk8m3yq7Ck8miLMmiLcmiMtWYwoHCqMSJY8abxLRzEtCIxI4Vy5tEaXNwxIJ5xLLFsceF0pMGwrjLqcWBxYPEvMONPNaHxZcm1orNqNWGxpXRvMeh0qgs1Y_Oq2zCoNap1JnQtcSzdMeF1rIBFsyWy53Ln8yazJzWv8O0xI7DgtGx0bPFj8uyzaHQoifXi9G6147Mt8ah1qXWqdONzorHncef1KQXxpHCttCN0I_IgtOW1KzEsHQgRmF1x5_Rq8yfBH4y1oPNnS7XiMm3G9ew07_StcuAx5TSuc200rIuzprHk3HGqMSEypvSqC_WmMemx6_Ym9Ctz5DJojDVmMKA1KQY05zTnsWi06DPsMiC06R0w4zCltOp06vXq8yr0p0D2JbTudey07vGk9WE1IDZhdSCzrQv04fFuNSI1Ipl1IzHl9WY1JHRkdSU1ajUltSYyJ7IoNSd2LfOs9SgyIMB150Z1rXWt9a5Yda715rWvsyeyaEFwqrYj9eDzKbMoDHXh9i_163FlyLZg8KR143Gi9ePxqvSsjDXk9C715bUjsy8xLDCgdeYZcKl2ato1KTRt8e70IzQjtCQ2IJQxa7Hn9a_QMmiYtaDwr7Whtm30KHFlwTZu8qWW3N5zqrUis2xxbjKutCsyp3Yp9SG1JvWks6q1qDOg8miMcmiM9iv153Ylce7wq3Wtta41rrWvNebaNKTB8KAyaLCvNOp2bbJs9qhybfUptO2ybzWi9WF2rHRvsqSAjHag9eV15fZnNqL2o3UpMyu2r5NxbFoL03ErsiS1rl524Ziy4nQm3jbjNes245yKNmD2YnGi8KhQdae2rTWldKyMsemwqFC27vWlNKoM9qwxpXCoT3cg9q1x6TNlTTJojXZldu5w4s_WMOPA0YVF8KR3IHDi0BeaRDDvsK_UcO_wqJPUMKhKtSk0p_Hu8Kv24DZqNa7RNS805Jz0pMIcMSOw4zRscK-N9iTcirapNuV0qg03IfZvtyLctSNyI7Uj8SwwoTCq86myJNTyagyyqTEgsefaNSKxZfCr9CSybcgxbJ42IVoybfai9udwqfcs8S13LXTgcao3JTDh8KTwofCgXLDm8KB150e16DMmMug0anLpNmtw40I0a4CWNepzKnaoNWAK92C2YragNe0AtyR2obPodqIzI3HqMeq1KQf0IvNis2M1KzIhW7Ous-b1r_CrsqTBtaDw7DFisOMwrrcv86P25HRucWjwpnHps2rzqbNg8SV2qvEqdqt0rrSss6HzarKgsWuyqbFs8W13rDUm8uFypDSssqx0qtbxoLevN6y2JzXtARTzppb1JJl3rzCrdqz1pQs3r7SqDnPh1vGjnRh34XflMy4BFXKslvGmHPGmsacdN-P35HJt9-TzoHSqDvfod-j2pbVqN-Oy5vfqXLfq9qu0rI834vOnMef36jWn9-2353Grcemyadnzb_Zht6JPdWE0qPGlcKrzrjemc670qfKuW9iamXIh8q9z4fFgeCghcia2KrOtEfgoJlp4KCbxrPTiM-dyaJG1ZjCiN2qZcOAyYfOjMOAxo3Gj8OAwqPfo8ONZcKQxpfEg9-xx5_DjwDgoL0Cw4tTw4fCgM-oyI7Pq8WX0ZPRhNGV0YfRmNGa0YvRndGONMiNyoTFssmZecOZQjB4NmXIrTkzZGY3NOCgljgwYTQxYTgyMTNjOTXgoa45ZTTSrTEyMGY01ZQ2MTg34KCWMzhlyJrgooNkOWbgoaZmMzngoabgob3GgW_DmSrgoZkx4KKHNmYyZjbOq2bgobcwMuChtMefMWbgoprGjmQwYzJjYtWUMjjgob1kM2XXnSDLm9eh0afYtNiLyaED0a4Dwo7YkMuv3L8F1YPWnNexxovgopDMg-Cgpd-J17bGleCikNSk2brHu8Ks1bfSjtSsb9W8z5XTpAbKk8m52bLNm8Kq2p_bjdWA2LLep9O41pnUmNaQyrnftc21BFndhsWq1pvMnN2IzrQ51qnWq-Cgltau0o7WsdGh1onbot23xLHgornSkwN6ypPCiOCjgDHLsN6D0p3en9uR4KOuxozfmcaQxpPOl9-f4KOMxq_gpI_UpCTYs9aLL86o27zTpEzDjQXFmdmyxLzCvti-4KOh0p3VteCjpNuT4KOmZdm_xpLfiFfgpI3gpK7Cpt-1zrQ72ZXdlciGZd2Y0IDJt8KhI9qKwqbgpJzWlOCgqsKlMjbVlDDXnSXgorbgo77LodaL0pMCw5rgpKDdteCjndKZzZ3gpIjgpKfQogfgo4TMnNmExovgoLjfpMabxp3go4nQrgRX4KSUxargpaHfpcad1KTXise7wrTXv9qUyIPEsUfEg8mb2pfHp927BGrgpKDCtNqdxYrYkuCkidCi1rTgpKrLvdu3x47apsSpyJrfnN-s0rJA3qtbbduox7jElMm334Xgo6rSskHgpLLgo7LatgJCyaJD2K_UpNevx7vCquCiudiD3aDgpZHgpZMF04zgpKPRr-Ckptuy1YAI3obdh9G92q_go4XWjNmO3rHevs60QNWY3Y7dkGXdksWD3ZTZqN2X3ZnJt92byIPdnd2f3aHdo9qKwqRUZd2g4KCqwqRmxJLUpNu14KOR4Kao4KWD1K_du8yhw40GzYjgpKPDjOCkpdy_CeCmtcWq4KSu25bKnuCmueCln-Cnq-CmndCuAkHgpLjgp4fgpLvgp4ly4KS_4KWB4Kee3YnfjcKmMS7gpYkx153Oj9q-3LDbgtqN1LDCguCnotGw4Kelw4jbsdmA0KLdteCmhsyz2b3gp7HgprfSssmxxILXlNqF3Yvah8yL2orajNa92o7Rod2B2r7go5PEsVTgo5ZHd-CjmN27BdCYBTzWg9aFMdS54KaDxZfek-ColeCmusyN1o_Wi92I0qhD4KSN4KOw0argp7LYrAI84KO11qzgo7jWsNSk3oXgp5zgpJrZntOi24bJpAXNv-Coj-CmseCoksWX4KWM4Ki84Kew4KSt2KTMuAPDs9mI4Ka7ZdSD4KClAj3gqabZkNSLz5zHrdmV4KCq2ZjHg9SX3aTQtNSb4KmT1J_GuMiDJtSk0bDSi9KN0o_Spti43bsIFsygw6jWg8Om0pvgqLnfqtmD4KCL4Ka2zr_Pms680qjPktKr0q3EteCpod6JRuCgoOCgotiq0qhH4Kml4Ki-343HsciLzZVKyaJN4Kmm4Kmo4Kmw3ozMitOMxpXGsMay05HTk9OV4KW005jRoS3VtuCqgS_SkM-B06PduwnDosygcOCqiuCqjOClmsWX4Kq64Kme4KqQ4KiY4KqS4KqDzb_Sss-G4KqX0q7gqprRvwJJ4KCDx4ZzaOCqn9KySuCqotaO4Kqk0b3WocmiT8miVMmiVuCqq92Ky5LejdWZzI3goI3emN6azrzgqrTTlMWq4Kq31KQu4Kq71bjgqr3gq4_SkwoAypN-4KuGMcmx4KqNcuCruuCri-Cpps-N4KqU0rJL4KCD4KqY0q_UgtKoTOCrmcSD4KuczbLfuN6JTeCroMak4KuiyIngpp5QyaLfoNqx4Kqsx77VmOCqsMaLwqfPlM-W4Ku14Kq2xaPgqrjMky_gpJnTn-CpueCrgNGsCgrgo5vYvdy_15_gqZ7gpKzgpK7Ssd6JTuCsneCrjcSp4Kym4KqmyaJJyaLgrJXaseCprdmS4Kmv4Kyn4Kqu1JDgqbJj1JXgqbXgpYHgrLbIpuCpu9SiAcKY1KQw1KfIgsiE1IrUrNSuyZ7gq4HgpJ8E0bfgpZbUtuCjoOCmstKdCuClndGq25TShNWI1Ypr1YzgqalO25rVkuClidWW4Kyo1Zvgp4zVnsS01aDVotWk1abgrbjVqtWs1a7WldWx1bLXnTHZptuB2anbg9ms0awLGMygXNCby4_Qn-Csh-Css-Csv-Col-CpoOComd6JT9ua4Kie4KutzIraidud4Kij24TXndiP4KiH2afgqIngqKTSkws2ypPGnuCmr92_4K6f4KuIybfYj-Cuot2D0rJQ4K6o25zgqbfgrq7XnNGhNt220abduNek3bsL4KuoA-CqieCnpdeq4K6-cuCtoeCsv-CpptuW4Kun4KWpZcev15034K-M16LRqOCvj-CumHzKk8O23oHcvzPgp6rgrqTXkNKyVeCvnuCsq-Cgls-Vx7nUpDjJkk_goJTgoJZ0L-Cqrtur4K-QcuCkoMKq3Lwe3L_grpLgr5rej-Cgk2rXs-CrllbgppzHu8Kgyq7NlVfJolnXl9-N4KCtx5_XnTngrpPcseCultuF3bsMwrLgpKDCjNuL3L802bvgrqPgp6zSqFfgr4XgrZPaiOCootuf0aE60IvgqKkvUkxQIEXHnsWc0pMM24jgp6PgpoAxfty_NdmDxaXgr4LeiVjgr5vSqFngsY_Gk-CxkuCgguCxjMW84LGUxrbgp6_gpKzgqYXWneCsmcq84KmpWuCmo9GhO8aRwqvJlMmWby9I4KyX0pMN0a4G2qPgpKN44LCH4KyH4K-L4LCK1o7go6jFuNC5zoEs4KaZ3ola4KSNwqTgq5rgrJjarOCmveCmnlvJolzau9Gh4Ki04K6y4K6U2argrrXduw5g4KSgzLbgpq8D2bXcv-CvouCvgd6H4KSv4KuWW-CwsOCon-CrruCurOCvh-CwtMyT3IrakVPOgS9TyLPgsqrQrNKTDtKVBtaC4K2t4Kem4KuH4K2w0KLgr7ngrIrMjd-GypDgrqXgq5Zc04DEhNOSyIjeseCxvuCrll3Ph8Svyo_RmeCpgdmH4LGaz4fgprngoJ3gqalf15fgs4TIkRrUpD7grLTYteCnveCxrcOK4KeiwrjcvOCpmtm4ybfJkeCxt-Cqkd6I4LGZ4KWe4K2A4KmHyIvPhF3gp7bdluCnuOCkveCnuuClgNud4KWC37_goKrCouClh9SkP8yW4LKvyqzQlNCOYsSV4KW60awQ1qQG0pfgsrbUt-Cshdy_4LCe4LK83IjbuuCzgNuXXtyA3ILgtJbJol_cgEPgsI7GiOCphOCzk-CxnsuG4Kae4LKUAmHgsaLMk8mm4Kam4Kao4KeT4Kaq3bsPWuCnotiy4KSjazjcv8ua4LOp4K2G4LKe4LSh4LOR2rHgsr7OtF7gp4Ddj82Q3ZHdk-CkueCniOCztuCni9Wd3Z7gp5Tgp4_Hk-CnkeC0r8il343CouChmded4LSVxbjcr-Cus-CulUHYmcuC0pMRCOCnolTgrp0BVOCvhOCsh-CwtuC0u-Cvr-Czq9uXYOCkuOCnguCnhGXgp4bgs7TgpLzFl-Cwk92l4LWe0rdz153gtJrFuNGl4K-k3bnFouC1oc2XBsOq4K-r4KyH4LGk4LWs4LCt0rLgtKngsLHMvsaVyIDgraPIhciH1KTgtJ_gqoDgq7zgqr7em-CluzjJosKy4KyE4KaC4K-X4KK14Kme4KaI4LWtz5ngq4_SqM624KuT4KqZ4KCH4KuWY-CthdqL4Kyf04Tgqall4Kur2ZTgtpDgrKnFquC1hc2u4Ke94Kyu4Ku34Kyw1KTHq-CpkeCstdSe4Ky32IzLjgLDpOCsvOCsh9e84LaM4KuV25dk4Lax4K2BzrRj4Kms1avZkdmT4Kqt4LKi0LHgrZXgrZfZm-Cpt9Sc4LeG4K2b1KHDjMOt151F4LCf4K6024TUsOCsogLbiuCoj-CokeCzpnLgpJjgspzgs6rgtL3JotqL4Kic2oTgr4bUmuCviOCopcyTRuCtotSp4K2l1K3FquCtqNGsBOCjmgLDrtaD4LSP4Ki44K-XzJXgpIzgsZrgrqPGt27VidmZ4K264Kez0J_gt7ts4K2-1ZXVl-C2ueCugtWd1Z_VodWj1aXIg9Wn1anVq9Wt1IrVr-CujzLXnSHgpY3gr43go7_gpZDduwLDuMqT4K2syajNm-ClmNy_zYjguJPgs63TgOCqpOCkkeCjiuCwmOC2kNKD4Kye0ZHUpFHGkcKx1KjgraTUq9SoZMadzrLct-CkgwbTqOCytsWF4KiB3L_guLPgtqXcgOC1mcSp4LG70Kzgsb3fv-Cjq-CzisyN3IHLm96-4Lmn27zNtQPDp-C2scSmcsaoxpHgrY_gt5rHvtOA4K6I4Lip4KCk0K7gqaPckkHDgNyBANynUMKiIT3UpE3gtIHGgsiFZ2XbpmXFm8mV24bgpZMH4Ka04LSO4K2v4KmbybfZpeC1rMKj0Lrgs4bgt7gEXOCkjeCgs8ik4Kqlyq_gubLgt73IoE3gupTFlXnXneCvreCjveC4teClj9260awGw5bgp6LCpOCkhuClmeCyucWX0IrguYLgrbTgpKzgqrLGs-C5htyNypNcypPgs7LguYnSq9C6xrLKrsmKQ8KWzLnEjg7grIHMlOCgveC7lQIlxI4P4LuZ4LuY4LK-4Lucy4rJkALEjhDgu5vOmOC7lwHEjhEA4KyMzrLgu5wo05rgu5kRAcO_4Lucy4zgu6bgu64C4LujyaIqxI4T4LuZEgDgu7nJoivgu67gu5kUxZ7fteC7nNakAeC8jNaz4LuqAtam4LyR4LuZFuC8lMuO4Lu8ARfFnt6-4LucL8SOGOC7mRfgu7jgu5wwxI7gvJ7EjhngvJTauAEa4LuZG-C8lDLEjuC8kgEc4LyN37_gu5wzxI7gvLHEjhwB4KS04Ly7yaLcj-C8uOC7mR3gvJQ14L2A4LuZHuC8lOCuuAHgu5jEjh_gvJ_OgeC7nDfEjgvgu5kf4L2C4LygyaI5xI4i4L2bA9-Q37_ft8qs4LucO8SOJOC9mwXgvaXbvOC9p8qP4LucPMSOKuC9mwbgva_fkuC9nuCpqsSOK-C9mwjgvIcC2poBJ-C7mSbgvZXQrOC7nEHEjijgvobgvYLgvI7JouCmoAHgvofEjingvJRDxI7gvpQB4L224L2D27zgu5xF4LuXBdGv4Luw4KqT4Luy4KCm4L2T4LunASzgvKfJokfgvZPgu63gvqrgu77gvbtI4LuXBMSOLeC-pOCrj-C7nOCtiwEv4LuZLeC-rALgqqjgvqrgvr_gvrLgvZbJokvgu5fgo5oBLuC-ueCqv-C7nOCkn-C-veC7mS7gv4FN4L6jxI4u4L-G4L6JyaJOxI4w4LuZ4L6-4L6B4KumAeC-uMSOMeC8lOCsouC_jOC7mTLgvJTgq6jgv6Tgu5k24LyUVeC_mOC7mTfgvJRW4L634LuZOOC8lOCwlgHgv7vEjjngvJRY4L2Z4L6pOuC8lFnEjuC_vwE6AQDgu5zgtLPhgIvgu5k7AOC5pcqs4Lmv1pTgu5zgsogB4YCTxI484LyU4LuL4YCb4LuZPeC8lF3Ejj7hgKLgvo_gvYQCXsml4LuZP-C8lF_EjuGAo8SOP-GAjeC7nOCylAHhgK_EjkHgvJRh4YC04LuZQuC8lNut4L2RA8SOQ-C_js-b4LucY8SOROC7mUPgv4HJj0bgu5nhgY3gvoFl4YGG4LuZReC7quC5ssSOTeC7mVEB4YCVyo_hgJfJt-C7leCpo8SO4YGf4L294LyG4LuVypTLmeC7meC9muC7v9-JxI4g4L2b4L-a4L2oypPgv7MBI-C9mwThgbDgv70l4LuZ4L2s4YCOypPhgIgBIeC7meC9ouC-neGAmOC7isSOM-C7meGBneGCgsmF4YKM4YGe4YCU4Lmu37XCpsi1xrjRhMKQwqbIgW5m4KChwoDCp9WlcsWByILclMOZwpnhgqnhgqnCmsqu4YKb4YKYdeGCmuGCnMiC4YKfZ-GCoeGCo-GCpW7hgqfhgqrhgqs"
+  title="Wallet (EOA)"
+  height={500}
+/>
+
+## 概述
+
+EOA（Externally Owned Account）是由私鑰控制的 Ethereum 帳戶。與[合約帳戶](/ethereum/accounts/contract-account/)不同，EOA 沒有程式碼，只能透過持有私鑰的人發起交易。所有 Ethereum 上的交易最終都源自某個 EOA——即使是合約之間的互動，最初也是由 EOA 觸發。
+
+## 核心原理
+
+### 帳戶結構
+
+EOA 在 [State Trie](/ethereum/data-structures/state-trie/) 中的四元組：
+
+| 欄位 | EOA 的值 |
+|------|----------|
+| `nonce` | 已發送交易數量，從 0 開始 |
+| `balance` | Wei 餘額（1 ETH = $10^{18}$ Wei） |
+| `storageRoot` | 空 Trie root hash（`0x56e81f...`） |
+| `codeHash` | 空 code hash：`keccak256(0x)` = `0xc5d246...` |
+
+EOA 的識別方式：`codeHash == keccak256(0x)`。RPC 層面可用 `eth_getCode` 檢查——回傳 `0x` 即為 EOA。
+
+### 控制機制
+
+EOA 由 [secp256k1](/ethereum/cryptography/secp256k1/) 橢圓曲線上的一對密鑰控制：
+
+```
+私鑰 (256 bits) → 公鑰 (512 bits) → 地址 (160 bits)
+```
+
+完整的[地址推導](/ethereum/accounts/address-derivation/)流程：
+1. 隨機生成 256-bit 私鑰（透過 [CSPRNG](/fundamentals/cryptography/csprng/)）
+2. 橢圓曲線乘法得到公鑰：$P = k \cdot G$
+3. 取公鑰的 [Keccak-256](/ethereum/cryptography/keccak-256/) hash 後 20 bytes 為地址
+
+### 交易發起
+
+只有 EOA 能發起交易。交易結構（[EIP-1559](/ethereum/accounts/eip-1559/) 格式）：
+
+```
+{
+  chainId,
+  nonce,              // 必須等於帳戶當前 nonce
+  maxPriorityFeePerGas,
+  maxFeePerGas,
+  gasLimit,
+  to,                 // 目標地址（合約或另一個 EOA）
+  value,              // 轉帳 ETH 數量
+  data,               // calldata（合約呼叫用）
+  accessList,
+}
+```
+
+交易必須用私鑰簽名（[ECDSA](/ethereum/cryptography/ecdsa/)），簽名後的 `(v, r, s)` 附加到交易上。任何人都可透過 [ECRECOVER](/ethereum/cryptography/ecrecover/) 從簽名還原出公鑰和地址，驗證發送者身份。
+
+### EOA 的傳統限制
+
+在 Pectra 升級前，EOA 有以下限制：
+
+1. **單一操作**：一筆交易只能呼叫一個目標
+2. **無條件邏輯**：無法設定花費條件、多重簽名等
+3. **Gas 支付**：必須自己支付 gas（除非使用 meta-transaction）
+4. **不可升級**：地址與私鑰綁定，無法更換控制方式
+
+### EIP-7702：EOA 可執行合約邏輯（Pectra，2025/5/7）
+
+EIP-7702 是 Pectra 硬分叉中對 EOA 影響最大的提案，根本性地改變了 EOA 的能力邊界。
+
+**機制**：EOA 可以透過 Type 4（Set Code）交易，指定一個合約地址作為其「委託代碼」（delegation designation）。設定後，該 EOA 在被呼叫時會執行指定合約的 bytecode，但使用自己的 storage 和 balance。
+
+**解鎖的能力**：
+- **交易批次處理**（batching）：一筆交易中完成多個操作（如 approve + swap）
+- **Gas 代付**（sponsored transactions）：第三方可以為 EOA 支付 gas
+- **替代驗證方式**：支援 passkey、session key 等非 secp256k1 簽名驗證
+
+**與 EOA 傳統模型的差異**：
+- EOA 不再必然是「無 code」的帳戶——設定委託後，`eth_getCode` 會回傳 delegation designation（`0xef0100 + address`）
+- 但 EOA 仍然保留私鑰控制權，可以隨時撤銷或更換委託
+- 這模糊了 [EOA](/ethereum/accounts/eoa/) 和 [合約帳戶](/ethereum/accounts/contract-account/) 的傳統二元劃分
+
+**實際採用**：上線一週內超過 11,000 個 EOA 完成授權。WhiteBIT 和 OKX 等交易所已整合 EIP-7702 支援。
+
+### EIP-4337 Account Abstraction
+
+EIP-4337 透過另一條路徑解決 EOA 的限制，讓合約帳戶也能發起「類交易」（UserOperation），實現：
+- 社交恢復（social recovery）
+- 多重簽名
+- Gas 贊助（paymaster）
+- Batch 操作
+
+但底層仍然需要 bundler（本質是 EOA）來提交交易上鏈。
+
+EIP-7702 和 EIP-4337 是互補而非互斥的方案：EIP-7702 讓現有 EOA 獲得部分合約能力；EIP-4337 則是完整的合約帳戶抽象化框架。兩者可以結合使用——EOA 透過 EIP-7702 委託給 EIP-4337 相容的合約，同時享有兩套機制的優勢。
+
+## 在 Ethereum 中的應用
+
+- **[密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/)**：EOA 的建立不需要鏈上操作，離線生成密鑰即可
+- **[交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/)**：所有交易的起點
+- **[Nonce](/ethereum/accounts/nonce/)**：防止重放攻擊，確保交易順序
+- **[Gas](/ethereum/accounts/gas/)**：EOA 需要有足夠 ETH 支付 gas
+- **[EIP-155 重放保護](/ethereum/accounts/eip-155/)**：chainId 防止跨鏈重放
+- **DApp 互動**：使用者透過 EOA 與智能合約交互
+
+## 程式碼範例
+
+### JavaScript（ethers.js）
+
+```javascript
+import { Wallet, JsonRpcProvider, parseEther } from 'ethers';
+
+// 建立新 EOA
+const wallet = Wallet.createRandom();
+console.log('address:', wallet.address);
+console.log('private key:', wallet.privateKey);
+console.log('mnemonic:', wallet.mnemonic.phrase);
+
+// 從私鑰恢復
+const restored = new Wallet('0x...');
+console.log('restored address:', restored.address);
+
+// 連接 provider
+const provider = new JsonRpcProvider('https://eth.llamarpc.com');
+const connected = wallet.connect(provider);
+
+// 檢查是否為 EOA
+async function isEOA(address) {
+  const code = await provider.getCode(address);
+  return code === '0x';
+}
+
+console.log('is EOA:', await isEOA(wallet.address));
+
+// 查詢 EOA 狀態
+const balance = await provider.getBalance(wallet.address);
+const nonce = await provider.getTransactionCount(wallet.address);
+console.log('balance:', balance.toString(), 'wei');
+console.log('nonce:', nonce);
+
+// 發送交易
+const tx = await connected.sendTransaction({
+  to: '0x...',
+  value: parseEther('0.01'),
+});
+console.log('tx hash:', tx.hash);
+const receipt = await tx.wait();
+console.log('status:', receipt.status);
+```
+
+### Python（web3.py）
+
+```python
+from web3 import Web3
+from eth_account import Account
+
+w3 = Web3(Web3.HTTPProvider('https://eth.llamarpc.com'))
+
+# 建立新 EOA
+account = Account.create()
+print(f"address: {account.address}")
+print(f"private key: {account.key.hex()}")
+
+# 從私鑰恢復
+restored = Account.from_key('0x...')
+print(f"restored: {restored.address}")
+
+# 檢查是否為 EOA
+def is_eoa(address: str) -> bool:
+    code = w3.eth.get_code(address)
+    return code == b''
+
+# 查詢狀態
+balance = w3.eth.get_balance(account.address)
+nonce = w3.eth.get_transaction_count(account.address)
+print(f"balance: {balance} wei")
+print(f"nonce: {nonce}")
+```
+
+## 相關概念
+
+- [合約帳戶](/ethereum/accounts/contract-account/) - 與 EOA 互補，由程式碼控制的帳戶
+- [地址推導](/ethereum/accounts/address-derivation/) - 從私鑰到地址的完整計算過程
+- [密鑰生成與帳戶創建](/ethereum/transaction-lifecycle/key-generation/) - EOA 的建立流程
+- [secp256k1](/ethereum/cryptography/secp256k1/) - EOA 使用的橢圓曲線
+- [ECDSA](/ethereum/cryptography/ecdsa/) - 交易簽名演算法
+- [Nonce](/ethereum/accounts/nonce/) - EOA 的交易序號
+- [State Trie](/ethereum/data-structures/state-trie/) - EOA 狀態的儲存位置
+- [EIP-55 地址校驗](/ethereum/accounts/eip-55/) - 地址的 checksum 格式
+- [交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/) - EOA 發起交易的完整流程

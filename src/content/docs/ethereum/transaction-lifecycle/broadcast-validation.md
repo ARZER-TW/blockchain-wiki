@@ -2,6 +2,8 @@
 title: "交易廣播與驗證"
 description: "Transaction Broadcasting, 交易傳播, 交易驗證"
 tags: [ethereum, transaction, broadcast, validation, p2p]
+sidebar:
+  order: 5
 ---
 
 # 交易廣播與驗證

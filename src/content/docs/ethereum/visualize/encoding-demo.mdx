@@ -1,0 +1,15 @@
+---
+title: "RLP Encoding"
+description: "互動式 RLP 編碼視覺化：逐 byte 觀察 Recursive Length Prefix 編碼過程與前綴範圍規則"
+tableOfContents: false
+sidebar:
+  order: 5
+---
+
+import EncodingDemo from '../../../../components/visualizations/EncodingDemo'
+
+# RLP Encoding Visualizer
+
+> RLP (Recursive Length Prefix) 是 Ethereum 執行層的核心序列化格式，只處理兩種型別：byte string 和 list。選擇預設範例或輸入自訂值，即時觀察 RLP 編碼的 prefix、length、data 各段位元組如何生成。
+
+<EncodingDemo client:load />

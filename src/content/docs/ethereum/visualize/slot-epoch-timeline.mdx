@@ -1,0 +1,15 @@
+---
+title: "Slot / Epoch Timeline"
+description: "Interactive visualization of Beacon Chain consensus: slots, epochs, proposers, attestations, and Casper FFG finality"
+tableOfContents: false
+sidebar:
+  order: 6
+---
+
+import SlotEpochTimeline from '../../../../components/visualizations/SlotEpochTimeline'
+
+# Slot / Epoch Timeline
+
+> 視覺化 Beacon Chain 的時間結構與共識流程。每個 Slot 為 12 秒，32 個 Slot 組成一個 Epoch（6.4 分鐘）。每個 Slot 由 RANDAO 選出的 Proposer 提議區塊，Committee 成員進行 Attestation 投票。Epoch 邊界為 Casper FFG Checkpoint：當超過 2/3 驗證者投票支持，Checkpoint 從 Pending 升級為 Justified，再到 Finalized。點擊任一 Slot 查看詳細資訊。
+
+<SlotEpochTimeline client:load />

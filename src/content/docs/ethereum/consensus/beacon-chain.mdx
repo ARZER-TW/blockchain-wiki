@@ -1,0 +1,264 @@
+---
+title: "Beacon Chain"
+description: "Beacon Chain, 信標鏈, CL"
+tags: [ethereum, consensus, pos, beacon-chain, consensus-layer]
+sidebar:
+  order: 1
+---
+
+# Beacon Chain
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作分散式帳本節點，視覺化理解區塊鏈網路中節點間如何同步資料。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZMOMwp3EgcSDxIVsaW5rxItkw40BB8KlxIfEiXPDnAAcworCosSMdsKkdHlwZcKrT2JqZWN0L0pTT07Co3Bvc8KSw40Fw4nDjQPDpMKkc2l6ZcKSw4zCjB7CpWbEgmdzwoHCqWNvbMSCcHNlZMODwqVvcsSJchPCpG3EiGUAwqbElHB1dHPCkcKDwqRuYW1lwqNvxK7Ep8SpxaXCpMSTxJXDjMKGwqdvxarFqcWrxa3Fr8WxZcKkanNvbsW3xKrCpsSEcsSUZ8KlxbtrxazDjMKHwqpwcm_EqnJ0aWXFkMKldmFsdWXColtdxKPEjG3GjcSrxK3Er8SxxLPEtcS3xLnEu8S9xK3Fg8WFxYfFicWLxY1hxY_FkcWTxZVhxZfFmcWbxZ3FnxrFosWkxabFqMWqxazFrsWwxbLFtMW2xKjEqgDFusSUa3TFv8aBx5LGhMeVxofGicaLxrDGj3TGkW7Gk8aVxax1xprGnMaexqDGosKBxqTGpsaow5kveyJ0byI6ImLFtSIsImbGnG3IgCLGpmljZciFIsalxqfIkDo1yIbEh27Ij8iAMH3GrWR0xrDCsU5ldHfFnWsvU3Vic2PGkWLFs8a4xLwFXcONAsK7xrzFhsKCwqEww4zDsMKhMS7FjMWOc8KAxZzFnmVyx5vFo8SJx5BuxoLHk8aFxbLCqVtjaGFubmVsXceoxpDGksecxJXDgMegdMmRwpLHlMaGwqfFsnNzx4LGh8eZZcepx6vHrcedxpfCicmpxbLCqHLEsGVpdsWZxrDDv8aUybbCkcOMworHscadyYrHtMWQwqfJl8mZyZtswrBsxZlnyYouyKVoLmJ1aWxkyJ98xrDCrcayxLDEssqUx6x0aMS4xLrItHHIt2vIusa-wr7HgMmFyYfHi8mKEceOyY7Fp8mQx6LJucmyxbXGs8ihybHHm8aVw4zCksmlyZHCkcKEyZPJssqoZ8qqxrDCoMqExJVzw4DGlGHIsWwAyonHs8ahxqPIk8aowqDIn3HGsMKsyqXGtFBhcsWYyqzGuQbItgHCnsqyxYjFismEx4LFkMWSxZTFlsWYxZrJiMWfDMq7xaXKvcuLy4DGiMaKxozJscmzyaHLh8KNy4rKv8uOx5dqy5PLlcaWwpF5y57Ki8ugx7bLomXChMKix77CpcmXdWPKsciIb23CpciNyI_Ht8iUZMScxovIjwHIn2fGsMKuVcagbHMvRnXImsagxovLr8S8AcOqw5DCsMqyyLzIvsOIyYFCy7jHg8u7x4bHiMu_yrhyFcyDyY_JkcKTy4DCoMawwqhmzL_EsWnHp8aVacyHY8ambMqCyaJrdsuAwqdhZGTJvMmtyZ_HqsyNx51tzJDFq8moy47MrsaoxrAAzJbFrGvNnMqCzoPDgMyaxp_LoMKCy47Cp2LGpsmZyI_CqcusZ3XFsm7Fq8KQyJ95yqNDxovHqsWUL0TJnGF5zYPDjQZgyLfDqc2JyL3FicmBGs2Py7rHhcu9xZnDgsyAyYoLzZjMhcyRx6TCpWXKgM6ZzavLh8KKzbvJksekxb9uX8agxbLOh8euyobDjM6KyozCgcKqz43EisSUX21zw4zDiMKJxKRkzarJscKvyKTIpsioL1DIrMSTc8qryLPEvcOSMs6uyL7JgDHNjseBxY_Kt8mJchvOvMeRxavNm8uOyZXKj8mayZzJnsyLyaDHrM2sw4DNr8msya7Kls22ybTNrHXNr8WpYs-raM-Ex513z5PMnMqOyZjQhGzCscmbz6Zya8qYyqrKm8qdyp_In3LOns6gxpxszqPOpc6nz64Gw6TEmcKqz7LOsDHOss-3zrTLvMeHy77His-6Dc-9yr7Gg8uAz4DPgsuExbjDv82sw4zCjs-Hx6PJqsaLz4xpz47JscqDz5B70JzHtc-W0ZfPmM-Lz5vPncifesiiz6XIp9ClyKrIrMiuyLDIssqtxL3EmAHChtC6z7TJg9C-z7nFnwHRhsyG0IHJltCfypHQhsW4zIzQicaVyaTGgMmmx5LNvc-J0I3Jr9CQxpLOg8qGwo3LgMm7yb3Jv8qB0ZnSkdGQ0Z3KjdCDypHQosil0anQpsqZ0KnKnsqgz6B4y6fLqcSyy6vLrdGvy7BoyLfCqMu1xr_Os8eE0YDNk864zZUK0bzOvsaGzIjHp9CHzbfShcedw4zCidGSy4DMk8yVx67FiMWIw43SnMydx7jFh8ygx77Co8iDYsKkzKjMqsysZc2_xZnMsciaxaXTlG_Mo2jMpcynyInMq8STzK3MnsywyJnMs8ife8qj0qsvy5DKqs6oBcKMxYDCmNK0yrTOs9G5yYoU0r3RiMuOwqbLgsqmzoHRj8KR0ZLLjcekwqbTttCYybHLlMeuy5jEgsuby53Gm8qKzovHtdOey6TPoMmwxbjKpMSuyqYv0qvNgzzDjMOcy7XEmUXDjMKR07_OuXIZ1INzwpXOhsyL1IfEsdCKy4DMoW_GsMK00IhnLG7Ol8ixcizUucih0obMh9Oa1L_VgdWD1YXJitWI1KPUusaVxJkG0YnMntWO04PVgtWEbdWG1ZPLg9S7zb7Tr9SgxKrVgNWc1ZDVn9WS1YnNrMSZB8-H1LbLjs2d1LjVlHTSkXTUvMe-0o_ThMmj1YzIidW8zLbVi82-1ZrMi9We1YbVo86_1aXHqNaHyYrQitKcwoTCpcagdMqUwqbSq8yjxZTFncKnIzVh1p3Wnc2fzqBTxr0Q057DmUB7CiAgx73HvzrWrNOXyIXWqtas05rIgNas05zWstaryJLTkta2yJfWsyLVpda2MAp9z5_EjMOMwpDGsMKvRGlzcMSCeS9CbG_MpsahzYMKWsu1Sz3UsM2VDtS00ZPFstW0xbjLhtOFw6jWkMKr0JbXlWvGodajxYYywqvXj2HIj2jFlMWfy5TWk8qUy5TMntOqyI5l14Zk1JHUodeM147XkC9XYXTJl86oAcOM15rFhMWGxYjDiDzXns-6GNeh1I3Ghtekx5rNrGvLmcubwqDSnMKAyJ93y6dJ0YfXksWqx75uzYPPksi3w4bStMOIMtiWxZ8C16HUt9GN0IrPh9KL2JvPj8qFw4zCiNi5xKrOj2_FlGXJmc6I0pzCg9OewqfQldCX1pJp1pTJskLYq8aL1pjMv3QSyJ9kzLdTxKpjacamL0zKlcmK2I3DgtSpy7XDi0DCgsK-McOHHAAAyLfDodi1yYoS1LTClNW60qnVtdWixpV504nNsdmd0ZnNrHvNr8qWyZvFhHPHqNWty4fDjdGJzbTIpdCZxbzDjM-H0IDHpNicZcKsy6xyzqbVocqmzoPFiMKG1K7LgMKpzpDEgtOhKCnNns2gzYDNo27Skc2mzo7Vpdqr2q3Noc2B2rHPkMOMw6zSnMKC2ZHZk8Km2aVkypZywqzJvHHKncm8TsyyZcODyJ_MlMmxwqrYqMaCL1RleHTNg27YkMa9zYQIPtm3cgPYuNWz1InShtOI26bTgsm0zoPClG3DjMOow4zDrtWX16nXq9eWZdevZdex17PXtde3yYrCr2XOmcmKIHTbmHQgaMmK053XusaH25fbmdOe177Ij8ifzIrUoc6fzpnQsNuW0aBy2I1yw5DDhNC6wozOsdK2zZHOts2Uz7oEzZjUjM6O0ZXGoMym2L_LlsKSdsOMw63YoMmcwqUzMDDPm9q-wqjElNyFcsiTxJks0YrcgcuEyI5rwqjIg3jHhcWdwqQjQd2QyJ_Ursy3zLnKnsy8zL7ar82Cz67NhcOQw5jQus2Mz7Xco8610YHHidSxFtS02pjYvsmxzZ_auNqw0Y_DrM2nzanalGvcs82v2oPNtNqM26vNuMW8w67YvNWZ05LOgdKR1a_Zg2XRmsm2zonUmcufxqLOjdaK243OlHLOls6YzprIn9S-ybHCrNuUxarYqnTYrNiuwrTEmcKk2LLYtNG41LEF26Xamd2z0ofHoc283oTehsuWwpF33oTZhdmH2YnUlNmL057Fg9yBzLDcjMKm2ZXem9mXxZPZmTLYgXXXitGoz6fPqdCW143PrdGwBW7DjQQQ0bXNjduiF92o2qbRv8qQ0IXWgdaJyarSjdCP3brVvd20wofQlM-q34rds9mB05DQnt-ZypLKlNuEypfSpMqc0qbdksKa2KfYqd693pzIs1bfj8OM3qHbogbept2q2LrbqNKIyaferNKaw7_esciD3rPaut6H3rbMnsKoY9OrayDFstuA1pXft96_xoDOmQDdksKd37XbleCgmNitz64Cwrnfj8OS373eo82VB-CggNej3qjdvtuq0Y3eggEB4KCJ2YbKlN604KCN3onMm8ai2YzgoI_goJHdh-CglNyL2ZLgoJfZltqx34DgoJvYgcOMwpvfhdKh34ffpc-szqgDwrvfj8Kj35LdoeCgqc-635HJjcyEz75z3anJlN-Y0KDSgsaO1YHfnMWyyavGotCO1abJsuChpdWWAQDfpN-Jz6zds8SZAd-p0p7JnMqT2aZy0KfKmt-xyp_goYnTvM-j34bRqt-I0JfYjVrfj9-02JFlzYrIv9-T4KGYxZ8P35bRvuChuMmd35vWg9KM4KGp0o7foNaC04XDvuChsdCX36fDv-Cht9KAyZzCsd-t24Vh4KG90qXgooDPoMOMwpnIolPHvtqeypbMvcqeZSBEx7LNg-CiiQRW0rTDgiTbogjcqeCghNK-xbLUht6q1oHSmsO-05DTmeCiuMKie9eF4KKvwpzgorLgorTJr-Cit8qU4KK64KK84KCjwrLfj-CjgOCijMWI4KOC26IJ4KOG3qrPiMaG4KOK0onRjOChpNWc4KCy1JjHsuCgu8WQ4KOQypTgo5J9zoPEoB7ClsSMAWcA3azdmW7Clmvgo79o2bPClm1qAGcC0oRnwpbchQBt4KSIzpcAbAHgpI_ClnZu4KSMAcO_wpbIp-CklwLgpKB5cQBkxabVicKWe8mLZOCkn8KWxb3gpKl24KSIxpjgpLR14KSZ1YHgpLHCiHcAdeCkpOCkscKJdAB4xabgpLrKh3QBeQDgpKDDjMKNegDgpKfgpJrRkHoByYvgpY3CkeCkqXvgpLXCkuClhXzgpLXDjOCli2QD4KWNw43gpYVk4KSO4KSr27DgpIvXiOCktcOs4KWo1K7gpIDars2ixovgpLHDreCkndSu4KSw27LgpazCkeCkjuClh8O-4KKwAMOMwpjgpLnVnOCkscO_w4zCmuCmgsKY4KWAxJngpoLCnOCmgsKb4KaFybTCluChtcSO4KaR4KaNAQbgpItlAtWoybTVqtWg4KSr1a_gpbFlBOCmn8aS4Kah1azVtsKmZ8acdcWXwpDCpsWTbmZpZ8KAwqfKgMut2rDDiz_DmcKZ4KeB4KeBwpo"
+  title="Distributed Ledger"
+  height={500}
+/>
+
+## 概述
+
+Beacon Chain 是 Ethereum 的 Consensus Layer，2020 年 12 月上線，The Merge 後正式成為主鏈共識引擎。它管理 [Validators](/ethereum/consensus/validators/) 註冊表、slot/epoch 時間分配、[Attestation](/ethereum/consensus/attestation/) 收集、[RANDAO](/ethereum/consensus/randao/) 隨機數產生，並透過 [Casper FFG](/ethereum/consensus/casper-ffg/) + [LMD GHOST](/ethereum/consensus/lmd-ghost/) 達成共識與最終性。
+
+## 核心原理
+
+### 時間劃分
+
+Beacon Chain 把時間切成固定單位：
+
+| 單位 | 長度 | 說明 |
+|------|------|------|
+| **Slot** | 12 秒 | 最小時間單位，每個 slot 最多一個區塊 |
+| **Epoch** | 32 slots = 6.4 分鐘 | 一輪完整的 attestation 週期 |
+
+Slot 從 0 開始編號，epoch $e$ 包含 slot $[32e, 32e + 31]$。
+
+### Proposer 選擇
+
+每個 slot 有一個 proposer，選擇過程：
+
+1. 取當前 epoch 的 [RANDAO](/ethereum/consensus/randao/) seed
+2. 對 active validator 集合做確定性 shuffle（Fisher-Yates，使用 swap-or-not 網路）
+3. 按 effective balance 加權的偽隨機選擇
+
+加權公式讓 effective balance 較高的 validator 更可能被選為 proposer。Pectra 升級前有效餘額上限為 32 ETH，大戶需要跑多個 validator；Pectra 後上限提升至 2048 ETH（EIP-7251），單一 validator 可承載更多質押。
+
+### Committee 分配
+
+每個 epoch 開始時，所有 active validator 被分配到 32 個 slot 的 committee：
+
+1. Shuffle 所有 validator（用 epoch 的 RANDAO seed）
+2. 平均分成 32 組，每組對應一個 slot
+3. 每個 slot 的 validator 再細分為多個 committee（最多 64 個）
+4. 每個 committee 至少 128 個 validator
+
+Committee 成員在其分配的 slot 進行 [Attestation](/ethereum/consensus/attestation/)。
+
+### State Transition
+
+Beacon Chain 維護一個 `BeaconState`，每個 slot 進行 state transition：
+
+$$\text{state}_{n+1} = \text{state\_transition}(\text{state}_n, \text{block}_n)$$
+
+State transition 分為三步：
+
+1. **Slot processing**：即使沒有區塊也要執行
+   - 更新 state slot number
+   - 處理 cache 過期
+
+2. **Epoch processing**（每 32 slots 一次）：
+   - 計算 attestation 獎勵與懲罰
+   - 更新 [Casper FFG](/ethereum/consensus/casper-ffg/) justification/finalization
+   - 處理 validator activation/exit queue
+   - 更新 effective balances
+   - 重置 RANDAO mix
+   - 計算 sync committee
+
+3. **Block processing**：
+   - 驗證 proposer 簽名（[BLS Signatures](/ethereum/cryptography/bls-signatures/)）
+   - 更新 [RANDAO](/ethereum/consensus/randao/) reveal
+   - 處理 [Attestation](/ethereum/consensus/attestation/)
+   - 處理 [Slashing](/ethereum/consensus/slashing/) 證據
+   - 處理存款和退出
+
+### Beacon State 主要欄位
+
+| 欄位 | 說明 |
+|------|------|
+| `slot` | 當前 slot |
+| `validators` | 完整 validator 列表 |
+| `balances` | 各 validator 餘額 |
+| `randao_mixes` | 最近 256 個 epoch 的 RANDAO mix |
+| `slashings` | 各 epoch 的 slashing 總量 |
+| `previous_epoch_attestations` | 前一 epoch 的 attestation |
+| `current_epoch_attestations` | 當前 epoch 的 attestation |
+| `justification_bits` | 最近 4 個 epoch 的 justification 狀態 |
+| `finalized_checkpoint` | 最新 finalized checkpoint |
+| `current_sync_committee` | 當前 sync committee |
+
+State 使用 [SSZ 編碼](/ethereum/data-structures/ssz-encoding/) 序列化，root hash 記錄在 [區塊結構](/ethereum/consensus/block-structure/) 的 `state_root` 欄位。
+
+### Sync Committee
+
+每 256 個 epoch（約 27 小時）隨機選出 512 個 validator 組成 sync committee。他們的工作是簽署每個 slot 的 head block，讓輕節點可以用少量簽名驗證鏈的狀態，無需下載所有 attestation。
+
+## 在 Ethereum 中的應用
+
+### 出塊流程
+
+一個 slot 內的完整流程（以 [交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/) 的 [區塊生產](/ethereum/transaction-lifecycle/block-production/) 和 [共識與最終性](/ethereum/transaction-lifecycle/consensus-finality/) 階段為例）：
+
+1. **t=0s**：Slot 開始，proposer 從 EL 取得 execution payload
+2. **t=0s**：Proposer 組裝 Beacon Block 並廣播
+3. **t=4s**：Attester 對區塊投票（[Attestation](/ethereum/consensus/attestation/)）
+4. **t=8s**：Attestation aggregator 聚合投票並廣播
+5. **t=12s**：下一個 slot 開始
+
+### 與 Execution Layer 的互動
+
+CL 和 EL 透過 Engine API（JSON-RPC）溝通：
+
+- `engine_forkchoiceUpdatedV3`：通知 EL 當前 head/safe/finalized block
+- `engine_getPayloadV3`：從 EL 取得 execution payload
+- `engine_newPayloadV3`：讓 EL 驗證 execution payload
+
+### Fork 歷史
+
+Beacon Chain 經歷多次升級（fork）：
+
+| Fork | 時間 | 重要變更 |
+|------|------|----------|
+| Phase 0 | 2020-12 | Beacon Chain 啟動 |
+| Altair | 2021-10 | Sync committee、獎勵調整 |
+| Bellatrix | 2022-09 | The Merge 準備 |
+| Capella | 2023-04 | 質押提款功能 |
+| Deneb | 2024-03 | [EIP-4844 Proto-Danksharding](/ethereum/advanced/eip-4844/) |
+| Pectra | 2025-05 | EIP-7251 MAX_EFFECTIVE_BALANCE 提升、EIP-7002 EL 觸發退出、EIP-6110 存款上鏈 |
+| Fusaka | 2025-12 | EIP-7917 Proposer 預測透明化、共識層最佳化 |
+
+## Pectra/Fusaka 升級更新（2025）
+
+### Pectra 升級（2025/5/7，epoch 364032）
+
+Pectra 對 Beacon Chain 帶來三項重大變更：
+
+**EIP-6110：驗證者存款處理移至執行層**
+- 存款不再透過 CL 輪詢 EL 的 deposit log，改為直接在 execution payload 中攜帶存款資訊
+- 存款確認時間從約 12 小時（`ETH1_FOLLOW_DISTANCE`）大幅降至約 13 分鐘（1 epoch）
+- Block processing 步驟中的存款處理邏輯相應調整
+
+**EIP-7002：執行層可觸發驗證者退出**
+- 新增從 EL 發起 validator exit 的路徑，不再強制依賴 BLS signing key
+- 提款地址持有者可直接透過 EL 合約觸發退出，強化了 withdrawal credential 的控制權
+
+**EIP-7251：`MAX_EFFECTIVE_BALANCE` 提升至 2048 ETH**
+- Proposer 選擇的加權空間大幅擴展
+- 大型質押者可合併多個 validator 為一個，減少 validator set 膨脹
+- Effective balance 的步進與更新規則不變，但上限放寬
+
+### Fusaka 升級（2025/12/3，slot 13,164,544）
+
+**EIP-7917：區塊提議者預測透明化**
+- 改善 proposer 選擇的可預測性，讓 validator 更早知道自己的出塊時間
+- 降低 [RANDAO](/ethereum/consensus/randao/) 操控對 proposer 選擇的影響
+
+### 硬分叉節奏
+
+自 Pectra/Fusaka 起，Ethereum 確立每年約兩次硬分叉的升級節奏，交替處理 EL 和 CL 改進。
+
+## 程式碼範例
+
+```python
+# Beacon Chain state transition（簡化版）
+from dataclasses import dataclass, replace
+from typing import Optional
+
+@dataclass(frozen=True)
+class BeaconState:
+    slot: int
+    validators: tuple
+    balances: tuple
+    randao_mixes: tuple
+    finalized_checkpoint: 'Checkpoint'
+
+def state_transition(state: BeaconState, block: Optional['BeaconBlock']) -> BeaconState:
+    # 1. Slot processing（不可變更新）
+    state = process_slots(state, block.slot if block else state.slot + 1)
+
+    # 2. Block processing（如果有區塊）
+    if block is not None:
+        state = process_block(state, block)
+
+    return state
+
+def process_slots(state: BeaconState, target_slot: int) -> BeaconState:
+    while state.slot < target_slot:
+        # 每個 slot 都要處理
+        state = replace(state, slot=state.slot + 1)
+
+        # Epoch boundary 額外處理
+        if state.slot % 32 == 0:
+            state = process_epoch(state)
+
+    return state
+
+def process_epoch(state: BeaconState) -> BeaconState:
+    state = process_justification_and_finalization(state)
+    state = process_rewards_and_penalties(state)
+    state = process_registry_updates(state)
+    state = process_slashings(state)
+    state = process_effective_balance_updates(state)
+    state = process_randao_mixes_reset(state)
+    return state
+```
+
+```javascript
+// 查詢 Beacon Chain 狀態（使用 Beacon API）
+async function getBeaconInfo(beaconUrl) {
+  // 取得當前 head
+  const headRes = await fetch(`${beaconUrl}/eth/v1/beacon/headers/head`);
+  const head = await headRes.json();
+
+  // 取得 finality checkpoints
+  const finalityRes = await fetch(
+    `${beaconUrl}/eth/v1/beacon/states/head/finality_checkpoints`
+  );
+  const finality = await finalityRes.json();
+
+  // 取得特定 slot 的 proposer
+  const epoch = Math.floor(head.data.header.message.slot / 32);
+  const dutiesRes = await fetch(
+    `${beaconUrl}/eth/v1/validator/duties/proposer/${epoch}`
+  );
+  const duties = await dutiesRes.json();
+
+  return {
+    slot: head.data.header.message.slot,
+    epoch: epoch,
+    finalizedEpoch: finality.data.finalized.epoch,
+    justifiedEpoch: finality.data.current_justified.epoch,
+    proposerDuties: duties.data,
+  };
+}
+```
+
+## 相關概念
+
+- [區塊結構](/ethereum/consensus/block-structure/) - Beacon Block 的完整結構定義
+- [Validators](/ethereum/consensus/validators/) - Beacon Chain 管理的驗證者集合
+- [Attestation](/ethereum/consensus/attestation/) - Validator 在每個 slot 的投票
+- [Casper FFG](/ethereum/consensus/casper-ffg/) - Finality gadget，決定哪些 checkpoint 被 finalized
+- [LMD GHOST](/ethereum/consensus/lmd-ghost/) - Fork choice rule，決定 canonical head
+- [RANDAO](/ethereum/consensus/randao/) - 偽隨機數來源，用於 proposer/committee 選擇
+- [Slashing](/ethereum/consensus/slashing/) - 惡意行為的懲罰機制
+- [SSZ 編碼](/ethereum/data-structures/ssz-encoding/) - Beacon State 的序列化格式
+- [BLS Signatures](/ethereum/cryptography/bls-signatures/) - Validator 簽名方案
+- [BLS12-381](/ethereum/cryptography/bls12-381/) - BLS 簽名使用的橢圓曲線
+- [共識與最終性](/ethereum/transaction-lifecycle/consensus-finality/) - 交易流程中的共識階段
+- [區塊生產](/ethereum/transaction-lifecycle/block-production/) - 交易流程中的出塊階段

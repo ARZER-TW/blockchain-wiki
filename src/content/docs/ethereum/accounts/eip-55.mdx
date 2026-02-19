@@ -1,0 +1,207 @@
+---
+title: "EIP-55 地址校驗"
+description: "EIP-55, EIP-55 地址校驗, Mixed-Case Checksum, Address Checksum"
+tags: [ethereum, account, address, checksum, eip-55]
+sidebar:
+  order: 4
+---
+
+# EIP-55 地址校驗
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作 Wallet 節點，觀察 Ethereum 地址的生成過程，理解 EIP-55 校驗的基礎。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZMONAVPEgcSDxIVsaW5rxIvEjQRrwqXEh8SJc8KRwovCosSMxI5TwqR0eXBlwq5NxIh1bGVzL1dhbMSvdMKjcG9zwpLDjMKqxL3CpHNpemXCgsKhMMOMwrLCoTHDjMKmwqVmxIJnc8KAwqVvcsSJcgDCpG3EiGUAwqbElXB1dHPClsKDwqRuYW1lwqpwcml2YXRla2V5xKbEqMWdwqTElMSWw4DFpsWoxarConRvxbfEqcWZxbtrxb3Fp8WpZcKkZMWxYcaExbnGh8aJxb9lwqhnxINMaW1pdMaRxobElcaIxb7Gi8KlxbBsdcaMxKfGhcW6xqHGlMaLxYBlbmTGn8asxbzCp2_FosWhxaPCl8ajxarCqmJsb2NrY2hhxJXGn8Klxodzxq7FqsKnYWRkcsSwc8eJx4vHjWXCp2LEtGFuY8apxbgAx4rGoceMxr1lwqNVU0THlsekx5jGgXjHrMSWx6XGiseOx5PHn2lwxp7GqsWdx6PHsseYwqhjb250cmFjx7rHoce9a8eMxaxyb8SpcnRpxLDCg8KnxrFhx4BlZMODwqXIknTEr8KmxLPEtWV0wqXIgceBcsKmZTkxZTYzwqhzdWJnyIVwaMSAxILEhMSGxZzEmMSOUsSRyLvGh8i-BF3EnMWcc8OcADzCisSixI0BC8aRwq9DcsSoxoIvS8W1IFDHh3LEuMS6wpLDjQISxI5AxYDFgsWExYbDikNTwpnCmsWKQsWOxZDFksWUxZZlchDFmsWcxZ7FoMWixLvHpsKtW8Wtxa_FsWUgxbR5XcaRwqbEhMWubmfGtWvDjQRRx6bGl8axybfKhcaRw7_KkcOAxrfGucm-wpPHpsKryoPFsMWyyofFtcqLyo3ElWfIisSfyaI3x6bFrMizxJRjyqjFtse7yozIhMqsyq7HmMePx5HHk3PHlcq5yqvKj8quwpTJoibJoinJoi7JoljIjciPybfIksSwwoDCicmOxI4MxpHCrcSsZMSuxLAvSW7GusmfxLvDjMOmyaXJp8WDxYXFh8OSxYomybJhxZHFk8WVxZfFmcWbxIkAyp90xrrEn8qyyqXKhcqIyp3KrsKRypNRy5HIkMuUc8KBx7TFq8yAxbLKiMuXxKMBDcaRxKvErcSvxLFPyqDEt8S5xLvDjQM-yaJsy6plxLzCtCjLscuzybXFlxzJusu5xZ_Lo8m-wpHHpsKgxrTGh8miJMyIy5PIk8yLzI3Gv8eBx4PHhceHbsmNzJMOyZJXZWIzL0LNgceEx4bElculyaECHMmiworMpcusw4zLrsWLwpLMqsm0y7XJtxHMr8WdzLHLvcy0zI3CrFvHgMeCzZHNhMqKy4TKu8qPypHJoiXLu8u9xrzMv82tzYLNkm7Kqs2zyq3Hi82VJMmiNsemwqnHm8SCx55lKCnGkcKoZnXHnsiSyILMhMmiJ8emwqfEh86Mzo7OkM6SzpRpzpbHl8qAzbxrTnVtYsm3zp7Hu86RzpPIh86ibs6XAmLKgMiEx51zyIbOlW7OrcW4zq_Ooc6jx6TMhQJIx6bKjMaxZM6-xKnPgM6xz4LHss-ERc6Ix7Zlx7h0z4vGls6gz47Os8eLz4RLzLvIkcy9woLKv8eSx5TCoMKoxa1vdsSMybfCu2h0y7xzOi8vcnBjLsikaC5idWlsZDo0NjIzNMySyY8PxpHCsENvbcS5bsaxxaMvQ82-zZRGyaLCgMylyaEBwpBkzaDLtMm2cgHNpcu6xrjLvMyzzLXOgMqOzoLPg822z6DMisKDyJ3GncSvwqXQlc2Ewq1zZcSvyIfImlbEtMaoz67PsHDPss-0z7bPuM-6z7zPvtCA0ILQhNCGxqXRgGXRgs-xz7PPtc-3z7l0z7vPvc-_0IHQg9CF0IfLmAHJuce7zJfLnsyZL8yb0KjMncmgzKDChMSOLNCbw4zMqNCgzKzJtxrQpc2n0KnMjcy2x7vGoMSWy4nQsMy9zIzGlc-ky4FzzYbJj82k0aRVyJJsxLFGzrDOvM2UypPDmMSOXs2axYbLp8mw0bTNonId0bjJvcWjyqLRu86f0pHOss21As6ZzI3CpGPEtMykx7vKnMy4AijOmseQz6XLgtCryqzSqCnNuMm-wpLHptGQxqfHoMaFzrQr0KrSsMq90oHEsMKCzI3HmseczozCqWFyZ86p0JJzwpDSiMSOEsaRwqzLosa6zY7FosaCbtKTBNKVAcKa0bHDiDLNoMKBwqnIp8SC0YTImsic0p3Tm8u4zabSocu-0qTSsNKoKtK9xaPSv9O6xbjDv8600rTUgcSpx5pvb8Svx53Tic-pzInMvdCyxqbGqMiAyrVrIMWq0LPIn2XCpkLToc6WyIHOk3TLi9OZARPLm9CNyIPIjmwvVMabybfSkwUexI7CrtKYxYfCjMWKGtOs067UitOw0LrIm9G1cgLQpdO-xJ_ChNONyIJfyJLHg8qbzrQqx4rImNC7wqYzMNWUbXPTinPCgsKoxJXFsnLGpsONC8K4wqVldtCSxKZpx4PCqGJveMinxZXCpCMy1bLUpBTMltKMz7_Sj8iObSDNimnUsMOwxI7CkNS1w4zCoNS40pzQoiPSoMyyxaPNqcaVwqXSocqLbs6pzqty0qgr1YTWjcaLwqbQp8a61pHWk8m3yq7Ck8miLMmiLcmiMtWYwoHCqMSJY8abxLRzEtCIxI4Vy5tEaXNwxIJ5xLLFsceF0pMGwrjLqcWBxYPEvMONPNaHxZcm1orNqNWGxpXRvMeh0qgs1Y_Oq2zCoNap1JnQtcSzdMeF1rIBFsyWy53Ln8yazJzWv8O0xI7DgtGx0bPFj8uyzaHQoifXi9G6147Mt8ah1qXWqdONzorHncef1KQXxpHCttCN0I_IgtOW1KzEsHQgRmF1x5_Rq8yfBH4y1oPNnS7XiMm3G9ew07_StcuAx5TSuc200rIuzprHk3HGqMSEypvSqC_WmMemx6_Ym9Ctz5DJojDVmMKA1KQY05zTnsWi06DPsMiC06R0w4zCltOp06vXq8yr0p0D2JbTudey07vGk9WE1IDZhdSCzrQv04fFuNSI1Ipl1IzHl9WY1JHRkdSU1ajUltSYyJ7IoNSd2LfOs9SgyIMB150Z1rXWt9a5Yda715rWvsyeyaEFwqrYj9eDzKbMoDHXh9i_163FlyLZg8KR143Gi9ePxqvSsjDXk9C715bUjsy8xLDCgdeYZcKl2ato1KTRt8e70IzQjtCQ2IJQxa7Hn9a_QMmiYtaDwr7Whtm30KHFlwTZu8qWW3N5zqrUis2xxbjKutCsyp3Yp9SG1JvWks6q1qDOg8miMcmiM9iv153Ylce7wq3Wtta41rrWvNebaNKTB8KAyaLCvNOp2bbJs9qhybfUptO2ybzWi9WF2rHRvsqSAjHag9eV15fZnNqL2o3UpMyu2r5NxbFoL03ErsiS1rl524Ziy4nQm3jbjNes245yKNmD2YnGi8KhQdae2rTWldKyMsemwqFC27vWlNKoM9qwxpXCoT3cg9q1x6TNlTTJojXZldu5w4s_WMOPA0YVF8KR3IHDi0BeaRDDvsK_UcO_wqJPUMKhKtSk0p_Hu8Kv24DZqNa7RNS805Jz0pMIcMSOw4zRscK-N9iTcirapNuV0qg03IfZvtyLctSNyI7Uj8SwwoTCq86myJNTyagyyqTEgsefaNSKxZfCr9CSybcgxbJ42IVoybfai9udwqfcs8S13LXTgcao3JTDh8KTwofCgXLDm8KB150e16DMmMug0anLpNmtw40I0a4CWNepzKnaoNWAK92C2YragNe0AtyR2obPodqIzI3HqMeq1KQf0IvNis2M1KzIhW7Ous-b1r_CrsqTBtaDw7DFisOMwrrcv86P25HRucWjwpnHps2rzqbNg8SV2qvEqdqt0rrSss6HzarKgsWuyqbFs8W13rDUm8uFypDSssqx0qtbxoLevN6y2JzXtARTzppb1JJl3rzCrdqz1pQs3r7SqDnPh1vGjnRh34XflMy4BFXKslvGmHPGmsacdN-P35HJt9-TzoHSqDvfod-j2pbVqN-Oy5vfqXLfq9qu0rI834vOnMef36jWn9-2353Grcemyadnzb_Zht6JPdWE0qPGlcKrzrjemc670qfKuW9iamXIh8q9z4fFgeCghcia2KrOtEfgoJlp4KCbxrPTiM-dyaJG1ZjCiN2qZcOAyYfOjMOAxo3Gj8OAwqPfo8ONZcKQxpfEg9-xx5_DjwDgoL0Cw4tTw4fCgM-oyI7Pq8WX0ZPRhNGV0YfRmNGa0YvRndGONMiNyoTFssmZecOZQjB4NmXIrTkzZGY3NOCgljgwYTQxYTgyMTNjOTXgoa45ZTTSrTEyMGY01ZQ2MTg34KCWMzhlyJrgooNkOWbgoaZmMzngoabgob3GgW_DmSrgoZkx4KKHNmYyZjbOq2bgobcwMuChtMefMWbgoprGjmQwYzJjYtWUMjjgob1kM2XXnSDLm9eh0afYtNiLyaED0a4Dwo7YkMuv3L8F1YPWnNexxovgopDMg-Cgpd-J17bGleCikNSk2brHu8Ks1bfSjtSsb9W8z5XTpAbKk8m52bLNm8Kq2p_bjdWA2LLep9O41pnUmNaQyrnftc21BFndhsWq1pvMnN2IzrQ51qnWq-Cgltau0o7WsdGh1onbot23xLHgornSkwN6ypPCiOCjgDHLsN6D0p3en9uR4KOuxozfmcaQxpPOl9-f4KOMxq_gpI_UpCTYs9aLL86o27zTpEzDjQXFmdmyxLzCvti-4KOh0p3VteCjpNuT4KOmZdm_xpLfiFfgpI3gpK7Cpt-1zrQ72ZXdlciGZd2Y0IDJt8KhI9qKwqbgpJzWlOCgqsKlMjbVlDDXnSXgorbgo77LodaL0pMCw5rgpKDdteCjndKZzZ3gpIjgpKfQogfgo4TMnNmExovgoLjfpMabxp3go4nQrgRX4KSUxargpaHfpcad1KTXise7wrTXv9qUyIPEsUfEg8mb2pfHp927BGrgpKDCtNqdxYrYkuCkidCi1rTgpKrLvdu3x47apsSpyJrfnN-s0rJA3qtbbduox7jElMm334Xgo6rSskHgpLLgo7LatgJCyaJD2K_UpNevx7vCquCiudiD3aDgpZHgpZMF04zgpKPRr-Ckptuy1YAI3obdh9G92q_go4XWjNmO3rHevs60QNWY3Y7dkGXdksWD3ZTZqN2X3ZnJt92byIPdnd2f3aHdo9qKwqRUZd2g4KCqwqRmxJLUpNu14KOR4Kao4KWD1K_du8yhw40GzYjgpKPDjOCkpdy_CeCmtcWq4KSu25bKnuCmueCln-Cnq-CmndCuAkHgpLjgp4fgpLvgp4ly4KS_4KWB4Kee3YnfjcKmMS7gpYkx153Oj9q-3LDbgtqN1LDCguCnotGw4Kelw4jbsdmA0KLdteCmhsyz2b3gp7HgprfSssmxxILXlNqF3Yvah8yL2orajNa92o7Rod2B2r7go5PEsVTgo5ZHd-CjmN27BdCYBTzWg9aFMdS54KaDxZfek-ColeCmusyN1o_Wi92I0qhD4KSN4KOw0argp7LYrAI84KO11qzgo7jWsNSk3oXgp5zgpJrZntOi24bJpAXNv-Coj-CmseCoksWX4KWM4Ki84Kew4KSt2KTMuAPDs9mI4Ka7ZdSD4KClAj3gqabZkNSLz5zHrdmV4KCq2ZjHg9SX3aTQtNSb4KmT1J_GuMiDJtSk0bDSi9KN0o_Spti43bsIFsygw6jWg8Om0pvgqLnfqtmD4KCL4Ka2zr_Pms680qjPktKr0q3EteCpod6JRuCgoOCgotiq0qhH4Kml4Ki-343HsciLzZVKyaJN4Kmm4Kmo4Kmw3ozMitOMxpXGsMay05HTk9OV4KW005jRoS3VtuCqgS_SkM-B06PduwnDosygcOCqiuCqjOClmsWX4Kq64Kme4KqQ4KiY4KqS4KqDzb_Sss-G4KqX0q7gqprRvwJJ4KCDx4ZzaOCqn9KySuCqotaO4Kqk0b3WocmiT8miVMmiVuCqq92Ky5LejdWZzI3goI3emN6azrzgqrTTlMWq4Kq31KQu4Kq71bjgqr3gq4_SkwoAypN-4KuGMcmx4KqNcuCruuCri-Cpps-N4KqU0rJL4KCD4KqY0q_UgtKoTOCrmcSD4KuczbLfuN6JTeCroMak4KuiyIngpp5QyaLfoNqx4Kqsx77VmOCqsMaLwqfPlM-W4Ku14Kq2xaPgqrjMky_gpJnTn-CpueCrgNGsCgrgo5vYvdy_15_gqZ7gpKzgpK7Ssd6JTuCsneCrjcSp4Kym4KqmyaJJyaLgrJXaseCprdmS4Kmv4Kyn4Kqu1JDgqbJj1JXgqbXgpYHgrLbIpuCpu9SiAcKY1KQw1KfIgsiE1IrUrNSuyZ7gq4HgpJ8E0bfgpZbUtuCjoOCmstKdCuClndGq25TShNWI1Ypr1YzgqalO25rVkuClidWW4Kyo1Zvgp4zVnsS01aDVotWk1abgrbjVqtWs1a7WldWx1bLXnTHZptuB2anbg9ms0awLGMygXNCby4_Qn-Csh-Css-Csv-Col-CpoOComd6JT9ua4Kie4KutzIraidud4Kij24TXndiP4KiH2afgqIngqKTSkws2ypPGnuCmr92_4K6f4KuIybfYj-Cuot2D0rJQ4K6o25zgqbfgrq7XnNGhNt220abduNek3bsL4KuoA-CqieCnpdeq4K6-cuCtoeCsv-CpptuW4Kun4KWpZcev15034K-M16LRqOCvj-CumHzKk8O23oHcvzPgp6rgrqTXkNKyVeCvnuCsq-Cgls-Vx7nUpDjJkk_goJTgoJZ0L-Cqrtur4K-QcuCkoMKq3Lwe3L_grpLgr5rej-Cgk2rXs-CrllbgppzHu8Kgyq7NlVfJolnXl9-N4KCtx5_XnTngrpPcseCultuF3bsMwrLgpKDCjNuL3L802bvgrqPgp6zSqFfgr4XgrZPaiOCootuf0aE60IvgqKkvUkxQIEXHnsWc0pMM24jgp6PgpoAxfty_NdmDxaXgr4LeiVjgr5vSqFngsY_Gk-CxkuCgguCxjMW84LGUxrbgp6_gpKzgqYXWneCsmcq84KmpWuCmo9GhO8aRwqvJlMmWby9I4KyX0pMN0a4G2qPgpKN44LCH4KyH4K-L4LCK1o7go6jFuNC5zoEs4KaZ3ola4KSNwqTgq5rgrJjarOCmveCmnlvJolzau9Gh4Ki04K6y4K6U2argrrXduw5g4KSgzLbgpq8D2bXcv-CvouCvgd6H4KSv4KuWW-CwsOCon-CrruCurOCvh-CwtMyT3IrakVPOgS9TyLPgsqrQrNKTDtKVBtaC4K2t4Kem4KuH4K2w0KLgr7ngrIrMjd-GypDgrqXgq5Zc04DEhNOSyIjeseCxvuCrll3Ph8Svyo_RmeCpgdmH4LGaz4fgprngoJ3gqalf15fgs4TIkRrUpD7grLTYteCnveCxrcOK4KeiwrjcvOCpmtm4ybfJkeCxt-Cqkd6I4LGZ4KWe4K2A4KmHyIvPhF3gp7bdluCnuOCkveCnuuClgNud4KWC37_goKrCouClh9SkP8yW4LKvyqzQlNCOYsSV4KW60awQ1qQG0pfgsrbUt-Cshdy_4LCe4LK83IjbuuCzgNuXXtyA3ILgtJbJol_cgEPgsI7GiOCphOCzk-CxnsuG4Kae4LKUAmHgsaLMk8mm4Kam4Kao4KeT4Kaq3bsPWuCnotiy4KSjazjcv8ua4LOp4K2G4LKe4LSh4LOR2rHgsr7OtF7gp4Ddj82Q3ZHdk-CkueCniOCztuCni9Wd3Z7gp5Tgp4_Hk-CnkeC0r8il343CouChmded4LSVxbjcr-Cus-CulUHYmcuC0pMRCOCnolTgrp0BVOCvhOCsh-CwtuC0u-Cvr-Czq9uXYOCkuOCnguCnhGXgp4bgs7TgpLzFl-Cwk92l4LWe0rdz153gtJrFuNGl4K-k3bnFouC1oc2XBsOq4K-r4KyH4LGk4LWs4LCt0rLgtKngsLHMvsaVyIDgraPIhciH1KTgtJ_gqoDgq7zgqr7em-CluzjJosKy4KyE4KaC4K-X4KK14Kme4KaI4LWtz5ngq4_SqM624KuT4KqZ4KCH4KuWY-CthdqL4Kyf04Tgqall4Kur2ZTgtpDgrKnFquC1hc2u4Ke94Kyu4Ku34Kyw1KTHq-CpkeCstdSe4Ky32IzLjgLDpOCsvOCsh9e84LaM4KuV25dk4Lax4K2BzrRj4Kms1avZkdmT4Kqt4LKi0LHgrZXgrZfZm-Cpt9Sc4LeG4K2b1KHDjMOt151F4LCf4K6024TUsOCsogLbiuCoj-CokeCzpnLgpJjgspzgs6rgtL3JotqL4Kic2oTgr4bUmuCviOCopcyTRuCtotSp4K2l1K3FquCtqNGsBOCjmgLDrtaD4LSP4Ki44K-XzJXgpIzgsZrgrqPGt27VidmZ4K264Kez0J_gt7ts4K2-1ZXVl-C2ueCugtWd1Z_VodWj1aXIg9Wn1anVq9Wt1IrVr-CujzLXnSHgpY3gr43go7_gpZDduwLDuMqT4K2syajNm-ClmNy_zYjguJPgs63TgOCqpOCkkeCjiuCwmOC2kNKD4Kye0ZHUpFHGkcKx1KjgraTUq9SoZMadzrLct-CkgwbTqOCytsWF4KiB3L_guLPgtqXcgOC1mcSp4LG70Kzgsb3fv-Cjq-CzisyN3IHLm96-4Lmn27zNtQPDp-C2scSmcsaoxpHgrY_gt5rHvtOA4K6I4Lip4KCk0K7gqaPckkHDgNyBANynUMKiIT3UpE3gtIHGgsiFZ2XbpmXFm8mV24bgpZMH4Ka04LSO4K2v4KmbybfZpeC1rMKj0Lrgs4bgt7gEXOCkjeCgs8ik4Kqlyq_gubLgt73IoE3gupTFlXnXneCvreCjveC4teClj9260awGw5bgp6LCpOCkhuClmeCyucWX0IrguYLgrbTgpKzgqrLGs-C5htyNypNcypPgs7LguYnSq9C6xrLKrsmKQ8KWzLnEjg7grIHMlOCgveC7lQIlxI4P4LuZ4LuY4LK-4Lucy4rJkALEjhDgu5vOmOC7lwHEjhEA4KyMzrLgu5wo05rgu5kRAcO_4Lucy4zgu6bgu64C4LujyaIqxI4T4LuZEgDgu7nJoivgu67gu5kUxZ7fteC7nNakAeC8jNaz4LuqAtam4LyR4LuZFuC8lMuO4Lu8ARfFnt6-4LucL8SOGOC7mRfgu7jgu5wwxI7gvJ7EjhngvJTauAEa4LuZG-C8lDLEjuC8kgEc4LyN37_gu5wzxI7gvLHEjhwB4KS04Ly7yaLcj-C8uOC7mR3gvJQ14L2A4LuZHuC8lOCuuAHgu5jEjh_gvJ_OgeC7nDfEjgvgu5kf4L2C4LygyaI5xI4i4L2bA9-Q37_ft8qs4LucO8SOJOC9mwXgvaXbvOC9p8qP4LucPMSOKuC9mwbgva_fkuC9nuCpqsSOK-C9mwjgvIcC2poBJ-C7mSbgvZXQrOC7nEHEjijgvobgvYLgvI7JouCmoAHgvofEjingvJRDxI7gvpQB4L224L2D27zgu5xF4LuXBdGv4Luw4KqT4Luy4KCm4L2T4LunASzgvKfJokfgvZPgu63gvqrgu77gvbtI4LuXBMSOLeC-pOCrj-C7nOCtiwEv4LuZLeC-rALgqqjgvqrgvr_gvrLgvZbJokvgu5fgo5oBLuC-ueCqv-C7nOCkn-C-veC7mS7gv4FN4L6jxI4u4L-G4L6JyaJOxI4w4LuZ4L6-4L6B4KumAeC-uMSOMeC8lOCsouC_jOC7mTLgvJTgq6jgv6Tgu5k24LyUVeC_mOC7mTfgvJRW4L634LuZOOC8lOCwlgHgv7vEjjngvJRY4L2Z4L6pOuC8lFnEjuC_vwE6AQDgu5zgtLPhgIvgu5k7AOC5pcqs4Lmv1pTgu5zgsogB4YCTxI484LyU4LuL4YCb4LuZPeC8lF3Ejj7hgKLgvo_gvYQCXsml4LuZP-C8lF_EjuGAo8SOP-GAjeC7nOCylAHhgK_EjkHgvJRh4YC04LuZQuC8lNut4L2RA8SOQ-C_js-b4LucY8SOROC7mUPgv4HJj0bgu5nhgY3gvoFl4YGG4LuZReC7quC5ssSOTeC7mVEB4YCVyo_hgJfJt-C7leCpo8SO4YGf4L294LyG4LuVypTLmeC7meC9muC7v9-JxI4g4L2b4L-a4L2oypPgv7MBI-C9mwThgbDgv70l4LuZ4L2s4YCOypPhgIgBIeC7meC9ouC-neGAmOC7isSOM-C7meGBneGCgsmF4YKM4YGe4YCU4Lmu37XCpsi1xrjRhMKQwqbIgW5m4KChwoDCp9WlcsWByILclMOZwpnhgqnhgqnCmsqu4YKb4YKYdeGCmuGCnMiC4YKfZ-GCoeGCo-GCpW7hgqfhgqrhgqs"
+  title="Wallet (EIP-55)"
+  height={500}
+/>
+
+## 概述
+
+EIP-55 定義了 Ethereum 地址的 mixed-case checksum 格式。利用 [Keccak-256](/ethereum/cryptography/keccak-256/) 對小寫地址做 hash，根據 hash 結果決定每個 hex 字元的大小寫。這個方法在不改變地址長度的前提下，提供約 99.986% 的錯誤偵測率——打錯任一字元幾乎必定被檢測到。
+
+## 核心原理
+
+### 演算法
+
+輸入：40 hex 字元的地址（不含 `0x`）
+
+```
+1. 將地址轉為全小寫
+2. 計算 keccak256(小寫地址的 ASCII 字串)
+3. 對地址的每個字元（只處理字母 a-f）：
+   - 若 hash 對應位置的 nibble >= 8，轉為大寫
+   - 若 hash 對應位置的 nibble < 8，保持小寫
+4. 數字 0-9 不受影響
+```
+
+### 手動範例
+
+地址（小寫）：`5aaeb6053f3e94c9b9a09f33669435e7ef1beaed`
+
+```
+hash = keccak256("5aaeb6053f3e94c9b9a09f33669435e7ef1beaed")
+     = 0x1b7a0c3e6d2f4a8b...
+
+地址:  5  a  a  e  b  6  0  5  3  f  3  e  9  4  c  9  ...
+hash:  1  b  7  a  0  c  3  e  6  d  2  f  4  a  8  b  ...
+
+5 → 數字，不變 → 5
+a → hash[1]=b(11)>=8 → A
+a → hash[2]=7(7)<8 → a
+e → hash[3]=a(10)>=8 → E
+b → hash[4]=0(0)<8 → b
+6 → 數字 → 6
+0 → 數字 → 0
+5 → 數字 → 5
+3 → 數字 → 3
+f → hash[9]=d(13)>=8 → F
+...
+
+結果: 0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed
+```
+
+### 錯誤偵測能力
+
+- 每個字母字元有 15/16 的機率被偵測到修改
+- 假設地址平均有 ~15 個字母（40 hex 字元中扣掉數字）
+- 單字元錯誤偵測率：$1 - 2^{-15} \approx 99.997\%$
+- EIP-55 論文聲稱的平均偵測率：~99.986%
+
+### 對全數字地址的處理
+
+如果地址恰好全是 0-9（無字母），checksum 無作用。但這種機率極低（$(10/16)^{40} \approx 5 \times 10^{-9}$）。
+
+### 向後相容
+
+舊版全小寫或全大寫地址仍然有效——checksum 不是強制的。多數工具在收到全小寫地址時不報錯，但收到 mixed-case 時會驗證。
+
+## 在 Ethereum 中的應用
+
+- **錢包**：MetaMask、Ledger 等都顯示和驗證 checksum 地址
+- **JSON-RPC**：`eth_getBalance` 等 RPC 回傳 checksum 格式
+- **合約開發**：Solidity `address` 常量必須通過 checksum 驗證
+- **前端 DApp**：使用者輸入地址時應驗證 checksum
+- **Block explorer**：Etherscan 顯示 checksum 格式
+
+### 不使用 checksum 的場景
+
+- 鏈上：Ethereum 協定本身不區分大小寫，地址都是 20 bytes 二進位
+- [State Trie](/ethereum/data-structures/state-trie/) key：`keccak256(address)` — 使用原始 bytes，不涉及大小寫
+
+## 程式碼範例
+
+### JavaScript（ethers.js）
+
+```javascript
+import { getAddress, keccak256, toUtf8Bytes } from 'ethers';
+
+// ethers 內建 checksum
+const checksummed = getAddress('0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed');
+console.log('checksum:', checksummed);
+// 0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed
+
+// 驗證 checksum（不正確的大小寫會 throw）
+try {
+  getAddress('0x5AAEB6053f3e94c9b9a09f33669435e7ef1beaed'); // 錯誤大小寫
+} catch (e) {
+  console.log('invalid checksum:', e.message);
+}
+
+// 手動實作 EIP-55
+function toChecksumAddress(address) {
+  const addr = address.toLowerCase().replace('0x', '');
+  const hash = keccak256(toUtf8Bytes(addr)).replace('0x', '');
+  let result = '0x';
+
+  for (let i = 0; i < 40; i++) {
+    const char = addr[i];
+    if ('0123456789'.includes(char)) {
+      result += char;
+    } else {
+      // hash 的第 i 個 nibble >= 8 → 大寫
+      const hashNibble = parseInt(hash[i], 16);
+      result += hashNibble >= 8 ? char.toUpperCase() : char;
+    }
+  }
+  return result;
+}
+
+const manual = toChecksumAddress('0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed');
+console.log('manual:', manual);
+console.log('match:', manual === checksummed);
+
+// 驗證
+function isValidChecksum(address) {
+  if (!/^0x[0-9a-fA-F]{40}$/.test(address)) return false;
+  // 全小寫或全大寫視為有效（非 checksum）
+  const lower = address.toLowerCase();
+  const upper = address.toUpperCase();
+  if (address === lower || address === '0x' + upper.slice(2)) return true;
+  // mixed-case 必須通過 checksum
+  return toChecksumAddress(address) === address;
+}
+
+console.log('valid:', isValidChecksum(checksummed)); // true
+console.log('valid (lowercase):', isValidChecksum(checksummed.toLowerCase())); // true
+console.log('valid (wrong):', isValidChecksum('0x5AAEB6053f3e94c9b9a09f33669435e7ef1beaed')); // false
+```
+
+### Python
+
+```python
+from eth_utils import keccak, to_checksum_address, is_checksum_address
+
+# 使用 eth_utils
+addr = '0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed'
+checksummed = to_checksum_address(addr)
+print(f"checksum: {checksummed}")
+# 0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed
+
+# 驗證
+print(f"valid: {is_checksum_address(checksummed)}")
+print(f"wrong: {is_checksum_address('0x5AAEB6053f3e94c9b9a09f33669435e7ef1beaed')}")
+
+# 手動實作
+def eip55_checksum(address: str) -> str:
+    addr = address.lower().replace('0x', '')
+    hash_hex = keccak(addr.encode('ascii')).hex()
+    result = '0x'
+
+    for i, char in enumerate(addr):
+        if char in '0123456789':
+            result += char
+        else:
+            nibble = int(hash_hex[i], 16)
+            result += char.upper() if nibble >= 8 else char
+
+    return result
+
+manual = eip55_checksum(addr)
+print(f"manual: {manual}")
+print(f"match: {manual == checksummed}")
+
+# 批量驗證
+test_addresses = [
+    '0x5aAeb6053F3E94C9b9A09f33669435E7Ef1BeAed',  # 正確
+    '0xfB6916095ca1df60bB79Ce92cE3Ea74c37c5d359',  # 正確
+    '0x5AAEB6053F3E94C9B9A09F33669435E7EF1BEAED',  # 全大寫（視為有效）
+    '0x5aaeb6053f3e94c9b9a09f33669435e7ef1beaed',  # 全小寫（視為有效）
+]
+
+for a in test_addresses:
+    print(f"{a}: checksum valid = {is_checksum_address(a)}")
+```
+
+## 相關概念
+
+- [Keccak-256](/ethereum/cryptography/keccak-256/) - Checksum 計算使用的 hash 函數
+- [地址推導](/ethereum/accounts/address-derivation/) - 地址的生成流程
+- [EOA](/ethereum/accounts/eoa/) - 使用 checksum 地址的帳戶類型
+- [合約帳戶](/ethereum/accounts/contract-account/) - 合約地址也適用 EIP-55

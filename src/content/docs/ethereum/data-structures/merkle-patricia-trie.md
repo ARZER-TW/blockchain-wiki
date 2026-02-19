@@ -2,6 +2,8 @@
 title: "Merkle Patricia Trie"
 description: "MPT, Merkle Patricia Trie, Modified Merkle Patricia Trie, Patricia Trie"
 tags: [ethereum, data-structure, trie, merkle-patricia-trie, mpt]
+sidebar:
+  order: 4
 ---
 
 # Merkle Patricia Trie

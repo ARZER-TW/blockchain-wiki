@@ -2,6 +2,8 @@
 title: "狀態轉換"
 description: "State Transition, 狀態轉移, EVM 執行"
 tags: [ethereum, state-transition, EVM, trie]
+sidebar:
+  order: 9
 ---
 
 # 狀態轉換

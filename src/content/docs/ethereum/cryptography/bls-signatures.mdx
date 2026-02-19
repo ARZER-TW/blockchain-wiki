@@ -1,0 +1,108 @@
+---
+title: "BLS Signatures"
+description: "BLS 簽名, BLS Signature, Boneh-Lynn-Shacham"
+tags: [ethereum, cryptography, digital-signature, BLS, beacon-chain]
+sidebar:
+  order: 8
+---
+
+# BLS Signatures
+
+> 本文聚焦 Ethereum 特定的實現細節。通用理論請參見 [BLS Signatures 原理](/fundamentals/cryptography/bls-signatures/)。
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作加密節點，體驗公鑰加密與解密的基本原理，理解密碼學簽章的核心機制。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZFfEgcSDxIVsaW5rxItkSMKlxIfEiXPDnAAQworCosSMP8KkdHlwZcKqSW5wdXQvVGV4dMKjcG9zwpI8eMKkc2l6ZcKSw40BLDLCpWbEgmdzwoDCpW9yxIlyAMKkbcSIZQDCpsSTxKx0c8KRwoPCpG5hbWXCoMSkxKbFlMKkxJLElMOAwqdvxK3FmMWaxZzFnsWgxaLEpcSnwqbEhHLEk2fCpcWna8WaMcKqcHJvxKdydGllc8KEwqtibG9ja8aGU8S9ZTLCq3DEgmNlaG9sxY7Cr2VudGVyIMahxLIgaMaiZcKlxoV0bGXCpMSwxLLCpXZhbHXGqsa1acaYxKDEjD7Fo8SnwqtDcsSmdG8vSMSDaMS0xLbFgAHCmsOMwoLEu8aSwpJ4HsWFxYfFicWLxY3GogfFkcWTxZXFl8Stxa7FncWfxqrHoXTGv2XCrcW2xbgsbnVtYsaixabEk2sxxarFrMeixZvHpMWgwqRox4nHqcW1dMW3bsW5xbvFmjPFv8aBxoPGhcaHwoDCicShZETHqcKvRGlzxpZheS9BZGRyxodzx4vEt8ONA1xQx5LEvseNVFDHl2HFiMWKxYzFjg7HnsSJx6DEq8e6xa_HpcWyxaTFkMW7NciKxoLGosiNxojGisaMxo7GkMaSxpTImcaYxprGnMaiwqDGq2nGrWXCp8idyJ_IocazxrXGt8OZKjB4MzI4ODA5YmM4OTRmOcmiMDc0MTdkMmRhZDZiN2M5OThjMWFmybZjNsiQxIxNx6nCrciWyJjEgsibV2F0Y8eKxLXIpARWw4zDnMipxL_FgcK9PMiuyLDHmsWOD8i1xZTFlsi4xZnCkcKEx7zFocepyL7HtT7FumHHsmzCoMmByIzGhsWJxrxkRsepwq7HgseEx4ZEZWPHg3DEs8qVxYDIpsOMw6bKm8KSw4zCtC3KoMeZyLLGog3Kpci3xa3Cksi6xaDGlcW3xrTGoSBrZXnIgcesyIXHtMSUP8ucZcKpxp_LhceEZWTLpsiDxbjLqWtIx7h0xa3Hu8Wwy63Eicuwy4fLssiBb2Jqy4R0xbrHtcWaPsq3yYPKucKAyrtPx6nEqcqoxK_EscuIx4wow40CHMuOxYHFg8uTyLHHm3IBy5jKp8u8y6zIvMSnyq_FqMu6zKnKrMyrZciCyITIhsyLwpFAzI7GhMq5xonGi8aNxo9lxpHEvsmLxpfGmcabxp3Gn8ahxqPGpXTGp8apyZLJlMawzJjJmsa2ZcKudGjIlyDNmsSsxovGusq7yKjFs2XCrMSqxZgvQsStx4VuyKPHlMycwoDLjsOMw4jFhMWGyK_LlMykAsynx6fHo8u-zLLDv8u3xanFq8u7yLnMscepw7_MisSUxZpBzLrJhMKCzZTGt8KoY8SSxo4gxaDNkMauwqbNqHTNqsq7UcepwrFOZXR3xYxrL1N1YnPLhWnHss2sUMOMw7rKm8KCwqEwxYEYwqExLsyiyqLGogPNucqozbvHpcKpW8qTYW5uZWxdy7TMtc2_zK_HosubyqzCp8Wgc3PIr8avzaLMtMW4zofFvMKRQ8uswqjIoMaYaXbMg82izobIh8OAzovKucKBwqfPhc-Hz4nCrmlwZnMuzqFoLmJ1acacyodkTsiUzqDOos6kL1DOqMSSc8qUx4zFgcKQzJzIk8S8xL7OszDDjMOwzrhCzrvLlXIIzr_FrcKTy6zPg8-vz4jPis-My7bFu8OAy6zPk8ihz5fQpcuoxbtA0KnNndCJaM6Fy7fOisaAyYLMu8aHz63Qos-xz7PPtc-3zZjPus-8xpzKu1bHqc2kzJbOmc2qzazMnMOQzJxYzbDNstCZzKQE0J3Og8280LXQp8-PyqnMqs6Fz5zFmkXPq8aHzo3GtM2VzpDOkmvOlMaqxqzOl9GLb27Pv1TQgs6hzqNyzqXQh82e0IrRjQPDssyc0IHQkWXQk9CV0JfRlMWODNGXxZnQn8qs0KHHv8-w0KTPmcunZ82_0KnPlM-WZ8-YxaTPmtCux7VG0LHQiMiX0LTPp8u30aLQuMq40LvPrtKO0KPPss-0z7bPuNGDz71kyrtLzJTNpcStzJfEstGNxYLIpRbMn8WCzbPHmMyjxY4F0onPgcWxyq7Pjs6BzLDRmdKRy7XIhdGgwpE70aPJhcy-yYjNgcmKxpXNhcmOzYjGoMaixqTMmM2OyKDOlsavxrHMidGmxrfCvc2YzZrNnMaBYsqzbHkgc8uEyKB0PyDDsMKfwpTCpcq7U9K1zJbTpdK6wrjFgdGW0oHHjWND0obGognThcu9yLvTiMW7Q9Gc04bKrdONzLXTkEjTk8y9yYfNgM2CxpPTmWHJjc2HxqLGntOdzYvToMao06LRrdOkzZPTp2XDmcOkyZ84NMmnNzNhYTY1MGLJpmRjYsmkZjgxNWU1ODJmYmQwMTAzOWY3y7LJpjFk1L3JsjTGk9WJybdiMzdmNGM1MTHJvjcyOdWnyoAzYzMwMGVlOWEzZjA4ZDMxY9S4MDU2YTU0MDJiyazVvtWJY9WU1a84yazTrsm0NjRhybJl1pPJpsmj1bBmxpjVtTTInjnGmGU3MTg2yoPVsNWRNmPWhmHJosmk1abWrsuyZThhOdaC1KExyaLJttS8OWXVjDYzNNWIMjYyNdWN1avJsDQ3yoJh1LZm1r_VtGTWj9aX1YjKs9eDyrtCyJTLgMuHx4ZLy6QgUGFpctGNAkRuzrLOtMOKQ1PCmcKa0oXNtMqh0JoL04XPkcu-wq1bxoDPpMqRZcuiy6TPi9SW0KbHtTPPoNKYz4hy177Rmse1zoDHudKKy6zLnte9y6HLo8ul2IPTj8iHwpHLq8qsxb_SoGPYgNiW0prSktGgwpDQqcm3yZjPldCtzLbOiMKRyYDSpsyP0LvIitiTZdegecOZQsmf1qHWhjXWpDHVm9S91ZHVtdWqODXVg9aj14jJtzc21bHVpNeU1ZJlM9WJyatm1rbWvsqA1a_WvzjWiDNi1oDVjsq7Rcq-153HhS9FbsyBzJnIpALCqMycw5rNsMuR1IpyCte3y6zYnc2e2J_Yldiq0pTPktKW0KzYl9KTxbs71JPXuMelwqbMhcyHY8eoz5nah8yI0aDQqNKMy6_Lhsahy7PZv9OQRtOTwoDCiMiRV8qKyozImcibVMmTxq7NrG7DkMKm0r7DtADZsQbLmNOTwoXCqGbRsHTUnizJhsy_yYnNg9Sg1KLJj3LJkdSrwqXaocmUzo7Nlsa5xpjZptmoy7LRoMKcwpYxPwA-AMer045nx67HsMeycsKWM9uQQsWV0pLCljVC16gAAMKWO0sARQHSm2fClj5GAE3bo8KWP9uc26_bq8KWQE8ATtuq255BUNu7AsO_wpZDUQBT27JFVgBU3ILClkbbqVTbvduTwpZI3IhG3JPMtcKmZ8aBdXBzwpDCpmPRsGZpZ8KAwqfPpXLEvNGww4o-w4zDjMON"
+  title="Encryption"
+  height={500}
+/>
+
+## 概述
+
+Ethereum [Beacon Chain](/ethereum/consensus/beacon-chain/) 選擇 BLS 簽名的核心原因是其聚合特性——數千個 [Validators](/ethereum/consensus/validators/) 的簽名可以聚合為一個 96-byte 的簽名，大幅降低共識通訊和驗證成本。底層曲線為 [BLS12-381](/ethereum/cryptography/bls12-381/)。關於 BLS 簽名的數學原理（簽名/驗證/聚合公式、正確性證明、rogue key attack 防護），請參見 [通用理論](/fundamentals/cryptography/bls-signatures/)。
+
+## Ethereum 的 BLS 方案選擇
+
+Ethereum 選擇公鑰在 $G_1$（48 bytes 壓縮）、簽名在 $G_2$（96 bytes 壓縮），因為 Beacon Chain 需要頻繁聚合公鑰，較短的公鑰減少儲存成本。
+
+Hash-to-curve 使用 [draft-irtf-cfrg-hash-to-curve](https://datatracker.ietf.org/doc/html/draft-irtf-cfrg-hash-to-curve) 的 `hash_to_G2` 方法，Domain Separation Tag 為 `BLS_SIG_BLS12381G2_XMD:SHA-256_SSWU_RO_POP_`。
+
+Rogue key attack 防護採用 Proof of Possession（PoP）方案：每個 validator 在註冊時提供 $\text{PoP} = \text{sk} \cdot H_{\text{PoP}}(\text{pk})$。
+
+## 在 Ethereum 中的應用
+
+- **[Attestation](/ethereum/consensus/attestation/)**：每個 slot 約有數千個 validator 簽署 attestation，同一 committee 的簽名聚合為一個
+- **Sync Committee**：512 個 validator 的 BLS 簽名聚合，用於輕客戶端驗證
+- **[Casper FFG](/ethereum/consensus/casper-ffg/)**：finality 投票使用 BLS 簽名
+- **[RANDAO](/ethereum/consensus/randao/)**：每個 block proposer 提供 BLS 簽名作為隨機性來源（BLS 的確定性保證同一 epoch reveal 值唯一）
+- **Validator Deposit**：存入 32 ETH 時附帶 BLS 公鑰和 PoP
+- **[Slashing](/ethereum/consensus/slashing/)**：被 slash 的證據中包含衝突的 BLS 簽名
+
+### 效率數據
+
+| 場景 | 無聚合 | 有聚合 |
+|------|--------|--------|
+| 每 slot 簽名大小 | ~32,000 * 96B = 3MB | 96B |
+| 公鑰儲存 | 48B per validator | 48B per validator |
+| 驗證（同訊息） | 32,000 次配對 | 1 次配對 |
+
+## 程式碼範例
+
+```python
+from py_ecc.bls import G2ProofOfPossession as bls
+import secrets
+
+# === Beacon Chain Attestation 模擬 ===
+
+# 生成 validator 金鑰
+NUM_VALIDATORS = 128  # 一個 committee 的大小
+keys = [secrets.token_bytes(32) for _ in range(NUM_VALIDATORS)]
+pubkeys = [bls.SkToPk(k) for k in keys]
+
+# 所有 validator 對同一 attestation data 簽名
+attestation_data = b"slot:3200|index:0|beacon_block_root:0xabcd|source:99|target:100"
+signatures = [bls.Sign(k, attestation_data) for k in keys]
+
+# 聚合
+aggregated_sig = bls.Aggregate(signatures)
+print(f"Aggregated {NUM_VALIDATORS} signatures into {len(aggregated_sig)} bytes")
+
+# 驗證聚合簽名（同一訊息，高效路徑）
+assert bls.FastAggregateVerify(pubkeys, attestation_data, aggregated_sig)
+print("[OK] Fast aggregate verify passed")
+
+# === Proof of Possession（Validator 註冊時需要）===
+private_key = keys[0]
+public_key = pubkeys[0]
+pop = bls.PopProve(private_key)
+assert bls.PopVerify(public_key, pop)
+print("[OK] Proof of Possession verified")
+
+# === RANDAO 模擬 ===
+# 每個 epoch 的 reveal 是 BLS(sk, epoch_number)
+epoch = 100
+randao_reveal = bls.Sign(private_key, epoch.to_bytes(8, 'big'))
+# 因為 BLS 是確定性的，同一個 proposer 在同一 epoch 只能產生一個 reveal
+print(f"RANDAO reveal for epoch {epoch}: {randao_reveal.hex()[:40]}...")
+```
+
+## 相關概念
+
+- [BLS Signatures 原理](/fundamentals/cryptography/bls-signatures/) - 通用 BLS 理論（簽名/驗證/聚合數學、rogue key attack、與 ECDSA 比較）
+- [BLS12-381](/ethereum/cryptography/bls12-381/) - BLS 簽名使用的底層曲線
+- [數位簽章概述](/ethereum/cryptography/digital-signature-overview/) - Ethereum 的雙簽章系統
+- [ECDSA](/ethereum/cryptography/ecdsa/) - 執行層使用的替代簽章方案
+- [Beacon Chain](/ethereum/consensus/beacon-chain/) - 使用 BLS 簽名的共識層
+- [Validators](/ethereum/consensus/validators/) - BLS 金鑰的持有者
+- [Attestation](/ethereum/consensus/attestation/) - 使用 BLS 簽署的投票
+- [Casper FFG](/ethereum/consensus/casper-ffg/) - finality 投票使用 BLS
+- [RANDAO](/ethereum/consensus/randao/) - 利用 BLS 確定性的隨機性混合
+- [Slashing](/ethereum/consensus/slashing/) - 衝突 BLS 簽名作為證據
+- [KZG Commitments](/ethereum/advanced/kzg-commitments/) - 同樣基於 BLS12-381 的配對

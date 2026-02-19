@@ -2,6 +2,8 @@
 title: "RANDAO"
 description: "RANDAO, 隨機數, Random Beacon"
 tags: [ethereum, consensus, pos, randomness, randao]
+sidebar:
+  order: 5
 ---
 
 # RANDAO

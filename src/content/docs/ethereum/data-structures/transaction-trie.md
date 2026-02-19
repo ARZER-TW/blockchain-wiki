@@ -2,6 +2,8 @@
 title: "Transaction Trie"
 description: "Transaction Trie, Transactions Trie, transactionsRoot"
 tags: [ethereum, data-structure, trie, transaction]
+sidebar:
+  order: 7
 ---
 
 # Transaction Trie

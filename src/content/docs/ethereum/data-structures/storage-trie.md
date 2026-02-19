@@ -2,6 +2,8 @@
 title: "Storage Trie"
 description: "Storage Trie, Contract Storage, storageRoot"
 tags: [ethereum, data-structure, trie, storage, evm]
+sidebar:
+  order: 6
 ---
 
 # Storage Trie

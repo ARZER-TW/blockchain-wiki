@@ -1,0 +1,15 @@
+---
+title: "Merkle Patricia Trie"
+description: "互動式 MPT 視覺化：觀察四種節點類型、Hex-Prefix 編碼，以及鍵值插入如何改變 Trie 結構"
+tableOfContents: false
+sidebar:
+  order: 4
+---
+
+import TrieVisualizer from '../../../../components/visualizations/TrieVisualizer'
+
+# Merkle Patricia Trie Visualizer
+
+> Ethereum 的 State、Storage、Transaction、Receipt Trie 全部基於 MPT。選擇預設範例或自行插入鍵值對，觀察四種節點（Branch / Extension / Leaf / Empty）如何組成 Trie 結構，以及 Hex-Prefix 編碼如何區分 Leaf 與 Extension 節點。
+
+<TrieVisualizer client:load />

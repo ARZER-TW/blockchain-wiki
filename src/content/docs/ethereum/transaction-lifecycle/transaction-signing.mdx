@@ -1,0 +1,186 @@
+---
+title: "交易簽名"
+description: "Transaction Signing, 交易數位簽章"
+tags: [ethereum, transaction, signature, ECDSA]
+sidebar:
+  order: 4
+---
+
+# 交易簽名
+
+> 本文聚焦 Ethereum 特定的實現細節。通用交易簽名理論請參見 [交易簽名](/fundamentals/concepts/transaction-signing/)。
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作 Transactions 節點，觀察交易簽名的完整視覺化流程。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZMONAcKtxIHEg8SFbGlua8SLxI0CLsKlxIfEiXPDnAAdworCosSMxI7CiMKkdHlwZcKwU3RvcmFnZS9WYXJpYWJsZcKjcG9zwpLEjsK9w4zDkMKkc2l6ZcKCwqEww4zCjMKhMRrCpWbEgmdzwoDCpcSwxIlyAMKkbcSIZQDCpsSVcHV0c8KRwoPCpG5hbWXEpG7EqMSqxaLCpMSUxJbDgMKnb8WnxabFqMKRwoLFrMWuxL3Fu3TCpcW3a8Wpw40CA8KqcHJvxKtydGllc8KCwqd2xLfFrcWvwqXGjmljZcKmZ2xvYmFsw4PCicSkxI0BwozFs8Srwq9EaXNwxIJ5L0FkZHLGlXPEvsWAxYIDwoTEjsOgxYfFiWXFggFUUMWUxZbFmMWacsWcE8WfxaHFo8WlxafFqcWrxptlwqDGr8W1xofGigXGjcaPxpHGk8aVwoTCq8S7b2NrxpRTx4cywqvGtWHGoGhvbMWcwqDCpcaTdMS8wqfGuca7xr3CpcaZbHVlw5kqMHg2ZjRjMmJixIk2MzJmOWQwNTU0yJ0yYTJlyI5kZjFhMzQyZDjIoGJlxKPEpQHCjceexrHGs8ezxrdEx7fEgnLGvsS_xYHDjQPCrMaKwoDHhsWKwpLDjMK-N8eNxLLHj8WbZXIVx5TEiceWbsW9x5nGgcWvx53EqcSrxZ7HoAIGxbrFvMeYxarJmMecx57Cpm51bciucsaGxJXGiMOAx6PGkMmPx6Zzx6jHqsesx67HsMeyxILHtce3xZzCr2VudMmPIMqEeHQgaMmPZce7ace9ZcKnyLlsyLtzyIPGp8iGAMaqyLHCiceewq3Gssa0xrYvV2F0Y2jGv8i_AmzDjMaAxYjJhsOMw4g8yYvFl8WZyY5yCsmSxaLFpMmVyaPChMmlyZrFtMmdya_GigPGhsS6ZWzCoMmyx6XGlMWYyLDGrMKHx57Crk3EiHXEvHMvy5Vky5fEvci-x4nCuMWyyq_HiMWPxJvFlcmMyrbHkcmPAcq6AMmhdMmWyaTHm8adxLjGoMeeAMmuxJZzybHGjsmzxpLLjsKDwqfKgsS6xLxkwqJvbsqOypDCpVDLtcqNY8e3xLDCpjdlY8yWMsKoc3ViZ8SxcGjEgMSCxITEhsWhxJgPxJHMo8aHxJgRxJzFoXPCm8uQBcqeVcaTbMuZVG9GxqTKpcqpx4F6yrHJhcukwqoeyrTJjcuqcgfLrcq8y7HHmsaCy4HJnMW2ya8Ey6_NjMuAyafJqcmryY_LucaIwpIFBsuMybTLjsKAyptkBsqeyqDIt8qjyqXKp8y9yYBSRs2ByYfDscqzy6fKtceQxZwIzYrHl8W-yr_Hm82Px5_JrwXLh8iuy4rNoMu_xpXCgMuQA8qeQ8yIdMaPbC9UacWvcsy9w4zCtMOMw5zNgcWMxY7FkMWSzYXLqcWcxZ7FoMmTzZTKvsmlxbpuX8aTx6zHnsO_zZvFqQrOg8uJwqczMM64MG1zzobJtcKCwqjElcqEcsiEw411MMKlZXbKgnTEqMafa8KoYm94zJDGpHLCpCMyz5nLkM2JyZvErMSuxLDEssS0xLbEuMyEy57HgMONBFbJiM6cxY3Fj8WRxZPNtc2GxZwJzbrKvcW-zY3Fr8Wxy7fNkcSWyaDGhMuxxoDHm8KjxoTOscKRC869y47Gl8aZcsuzxp7GoMaixqTGpsaozaTKuc-dy5TLlsuYL0_JonTNrQRqxI42zbHOmCjOoc23yY_Kuc6lyrvNu8mXzb7Pu8aH0IfLvcuNxpXCgcmly7TGn8ivxqsLx57CqknPts6SZcqIzL1QxI5ozbHEjiwy0KbKt8us0KrJlM2V0K7PncuDxbjOp8-3zZbPncKmxITEuG5nzrHCkNCIx6fHqcakybllx6_Fisexx7PJvse4yY_KgcqDyoXKh8qJyovGvMyKxLzCpFTRgcaFyITIhsOZNWh0y7BzOi8vYXBpLsSxZMS3xrzGti7MkG0vdjIvbcS3a2XFqMqjRVRILURBSS_OrdKXcsuQAtC80L7FvdGA0YLLn1DNsMujx4nRidGLzYfSp9GOzYvJo8-4yabRks-8a8W5z7_SuNGXxbTRmc6PxJXRncaHxakM0aDJttGix6vHrdGlybvRqWXHttGrctGtz4LKhtG4yorKjNG0ZdG20bjKl8iFyIcx0b7SgNKC0oTShtKOb8SV0pVy0pfKptKF06nSkHYx0qLPjsmPL9KY0bJlyaovy5DLrM-dwq9O0ph3xLBrL1JlcciGxITNrQHCrsOMx53Lo86dzpjFkcumx47OosmPBM-1yZbCktK5wqVbdXJsXcmn0ZrThdK8DNK5wqfGvNSKxpXPjM-dw7_SvArRlcWpzb3GgsKm0r_Ur9OCxqVqzJXGhdOHwpEOzrRsAdOKwoLCo9ShbMOZ06PRv3DSgdKD0oXSh8yQ06vSltKYY9Ow0o_SkdO00qPTt9O5yozTvMKoxInPkXVuxqDJgMOoy5AOx57CrNKpxacvTsmqyazNrQIc0YXQo8K-0YrPscKBwqnPlMSC1Y5lZMOD0KdyzovSttCsy7LNjtCvya_SvtCc0K3WidGYzZjJrNCFD9OKwoPJvMe005LJv8mPwqEj05zCptWwzZnJrdG6ZcWNy5AN1atPYtS9Y3QvxJXEiXjVs8KKxI5A1bfNtNSX1oPMstaGz7bFgdK50IPWqtaKxJYO1J7Wr9GBzZfVscmP0rwP1LTUndC21qPHnsKz1KbRnCzUvNS-LNKLYXnQhRHXhG7WsNeH1qHOscu8x6TNoc6Iy5DUmtSA1qnWq9at0LLJtHnVs8Kez6vSsMmIzYTPsdSYcs2m1rvRkMaC1r9q14FrEdS01ojJmceex7rVgATTisKB06DIhsKp0I7EinVzZM6xwpnClgQEAAUAAMKWBdiZBtiawpYG2JkH2KAKAwABAcO_wpYL2KQK2KAMAtioxaPXkmfClg4BAA3YoA8O2LoByajXiHLClhHYu9iXxaPMncW71Y7CkMKmzJBuZmlnwoDGmMmPxYjMiMOLP8OZwpnZm9mbwprNpMSOwpTItM2oyqLIgMa8c8i9z6cFw5Io0YfHiseM17bWgxHUm9OA0ZHLgtK8xorQsdekzofTi8m4047RpmXRqMm91pnTlMe6x7zHvtmlyILWo8iIyIrIqce0ZjDIpTTIpWU5yJIxMTdkzJZlyIww2o0yNzY4NDgzNsyVNWXZnwHCk8eewrHPn8SxxLMvRmnEvCBEx6TNrQPCtsOMwpbQo8OCJNKzxZzStceV2ILSudS40JzUpdOE0ZzQhcaKCtiJwqTZkMS8wqJ7fcuQxI7Cm9WrzLTatcy3byBXZWnNrQY2xI7Dgs-sxY7Cqs-v24LJjwzZs9GWy7PNu9egyazZtwIU24bJpduIy7DFp9uzzZrVgMaKFtiJ1aHMlc6UxqdzEtuXAc2_wq3bm8y2zpLbnkd326Hbo0rGiibbqNSQ26vZsMq30LvXutm0xoLCpduy1pDZgtu1G9u4x5vbusW9273Jrdu_1bTcgsSJY9yFzLYS2qvCoc2nyLbKosqkyqbKqMufyYDCosmAFtCjyrLbrHLdgdyezbzTgc2QyZ4d1YPLi9et2bvOicarxI7Co8eexK3Er9qxz6LEt8S5xLvPpsi_BMKcxI4Y3JjOn8-w1rjKt9aFx5XSt9uwxoLPutK7xofWjNu7xb7Qgde80ITcrR7VhsaYxprcoNiO0JDGpcanw4PcicKiyp5NyqVoy5rLl8aTxrXXr9y9BcK-0KHNsXjWt8uo1oPWp92H1r3JpcKhQdyr27Ue0rnCoULem8meH9ynxoLCoT3cq9uNAiDWld6Zw4tAYBFOOcKwwpTCot6f2ZjCqdmc2Z3Cok9QwqEq3InCpNmi3LjXmS_Kk8qV26PCmt2h1bfJitybzYcQ26_WjtiE3a7LhN6q3qTfk9OC1pHbvsmvy7vTism30aPZvtOQ2oLTk8qAz4vRr9OZ07rTnMqSyLrEt8qW1qPerhnCtUnDtcOnVDfcicKd1avVrdat1qDVst6MRsaKOtW31bndps2H1JreltiD0rrZtt2v35fgoIrEq9mB16HcrRvWldaX0arFnNac1p7fvc2a1qPCpjEwLs64MdyJwprfutC_4KCazpbfv9um4KCD3YTWut2p1ofSuc2_0ZPSveCgjc2_4KCQ1pLTh8WC27bGih_goJTTkd-k1pvWndqGxqHgoKfYi9Od4KCfyJraq8Kn3LfKod-F3LrNrNy9CMOKxI7DvtGHClHeks22yrfdouCgiNS235jdit-V1p3Egs6E3Y7Zusm13ZHIscKOyLTboGIzL0LfoMqnYcSVzpfCqsSOwobcmMOSxZF-3YTXueCgrta84KCJwqxb2b3gobHEldSk0ZjYtdK83bDJlsKW0rnCquCig2jgobLFsuCih9uL04bfnMKRxorXnMmlwqnQkmHVpWUoKceewqhm1aTWrGnMiM6x4KC5B8aK14POqcSH4KKe4KKg4KKi4KKk1aXGk-CiqNOHw4DSucKt2b3goKfgorHPneCio-CipeCitcyJ4KK34KK5zo_gop1zx7Tgo4Hgor3FtOCiv-CitOCip-CjguCilsaKJduHc8qCZOCjisSr4KOM4KKm4KK24KOQAiTduGHGutmmc8KgwqjLvXbEjMmPw5k906TVjtOm0pXElW7SmC7EleCipMSx4KOzb9KR4KGtZTU5YzQ2yI7IlciWNMyUMjnIlGY12o8wyJQ4yK7IljjcicKQ3ZXgoavgoa1UxLFu4KOH4KOabs2tB07EjnzcmMOwxZHDjMK63YQU35HCmdK54KKB4KKP4KKR4KKG04LgoojJnuCimceb4KKBxp7GmcqE0pd54KSv4KCP4KSx35Ut0rnCpFvEr-Cku8ah4KS9xJbGii7UqlvWo-ClhMKt35pyLOClhmvcgNuHW9KKdGHgpYTTg9GbZ-CiidSeW2fEg-CljeClj-ClkeCilOClnsmlwqrgpaDEg8yN0LjgpaPZguClpeClnNu1HOCliuCir8ag4KWu1qHgpbDUp92v4KWAxYhn4KKSxbTUscmeCNS0wpPSucKr4KOF4KSZ4KOI4KOOyafXldas3qki4KOT2ZHgo7Fk24rgpZzgoqnGiiPcluCmkeClvtaAzq_eqSfTisKI4KGFw4tDyI1XwoXDmMKgy7jgpbVlw4DCpOCll2HCosiKwqPgpaFzw41Zw5jCqOCmteClrMagw4_YmgACVBsmQOCjpcaP4KOnxZzgo6rgo6zVj9KU4KKR4KOxdOCjs9mP1KFh4KO34KO507jgo7zgo77gpIBj4KSCyI3gpIXgpIcz4KSJ4KSL4KSN4KSPZjjHo2ngpLdlS2V5w5lCyIramDfInWM5yJcxNsiRMDcy2qkx2pzgpI022pow2qM0YcicNzMxZmE5N8S6ZOCnu2HanGJmYuCkgGE0NWM3OOCkgMiowqLEr9qLyIvIjciPyJHIk8iVyJfImcibyJ3an8iiY8ikyKbIqMiqyKzIkNqq3ZLVheChi82p4KGO3LzPpwpaxop20YcDMeChmM-yyY8a35HCkeChneCgjs6A4KWHAtCl4KGiy4ngoaTLvuChptyJwqjLk9yNy5lG4KOA4KOOza0Iw57GiuCpl9SSz63DpsWRQt2EGd-R4KaF3Yll4KOZ4KOB27Uk4KWA1ZfKlM6v27Un4Kab4KaT4KaV4KW635Um14zUnteP0ZLgppfgqY_GiirgoLDgpp7gorfVhsmlxYfgo5XCqcS3Z8mqz4tzwpDcicKp4KmYzLXgqZrgqZzMiM2tCQbJgFzcmOCppTHgqaffjsWcG-CpquCqhuCivuCis-Ckm9u14KOS4KqK4KmzbOCptcmeKeClgOCikHPRhuCik-ClscmeKuCpvteOypjTneCqgdytK-CqqOCmgNei4KqJx5vgpofgpJjgpJrgo4Hgqo1y4KqPxa_Kg-CqktyJwpXfg-ChjMi436zIvOCknVg834zdhBLgqYngq4PgoZ_gqY4M4KC03qjgqojdj8m135_Tjcm60afgoJXag9-l0a5y05jKiNOa0bPgoYLfq8qU363goYUA3InCq86Mzo7OkM6SzpTJj-CpnnDJgOChqeCpo86e3JrHjtW71b3SheCjlNaB1oPNidGO2ILgqYvOqs6sz47gqofgo5wp1YPCps63zrjOu9WGz4Dgq7DPhAvCuM-Iz4rKg8-Nx6zPkM-Sz5TEsM-Xz5ky2qvCrdqu2rDPodqz2rVl2rfaucufw4zDsMmD2r_bgeCqpMmPzbngrJPUud-SxqHUueCputuM3K0s25DbksWw25XcicKR4KCl0qpCxafEr-CknNy9B9W1AuCposeHyYfDiOCghN6TyrfPtOCgiOCroGXgpoHWi-CqvNm1xKvOsNytCOCtqMKnz5HHt2Xgop3gq4Xgq6fMgOChhcKoY8SUx6wgxpzgoYLCpuCtl9G_4KKozJDVpHQKwovgqLfCksuTy5vLncuZ4K6PxLzQnsOEWtCjwrJq3YTVqt6W143Hm-Cim8an4KKdxqDgo5fgqY3gpZMC4KKtx5vCqG3go7HFoG7Gn9e_247UtMKU1Krgo6DIgdmny7feqQvgpobgpLbKpeCsuuCkueCut9yt4KS_zqlk4KuXc-Cuv-CjnNSpzqngopzgop7gr4bLutGf4K25xpXMgcyD3ZzgrJDgq7ZBzJbFu8qDwqXgrK5ywqZm4KSJN8iPzJnMm8yd0oXMoMyoxIXEncSKxIwm4K-nX8yqxIxezK3EnsSgENO-yLRDcsSqxK_LmuCuq8yIxp_MvQzEjsOG26jDikM64K-e4Kmm3YTgoIfgob7JluCpq8eb4KWp4K6qZeCurMaf4KWa4KWSXOCliteFeOClmuClj-Clp-CuqMSz4KOxxLHKhOCqseCtq-Cth-CuncaCx7LEuOCnqSDgrr7gqrjThdCFAdK54K6p4K-94K6tY-Cti-Cilcu616PgqZTLjtiK4LCZyprGq86L1IDZo9-F2ojZp9WzHsSOwrzZrceL3YTgrJLgsIzcn-ChnuCupALfntOM0aTZv9qB1pjgoL9y2oXKj9qH4KOh2ongqr7gqKLajWPaj9qR2pPalWTal9qZ2pvandqf2qHao9ql2qdj2qnNpM25z53CquCxgsa3UVLgsYbGij7ZrcKQxI7CkN2E4K2m4LGO3Yjgra3grqQH1YPgqKLajznIrDM4MeCyjzYxzJY2yJzWgGPgqJbEuuCogTPHtMiqN9qPYeCojuCyljnYicKmcXLZv92hy5DQu-Cxgd-E4KuW4Ku44KuY3L0Ew67EjuCrntezyYngrprgq5_gqazgoLIJ4Kuk3KPgoJHfnOCwudCz2bzfoOCrq9qA4Kut4LGZ05bfp-Crs9-p4Ku234fgq7nWo-CwvsSM1arQluCuksaV0JrQnNCeJ8aKw4XQo8K00KXgrYPKuOCyu-Cyh-Cgsg3bkMebwqfgrrTgo6LSpuCvt-CvuXDgr7vgp6t5IFDgobLgoKjHgMOMw6jgsYjgsIRDU8KZwprgsIngs6LgoK3Jk92q3pfHm8KtW-Cuu8qE4LCr4Kes4LCV4KWmxofgsLDJpeCmusqCyY_grrzgsKPRlOCth-CwjuCwp-C0iuCuveCnrOCwttCF4K6nxoLGjcyb4K2-4LSMeeC0n-Cjg86p4LOrxr3gtKjfnMKUAgQH4LOn4K-Pc8KB4Ken4Kep4LOy4Keu4KewN-CnssiO4Ke1OeCnt-CnueCnu-CnveCnv-CykuCoguCohOCohuCkhOCoieCoi-CojeCoj-CokeCok-ColeCol-ComeCom-ConTTIqM2k1qfgs5bQmOCzmNCb3bHQniTGiuC0p9ez4LOg4KG84LOk1o_goIvJrw7gs6jgtJvgsKngrrzgtKbMseCrvsqD4KyAzpPOlc6X4Ky_AU3do-CsismM4KyM36zVv-CskMq3zqTbheCth-Cpis6pzIjgrJfOrtSw0IXLhuCpkWzgrJ3OueCsoOC0tM6_z4HJj-CspOCsps-Jz4vgrKrPj8-Rz5PMkc-Wz5jPmsar0JXFtMKt3oR03oZN3ohp3orQnuCilwHCnN6Q4KmF17fbruCunN6e3prgs4DbtMaH4K2x3pjeoOC2uNeJxocQ4KCN3qbgq6XfnMKSCd234LS0woPerd6v3rHes9613p8A3rzevirNpNmy4LWay5zQmeC1ncW90J44yYA04LOf4LOh4KCFxZwP4LWm4LGQ4KCy4LeI4KGl4LC74K-C4K-EzaTgq57gt5fgrpDgs5ngtZ7gsrNMyYDCmOC3oN2E3pXgsoXgrYjgoLHSvOCgvOC0tNC14LOp4K-KxqDLkM2m0JbgqZnas8aPbduf3JPcvQLDpMSOzYngrIjcmc6g1brVvOC1vuCsj8OC1oPcneC3uuCgidyhz7beoc6B4KCN3KnbvOC2vtys4LeFEOC3vuC3qdC03IPcsdKV3LPNpNuuz53gtqXgtZvLmd-7zL3goIACYuChuMWRJt2E0Y3gtoPWjeCgieCwsuCwkuCvvuCwtd2v0IVc4LWrxa_guYPgsJNjy5DPtM-d3ZbPoNqyz6Pdm-Cuk9y9A8OM4LO74LiS3aTdhNuE4LSE4KCvyaXdreC1qOC0mOC5gd2zxa_Qg8Wn0IUI3bjQi9CNzI7dvdCS3oDGq9eoxbTCruC4h-Cpm-CjjeCqmty9AcK4xI7ZsuC4kuCqoeCqo-C3ouCthOCqp-CprOCpruCmi8aHXuCpssan4Kqw1LDSvAPgrrPgsZ7grrbgsK3RnNK8zZPgsKXgqb_gqr7gr4zGiMKRBeCtqOCtr-CzguCrhsaC4K2z4K6g4KKe4KuM4KuO4KqRwpDNpN-Q4Liy4LOX4Li1z7bMvSjOmuC4uzHguL3gs6LdqM6m4LaE0rngrp_EguCisOCioeC5h9WAXuC5imXgur3grqHgop_grJvTh8KfwpbYqeCngNi04KKUwpYC4LuS2KfYmwPYmQTYqtiV4LuSBALgpZvThdic2JfYn-CgtsmPwpYH4LuSCNigCAkA2K_gu6PZgwnYrwvYoA3gu5LYvtibDtiy2LvYmxDYnwrZgOClj8KWHtivEdigH9ifEtigXAzYs-C7ntGcwpZeEADYl-C6iMyIxqLGj3XZi9mNzIjZkNmS2ZTIvOCjjtmY2ZreusKa4K6LyLHCiuCujuC4tMua4LWb1bPgpJ8C4LK34K2gw4zgrpjdhOC3pOC2teC0kuCwkeC5jeCurwIs4Lq84LiC4LuI4Ly5B-CuseC6kuCuteCvheCrgOC3hceh4KWI4K664LWt4LSL4LCsy4LRntSq4K-D4LKx4L2E4L2N3K0G1KrgvL3gupzGiQId1pXMgsWt4K-T1oLgr5Xgr5fgrojgr5rgtp7gr53gr5_gr6HMmsyczJ7gr6bMouCvqMylxIwT4K-t4K-vZEDgr7LGlcSgEeCvttSA4K-44K-64KO4TeCws-Cvv8uf4LCBAeCwg-CsiOCwheCwh2bgtIHguoRy4LCL4Lmg1rzgtJrFr-CwkOC-gGPgtI7gqrnJr0DgsJjXntGB4LCb3KTgpbvgtJLgsJ_gtJXgsKLguo_goIzgupnJpeCwqOCnqOC1ruC9jOCkvOCilOCwr-CwseC8t-C5heC0reCwuNiJ4Lie1rDgs5Nk4LGAxbTIteCrlca44LqT2ajKquCxhwHgsYnSsMSO4LGL4LOi4LGN4L6O17vgt6bSvOCxkuC0tOCrqeCxld-i4LGY1prgsZrfquCxhN-u4LGgyIngqKPIjsiQyJLanOCoqMiYyJrInMieyKDgqK7gqLDIp8ipyKvIreCotsSM4LG1xbTgsbfgsq8v4LG64LG8AuCxvuC_gwHgsoDgv7bgsoPgqYngqYvgt7zGh-CyieC2jeCoomHgqIzIpjXgr6Bk4KSG4KiI4LGyMjQxYuCjvuCvoMiNODDSijjhgIbgqJdiNGI34LKl4Le_4LKn4LKpx4fgsqvQuuCrlM2p4LOQ4LKyz6fgsrTgsrbgq5zgs6LgvLTguJzgrajgsr3gsr_fmdmC4K244Liq4LOF4Kuq04_gq6zgoL7gv5Lgs4vgq7HRsOCrtMqN4LOP4K-E4Ku6zaTgs5Xgubbguq_gt7Hgt5vgsrPgs5wC4LOe4LWj4Leh4K2kzYfQqeGArOCyvNK84LSz4YCz4LiA4Lqk4LSr2afgs63gvbvgs6_gs7Hgp6zgs7Tgs7bOl-CzuuC_geCzvOCzvuC0gOCqouCgrN-R4LCmxa_gtIjgtJzgtKbgvpXgqbvEluC0keCwnuC0lOCwoeCqv-CmgOCiieCmhOC9ieC-qOC9i-C0nuC6leCwt-C6neC0oeC-kcWmxLvGn-C0puC-scmw4L2C4KOi4YKHc-C0r-C0seGBlOCwutC04LS34K684LS54KeveOC1jDPamciO4Ke04KiSZDngso3MlOCjv-CjvTLIj8ii4KSO4YCaMjjgp5s02p40ZDbImmbgrbbIpTnhgqM24Ke14YKt2pLgp7414KSANs2kz5zgtqTgsbjNqty72rrDnsOMw5_Qo8O94Lay1oPgtrTguJzgv7vXvwbdjdOKzaPGq-C1meGBhOC8qeC3msWn4LWf4LWh4Le34LOi4KG94L-I4LGP4KmM4KCy4LWq4Le_4L6m4YGt4KS54LWw4Liyzo3gtbLHt-CsgeC1teCsveC1t-C1ueC5nOC1u8WX4LW94Ku44LW_1oLgtoHLreCslOC2hs6r0qPgrJnLusKR4LaMy4jgto7grJ7Ous684LaS4Kyiz4LgtpbgrKfgtpnSo-CsrOC2nc-V4Kyw4LahxIzgubXEq-C5t-Cql9qz4KqZ4K2az6fgub3gub_gqqDgvorhgY7NuOC6huCyh-C8lMWyxoc-4LqM4Km04L6jya_gupHgtKrgvr3gsLbgupfgrazcoOCqgOC9k-CiluC6n-CprOC6oeC-suC2kuCvieC6psag4Lqo4KqQ4KuQ4Lqrxqvguq3gtqThgYXguLbLn-C6s86b4LiS4KG54Lq24Li-4YO64Lq74KKa4Ly94KKx4LuB4KKWPuC7hOC7huC6v8uQ4LajxKvgtqXehd6HbN6JbN6L4YCm4Lau4Law0rDekeC3uOGBqeC2tuC4oMSW4La7x5ven-GFrGvgt4HhhZDhha_ep-C4peCiqeC3h96sQd6u3rDest603rZC4LeR3r3ev-C3leC8qOC3mOC1nOCzmuCys-C3nQPgt5_hgYzdhN-Q4K2n4YGSxofgt6jhgpDgtLXgt6vgvZHgt63hhobgt7Dhg5jQneC3s-C3teGDnOC-i-Cum-GBkeCzpeC3veC7hOC6peC6vuC4g8ar4LiF4Lm24Lm44LiJ4LiL26LguI3guI8B4LiRx4fUk8Kg4YOz4LS14LiW4YO24LiY4Lia4Lelyo3couGAsNah0rwF4Lii4K2K4YW304fCkwbguKjcr9yE4Liu3IfguLDeg-C8qeGFh8eA4Li44Li64YWL4Li84Lme4YWP4LmB4L6u4L6T4KKJ0IVA4LuE4LmM4LmF4LmP3ZXgrLbguZTdms-l2rrgoZLgub3gtbrguJTgvovgurnQq-Chv9K54Lmj4Kuh4KCz4LaE4LmnxoPguarVgOC5rOC2kt250Izdu-C5sMaj3b7GqM6x4K-04LuM2LnYsuC8jdi24LuSxovYoOC7luC8kuC7meC7nOC0sOC7ndi14LugAOC7ouC8gAbYn9ik2Jvgu6YC4Luo2Jvgu6rgu6zFo-C8gOC7sADgu7LYm-C7tOCuptig4Lu42LrYoOC7vOC7rOC7v9mC4LyB4LyD4LyF4LyH2KA-4LyR4LyT4Kqq4KOBwpZA4LyL2LnhiIrgvJbZiuCqkuC8mtmP2ZHZk8-K4Lyf2ZfZmd664LO_2qvCrOCoudy5zavgqLzIvwoU3YDRhwLCuOC8sd2EHOC_uuGGkt-VK-GDkeC0tOGDk8ixwqbhiZLgoY3hiZTgqZ7CmNSQ4KmCRsOMw6bdhBfhiaDhhqTJniLhiaThgLPFmdOHxKAfwpbLhcSmAMSOwonYoOC9hwHCiuGKgsat4YqFyZ_EjsKKAsSOwo3hiovgoqsBwo4B4YqN2Lnhib_hiJ_EjsKR4YqJwpAI2KvbjsSOwpPhionCkuGKmNm4xI7CkuGKicKU4YqL4L6DwpLhio8BwpXhiosOxI7hipXhiqjhiosR4Yq04Yqd4LuP4KWc4YqZ4YmYAcKa4YqJwpvhiKThiLPcgNuY4YqdA-CljuClr-GIlcaKG8SOwp3hiongpqrgu67hipnVtdyK4YqdBuGLieCluOGLi-C9muGKjQPEjsKh4YqL4L-AwqPhionCouGLg9ah4YqZH8SO4YuAxI7CouGIsuGLpsaKIOGLq-GKicKk4YqLIuCygeGKicKm4YqL4KaZ4L-24YqWAcKn4YqL4LWg4YqUBcSOwqgA4YSl4YqZJeGKtATEjsKp4YyF4Yi84KOO4YqZJuCygeGLvMKo4YiU4LuQxorgs5zgv7bhiq_CqOC7mcaKKOGMg-GKicKq4YqLKcSOwqvhionCqeGMnAIq4Yyf4YyL4YyV4Yq8xoor4YyL4YqJwqzhiossxI7CreGKieGKiNibxoot4Yqo4Yu8wpDZgOGLmi7hio3hip3hjK3TheGJg-C8mOGJhdmO4Lyc4YmJ2ZXgvKDhiY3gvKM"
+  title="Transactions (Signing)"
+  height={500}
+/>
+
+## 概述
+
+Ethereum 交易簽名使用 [ECDSA](/ethereum/cryptography/ecdsa/) 演算法在 [secp256k1](/ethereum/cryptography/secp256k1/) 曲線上對交易雜湊進行簽章，產生 `(v, r, s)` 三個值。驗證者可以用 [ECRECOVER](/ethereum/cryptography/ecrecover/) 從簽名反推公鑰，進而推導出發送者地址 -- Ethereum 不需要在交易中顯式包含 `from` 欄位。
+
+## Ethereum 簽名細節
+
+### ECDSA 簽章流程
+
+給定私鑰 $k$、待簽訊息雜湊 $z$：
+
+1. 產生隨機數 $r_k$（ephemeral key），$1 \leq r_k < n$
+2. 計算曲線點 $R = r_k \cdot G$，取 $r = R.x \mod n$
+3. 計算 $s = r_k^{-1}(z + r \cdot k) \mod n$
+4. 若 $r = 0$ 或 $s = 0$，重新選擇 $r_k$
+
+簽章結果為 $(r, s)$，各 32 bytes。
+
+### 訊息雜湊的計算（RLP 編碼）
+
+依交易類型不同，待簽雜湊的輸入不同：
+
+**Legacy（pre-EIP-155）**：
+$$z = \text{Keccak-256}(\text{RLP}([\text{nonce}, \text{gasPrice}, \text{gasLimit}, \text{to}, \text{value}, \text{data}]))$$
+
+**Legacy（EIP-155）**：
+$$z = \text{Keccak-256}(\text{RLP}([\text{nonce}, \text{gasPrice}, \text{gasLimit}, \text{to}, \text{value}, \text{data}, \text{chainId}, 0, 0]))$$
+
+**Typed Transaction（Type 2, EIP-1559）**：
+$$z = \text{Keccak-256}(\texttt{0x02} \| \text{RLP}([\text{chainId}, \text{nonce}, ...]))$$
+
+### v 值的含義
+
+`v` 值（recovery ID）讓驗證者能從 `(r, s)` 唯一確定公鑰。一個 `r` 值對應兩個可能的公鑰（橢圓曲線的 $y$ 和 $-y$），`v` 指定是哪一個。
+
+| 場景 | v 值 | 說明 |
+|------|------|------|
+| Pre-EIP-155 | 27 或 28 | recovery ID + 27 |
+| EIP-155 | chainId * 2 + 35 或 36 | 包含 chain ID（[EIP-155 重放保護](/ethereum/accounts/eip-155/)） |
+| Typed TX (Type 1/2/3) | 0 或 1 | 純 recovery ID，chain ID 在欄位中 |
+
+EIP-155 的 `v` 值公式：
+$$v = \text{recoveryId} + \text{chainId} \times 2 + 35$$
+
+Mainnet（chainId = 1）的 `v` 值為 37 或 38。
+
+### EIP-2718 Typed Transactions
+
+EIP-2718 定義了交易的 envelope 格式，使新的交易類型可以擴展而不破壞向後相容：
+
+- **Type 0**（Legacy）：傳統 RLP 編碼
+- **Type 1**（EIP-2930）：Access list transaction
+- **Type 2**（EIP-1559）：動態手續費交易
+- **Type 3**（EIP-4844）：Blob transaction
+
+Typed transaction 的簽名格式為 `TransactionType || RLP(...)`，chain ID 是交易欄位的一部分，不再編碼在 `v` 中。
+
+### Signature Malleability（EIP-2）
+
+[ECDSA](/ethereum/cryptography/ecdsa/) 簽章存在 malleability 問題：對於有效簽章 $(r, s)$，$(r, n - s)$ 也是有效簽章。Ethereum 透過 EIP-2 規定 $s$ 必須在曲線階的下半部分（$s \leq n/2$），消除這個問題。
+
+### RFC 6979 確定性 k 值
+
+為避免 $r_k$ 的隨機數品質問題，現代實作使用 RFC 6979：
+
+$$r_k = \text{HMAC-DRBG}(k, z)$$
+
+從私鑰和訊息雜湊確定性地推導 $r_k$，同一筆交易永遠產生相同簽章。
+
+## 在 Ethereum 中的應用
+
+- **交易認證**：每筆鏈上交易都必須有合法簽章
+- **EIP-712 結構化簽章**：dApp 請求使用者對結構化資料簽章（permit、order 等）
+- **EIP-191 個人簽章**：`personal_sign` 對任意訊息簽章，前綴 `\x19Ethereum Signed Message:\n`
+- **合約驗證**：合約內用 `ecrecover` precompile（[ECRECOVER](/ethereum/cryptography/ecrecover/)）驗證簽章
+- **Account Abstraction (ERC-4337)**：可自定義簽章驗證邏輯
+
+## 程式碼範例
+
+```javascript
+import { ethers } from 'ethers';
+
+const privateKey = '0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80';
+const wallet = new ethers.Wallet(privateKey);
+
+// --- 1. 簽署交易 ---
+const tx = {
+  type: 2,
+  chainId: 1n,
+  nonce: 0,
+  to: '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+  value: ethers.parseEther('1.0'),
+  maxFeePerGas: ethers.parseUnits('30', 'gwei'),
+  maxPriorityFeePerGas: ethers.parseUnits('2', 'gwei'),
+  gasLimit: 21000n,
+};
+
+const signedTx = await wallet.signTransaction(tx);
+console.log('Signed TX (hex):', signedTx);
+
+// 解析已簽名交易，查看 v, r, s
+const parsed = ethers.Transaction.from(signedTx);
+console.log('v:', parsed.signature.v);
+console.log('r:', parsed.signature.r);
+console.log('s:', parsed.signature.s);
+console.log('Recovery ID:', parsed.signature.yParity);
+
+// --- 2. 從簽名恢復地址（ECRECOVER） ---
+const txHash = parsed.unsignedHash;
+const recoveredAddress = ethers.recoverAddress(txHash, parsed.signature);
+console.log('Recovered:', recoveredAddress);
+console.log('Match:', recoveredAddress === wallet.address);
+
+// --- 3. EIP-191 個人訊息簽章 ---
+const message = 'Hello Ethereum';
+const personalSig = await wallet.signMessage(message);
+console.log('Personal Signature:', personalSig);
+
+// 驗證
+const recoveredFromMsg = ethers.verifyMessage(message, personalSig);
+console.log('Verified signer:', recoveredFromMsg);
+
+// --- 4. EIP-712 結構化資料簽章 ---
+const domain = {
+  name: 'MyDApp',
+  version: '1',
+  chainId: 1,
+  verifyingContract: '0xCcCCccccCCCCcCCCCCCcCcCccCcCCCcCcccccccC',
+};
+
+const types = {
+  Transfer: [
+    { name: 'to', type: 'address' },
+    { name: 'amount', type: 'uint256' },
+    { name: 'nonce', type: 'uint256' },
+  ],
+};
+
+const transferData = {
+  to: '0x70997970C51812dc3A010C7d01b50e0d17dc79C8',
+  amount: ethers.parseEther('100'),
+  nonce: 0n,
+};
+
+const typedSig = await wallet.signTypedData(domain, types, transferData);
+const typedSigner = ethers.verifyTypedData(domain, types, transferData, typedSig);
+console.log('EIP-712 Signer:', typedSigner);
+```
+
+## 相關概念
+
+- [交易簽名（通用概念）](/fundamentals/concepts/transaction-signing/) - 跨鏈通用的簽名理論
+- [交易生命週期](/ethereum/transaction-lifecycle/transaction-lifecycle/) - 本筆記是流程第三步
+- [交易構建](/ethereum/transaction-lifecycle/transaction-construction/) - 流程上一步：產生待簽資料
+- [交易廣播與驗證](/ethereum/transaction-lifecycle/broadcast-validation/) - 流程下一步：簽好的交易送出
+- [ECDSA](/ethereum/cryptography/ecdsa/) - 簽章演算法的數學原理
+- [secp256k1](/ethereum/cryptography/secp256k1/) - 使用的橢圓曲線
+- [Keccak-256](/ethereum/cryptography/keccak-256/) - 計算交易雜湊
+- [ECRECOVER](/ethereum/cryptography/ecrecover/) - 從簽章恢復公鑰
+- [EIP-155 重放保護](/ethereum/accounts/eip-155/) - v 值中編碼 chain ID
+- [數位簽章概述](/ethereum/cryptography/digital-signature-overview/) - 數位簽章的通用概念

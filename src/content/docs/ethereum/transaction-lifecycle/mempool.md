@@ -2,6 +2,8 @@
 title: "記憶池"
 description: "Mempool, Transaction Pool, txpool, 交易池"
 tags: [ethereum, mempool, transaction-pool, MEV]
+sidebar:
+  order: 6
 ---
 
 # 記憶池

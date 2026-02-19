@@ -2,6 +2,8 @@
 title: "Nonce"
 description: "Nonce, 交易序號, Account Nonce"
 tags: [ethereum, account, nonce, transaction, replay-protection]
+sidebar:
+  order: 5
 ---
 
 # Nonce

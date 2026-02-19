@@ -1,0 +1,15 @@
+---
+title: "Transaction Signing Flow"
+description: "Interactive visualization: ECDSA transaction signing pipeline and ECRECOVER public key recovery"
+tableOfContents: false
+sidebar:
+  order: 5
+---
+
+import SignatureFlow from '../../../../components/visualizations/SignatureFlow'
+
+# Transaction Signing Flow
+
+> 完整的 Ethereum 交易簽名流程視覺化。觀察 Type 2 (EIP-1559) 交易如何從原始欄位序列化、Keccak-256 雜湊、ECDSA 簽名，到產生 (r, s, v) 簽名值。切換到 ECRECOVER 頁籤，觀察反向流程：從簽名恢復公鑰並推導出發送者地址。
+
+<SignatureFlow client:load />

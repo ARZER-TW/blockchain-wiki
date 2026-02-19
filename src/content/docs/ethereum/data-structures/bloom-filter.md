@@ -2,6 +2,8 @@
 title: "Bloom Filter"
 description: "Bloom Filter, Logs Bloom, logsBloom, 布隆過濾器"
 tags: [ethereum, data-structure, bloom-filter, probabilistic]
+sidebar:
+  order: 9
 ---
 
 # Bloom Filter 在 Ethereum 中的應用

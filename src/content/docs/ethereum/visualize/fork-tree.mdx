@@ -1,0 +1,15 @@
+---
+title: "Fork Choice & Finality"
+description: "Interactive visualization: LMD-GHOST fork choice rule and Casper FFG finality mechanism on a blockchain tree"
+tableOfContents: false
+sidebar:
+  order: 7
+---
+
+import ForkTree from '../../../../components/visualizations/ForkTree'
+
+# Fork Choice & Finality
+
+> 以太坊使用 LMD-GHOST（最新訊息驅動的最重觀察子樹）作為分叉選擇規則，搭配 Casper FFG 實現最終性。選擇不同預設場景，點擊區塊添加或移除驗證者投票，觀察規範鏈（canonical chain）如何隨投票權重變化而切換。黃色框線表示 Justified 檢查點，紫色表示 Finalized 檢查點。
+
+<ForkTree client:load />

@@ -4,7 +4,7 @@ import PageProgress from '../components/PageProgress'
 
 const { slug } = Astro.params
 const currentPage = slug ? `/${slug}/` : undefined
-const contentPrefixes = ['/ethereum/', '/fundamentals/', '/bitcoin/', '/solana/', '/comparisons/']
+const contentPrefixes = ['/ethereum/']
 const isContentPage = contentPrefixes.some(p => currentPage?.startsWith(p))
 ---
 

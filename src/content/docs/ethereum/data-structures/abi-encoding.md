@@ -2,6 +2,8 @@
 title: "ABI 編碼"
 description: "ABI, ABI Encoding, Contract ABI, Application Binary Interface"
 tags: [ethereum, serialization, data-structure, abi, solidity]
+sidebar:
+  order: 3
 ---
 
 # ABI 編碼

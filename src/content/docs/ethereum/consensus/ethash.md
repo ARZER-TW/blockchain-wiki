@@ -2,6 +2,8 @@
 title: "Ethash"
 description: "Ethash, PoW, Proof of Work"
 tags: [ethereum, consensus, pow, mining, history]
+sidebar:
+  order: 10
 ---
 
 # Ethash

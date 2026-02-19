@@ -2,6 +2,8 @@
 title: "RLP 編碼"
 description: "RLP, Recursive Length Prefix, RLP Encoding"
 tags: [ethereum, serialization, data-structure, rlp]
+sidebar:
+  order: 1
 ---
 
 # RLP 編碼

@@ -2,6 +2,8 @@
 title: "LMD GHOST"
 description: "LMD GHOST, LMD-GHOST, Fork Choice Rule, GHOST"
 tags: [ethereum, consensus, pos, fork-choice, ghost]
+sidebar:
+  order: 7
 ---
 
 # LMD GHOST

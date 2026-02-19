@@ -2,6 +2,8 @@
 title: "Verkle Trees"
 description: "Verkle Trees, Verkle Trie, VKT"
 tags: [ethereum, data-structure, verkle, statelessness, trie]
+sidebar:
+  order: 4
 ---
 
 # Verkle Trees 在 Ethereum 中的應用

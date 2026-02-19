@@ -1,0 +1,15 @@
+---
+title: "Account Model"
+description: "Interactive comparison of Ethereum account types: EOA vs Contract Account, with account fields, State Trie mapping, and EIP-7702 delegation"
+tableOfContents: false
+sidebar:
+  order: 4
+---
+
+import AccountDiagram from '../../../../components/visualizations/AccountDiagram'
+
+# Account Model
+
+> Ethereum 有兩種帳戶類型：EOA（外部擁有帳戶）和合約帳戶。兩者在 State Trie 中都以四個欄位（nonce、balance、storageRoot、codeHash）表示，但欄位的語義和值不同。選擇不同的帳戶範例，觀察欄位差異。EIP-7702（Pectra 2025）模糊了兩者的界線。
+
+<AccountDiagram client:load />

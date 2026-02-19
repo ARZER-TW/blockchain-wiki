@@ -2,6 +2,8 @@
 title: "KZG Commitments"
 description: "KZG Commitments, KZG, Kate Commitment, Polynomial Commitment"
 tags: [ethereum, cryptography, polynomial-commitment, kzg, trusted-setup]
+sidebar:
+  order: 3
 ---
 
 # KZG Commitments 在 Ethereum 中的應用

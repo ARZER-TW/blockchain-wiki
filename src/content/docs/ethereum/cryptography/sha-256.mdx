@@ -1,0 +1,126 @@
+---
+title: "SHA-256"
+description: "SHA256, SHA-2"
+tags: [ethereum, cryptography, hash-function, sha256]
+sidebar:
+  order: 1
+---
+
+# SHA-256 在 Ethereum 中的應用
+
+> 本文聚焦 Ethereum 特定的實現細節。通用理論請參見 [SHA-256 雜湊函數](/fundamentals/cryptography/sha-256/)。
+
+
+import EthBuildEmbed from '../../../../components/EthBuildEmbed'
+
+## eth.build
+
+透過 eth.build 操作 Hash Function 節點，輸入任意資料觀察即時雜湊輸出，體驗雜湊函數的不可逆性與雪崩效應。
+
+<EthBuildEmbed
+  client:load
+  src="https://sandbox.eth.build/wofCrGxhc3Rfbm9kZV9pZCLEgcSDxIVsaW5rxItkFsKlxIfEiXPClMKKwqLEjCDCpHR5cGXCqklucHV0L1RleHTCo3Bvc8KSWsOMwqDCpHNpemXCksONASwywqVmxIJnc8KAwqVvcsSJcgDCpG3EiGUAwqbEk8SqdHPCkcKDwqRuYW1lxLnEo8SlxY_EksSUw4DCp2_Eq8WXxZnFm8WdxZ_FocSkZcKmxIRyxJNnwqXFpWvFmRXCqnByb8SlcnRpZXPChMKrYmxvY2vGhFPEvGUywqtwxIJjZWhvbMWNwq9lbnRlciDGn8SwIGjGoGXCpcaDdGxlwqTErsSwwqV2YWx1xq3Gn8SExJ7EjB_EosWxwqtDcsSkdG8vSMSDaMSyxLTEvwHDjMS4xLrGkMKSeB7FhMWGxYjFisWMxqACxZDFksWUxZbEq8WsxZzFnsaox510xrzEpcKtxbTFtixudW1ixqDCpMW5FcWoxarHnsWax6DFn8KkaMeGx6XFsseobsW3xbnFmRbFvcW_xoHGg8aFwoDCicSfZCHHvMKtRGlzxpRheS9XYXRjx4fEs8S1w40CwqjDjMKWx47EvcS_AzE8x5NhxYfFicWLxY0Dx5rEicecxKnHtcKEx7fFoMe8xaTEk2vEmMSCx65swqDIhMaAxqDIh8WIwojIiyLIjsiQyJLEgsiVVGnGq2XHiMS1FCjIo8S-xYDDtADIqcirx5bFjQHIsMWTyYHIhsaEc8KFwqhmb8aexo_EvSzGiMaKxozGjsaQxpLIk8aWxpjGmsagwqDGqcmPxqzCpcmOyZDGscazxrXCrceFc2ggRnVuY8aDyanFuMi6xLXClhUgAB8Ax6d0xbXHv8eqx6zHrnLClhbKlSEAxZRnxb91cHPCkMKmY8mpZmlnwoDCp3bGoMS7yanDij7HjMON"
+  title="Hash Function (SHA-256)"
+  height={500}
+/>
+
+## 概述
+
+在 Ethereum 生態中，SHA-256 主要用於 [Beacon Chain](/ethereum/consensus/beacon-chain/) 共識層和 [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/)（地址 0x02），而執行層以 [Keccak-256](/ethereum/cryptography/keccak-256/) 為主。選擇 SHA-256 用於共識層的主要原因是硬體加速支援（Intel SHA Extensions）更成熟，在高吞吐量 hashing 場景下效能更優。
+
+## Precompiled Contract
+
+地址 `0x0000000000000000000000000000000000000002` 提供 SHA-256 precompile：
+
+- **Gas**：$60 + 12 \times \lceil \text{len}/32 \rceil$
+- 比 [Keccak-256](/ethereum/cryptography/keccak-256/) 的 EVM opcode（$30 + 6 \times \lceil \text{len}/32 \rceil$）貴一倍
+- 主要用途：與 Bitcoin 等使用 SHA-256 系統的互操作
+
+### 與 Bitcoin 的橋接
+
+BTC relay、跨鏈驗證等場景需要在 EVM 中驗證 Bitcoin 的 double-SHA-256（`SHA-256(SHA-256(data))`），此時 SHA-256 precompile 是必要的。沒有 precompile 的話，純 Solidity 實作 SHA-256 的 gas 成本極高。
+
+## Beacon Chain（共識層）
+
+SHA-256 是 Ethereum 共識層的核心雜湊函數：
+
+- **[SSZ 編碼](/ethereum/data-structures/ssz-encoding/)**：使用 SHA-256 作為 Merkleization 的雜湊函數
+- **[RANDAO](/ethereum/consensus/randao/)**：混合隨機性時使用 SHA-256
+- **Validator deposit**：deposit 資料雜湊使用 SHA-256
+- **Block root / State root**：共識層的所有 Merkle root 基於 SHA-256
+
+### 為何共識層選擇 SHA-256 而非 Keccak-256
+
+1. **硬體加速**：Intel SHA Extensions 和 ARM Crypto Extensions 提供原生 SHA-256 指令，在批量 hashing 場景下速度比 Keccak 快數倍
+2. **驗證者效能**：共識層需要頻繁計算大量 Merkle root（如 beacon state 的 Merkleization），硬體加速帶來的效能提升顯著
+3. **生態相容**：SHA-256 在更廣泛的密碼學生態中有更成熟的支援
+
+### SSZ Merkleization 示意
+
+```python
+import hashlib
+
+def merkleize(chunks: list[bytes]) -> bytes:
+    """簡化版 SSZ Merkleization（Beacon Chain 使用）"""
+    layer = list(chunks)
+    # 補齊至 2 的冪次
+    while len(layer) & (len(layer) - 1):
+        layer.append(b'\x00' * 32)
+
+    while len(layer) > 1:
+        next_layer = []
+        for i in range(0, len(layer), 2):
+            combined = layer[i] + layer[i + 1]
+            next_layer.append(hashlib.sha256(combined).digest())
+        layer = next_layer
+
+    return layer[0]
+
+chunks = [hashlib.sha256(f"chunk{i}".encode()).digest() for i in range(4)]
+root = merkleize(chunks)
+print(f"Merkle root: {root.hex()}")
+```
+
+## 程式碼範例
+
+```solidity
+// Solidity: 使用 SHA-256 precompile
+contract SHA256Example {
+    function sha256Hash(bytes memory data) public view returns (bytes32) {
+        // sha256 是 Solidity 內建函數，調用 precompile 0x02
+        return sha256(data);
+    }
+
+    // 驗證 Bitcoin-style double SHA-256
+    function doubleSHA256(bytes memory data) public view returns (bytes32) {
+        return sha256(abi.encodePacked(sha256(data)));
+    }
+}
+```
+
+```python
+import hashlib
+
+# Precompile gas 成本計算
+def sha256_precompile_gas(data_length: int) -> int:
+    """計算 SHA-256 precompile 的 gas 成本"""
+    word_count = (data_length + 31) // 32
+    return 60 + 12 * word_count
+
+# 比較 SHA-256 precompile vs Keccak-256 opcode gas
+for size in [32, 64, 128, 256]:
+    sha256_gas = sha256_precompile_gas(size)
+    keccak_gas = 30 + 6 * ((size + 31) // 32)
+    print(f"{size} bytes: SHA-256={sha256_gas} gas, Keccak-256={keccak_gas} gas")
+```
+
+## 相關概念
+
+- [SHA-256 通用理論](/fundamentals/cryptography/sha-256/) - Merkle-Damgard 結構、壓縮函數
+- [雜湊函數概述](/fundamentals/cryptography/hash-function-overview/) - 雜湊函數的安全性質總覽
+- [Keccak-256](/ethereum/cryptography/keccak-256/) - Ethereum 執行層使用的雜湊函數
+- [Beacon Chain](/ethereum/consensus/beacon-chain/) - 共識層使用 SHA-256
+- [SSZ 編碼](/ethereum/data-structures/ssz-encoding/) - 使用 SHA-256 進行 Merkleization
+- [RANDAO](/ethereum/consensus/randao/) - 使用 SHA-256 混合隨機性
+- [Precompiled Contracts](/ethereum/advanced/precompiled-contracts/) - SHA-256 作為 precompile 地址 0x02
+- [Merkle Tree](/fundamentals/data-structures/merkle-tree/) - SHA-256 是常用的雜湊函數選項

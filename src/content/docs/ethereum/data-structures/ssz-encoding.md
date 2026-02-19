@@ -2,6 +2,8 @@
 title: "SSZ 編碼"
 description: "SSZ, Simple Serialize, SSZ Encoding"
 tags: [ethereum, serialization, data-structure, ssz, beacon-chain]
+sidebar:
+  order: 2
 ---
 
 # SSZ 編碼

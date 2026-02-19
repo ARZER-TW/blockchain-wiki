@@ -2,165 +2,98 @@
   {
     "id": "crypto-fundamentals",
     "title": "密碼學基礎路徑",
-    "description": "從通用密碼學原理到數位簽名",
+    "description": "從雜湊函數到數位簽章，理解 Ethereum 的密碼學基石",
     "color": "#818cf8",
     "steps": [
-      { "title": "公鑰密碼學", "href": "/fundamentals/cryptography/public-key-cryptography/" },
-      { "title": "橢圓曲線密碼學", "href": "/fundamentals/cryptography/elliptic-curve-cryptography/" },
-      { "title": "secp256k1", "href": "/fundamentals/cryptography/secp256k1/" },
-      { "title": "數位簽名概述", "href": "/fundamentals/cryptography/digital-signature-overview/" },
-      { "title": "ECDSA", "href": "/fundamentals/cryptography/ecdsa/" },
-      { "title": "BLS Signatures", "href": "/fundamentals/cryptography/bls-signatures/" }
+      { "title": "SHA-256", "href": "/ethereum/cryptography/sha-256/" },
+      { "title": "Keccak-256", "href": "/ethereum/cryptography/keccak-256/" },
+      { "title": "secp256k1", "href": "/ethereum/cryptography/secp256k1/" },
+      { "title": "數位簽章概論", "href": "/ethereum/cryptography/digital-signature-overview/" },
+      { "title": "ECDSA", "href": "/ethereum/cryptography/ecdsa/" },
+      { "title": "ECRECOVER", "href": "/ethereum/cryptography/ecrecover/" },
+      { "title": "BLS12-381", "href": "/ethereum/cryptography/bls12-381/" },
+      { "title": "BLS Signatures", "href": "/ethereum/cryptography/bls-signatures/" }
+    ]
+  },
+  {
+    "id": "accounts",
+    "title": "帳戶與交易路徑",
+    "description": "帳戶模型、地址體系與交易費用機制",
+    "color": "#fbbf24",
+    "steps": [
+      { "title": "EOA 外部帳戶", "href": "/ethereum/accounts/eoa/" },
+      { "title": "合約帳戶", "href": "/ethereum/accounts/contract-account/" },
+      { "title": "地址推導", "href": "/ethereum/accounts/address-derivation/" },
+      { "title": "EIP-55 地址校驗", "href": "/ethereum/accounts/eip-55/" },
+      { "title": "Nonce", "href": "/ethereum/accounts/nonce/" },
+      { "title": "Gas", "href": "/ethereum/accounts/gas/" },
+      { "title": "EIP-1559 費用市場", "href": "/ethereum/accounts/eip-1559/" },
+      { "title": "EIP-155 重放保護", "href": "/ethereum/accounts/eip-155/" }
     ]
   },
   {
     "id": "ethereum-tx",
-    "title": "Ethereum 交易路徑",
-    "description": "從密鑰生成到交易完整流程",
+    "title": "交易流程路徑",
+    "description": "一筆交易從發起到上鏈的完整生命週期",
     "color": "#34d399",
     "steps": [
-      { "title": "密鑰生成", "href": "/ethereum/transaction-lifecycle/key-generation/" },
-      { "title": "地址推導", "href": "/ethereum/accounts/address-derivation/" },
+      { "title": "交易生命週期（概覽）", "href": "/ethereum/transaction-lifecycle/transaction-lifecycle/" },
+      { "title": "密鑰生成與帳戶創建", "href": "/ethereum/transaction-lifecycle/key-generation/" },
       { "title": "交易構建", "href": "/ethereum/transaction-lifecycle/transaction-construction/" },
       { "title": "交易簽名", "href": "/ethereum/transaction-lifecycle/transaction-signing/" },
       { "title": "廣播與驗證", "href": "/ethereum/transaction-lifecycle/broadcast-validation/" },
-      { "title": "交易生命週期", "href": "/ethereum/transaction-lifecycle/transaction-lifecycle/" }
+      { "title": "記憶池", "href": "/ethereum/transaction-lifecycle/mempool/" },
+      { "title": "區塊生產", "href": "/ethereum/transaction-lifecycle/block-production/" },
+      { "title": "共識與最終性", "href": "/ethereum/transaction-lifecycle/consensus-finality/" },
+      { "title": "狀態轉換", "href": "/ethereum/transaction-lifecycle/state-transition/" }
     ]
   },
   {
     "id": "data-structures",
     "title": "資料結構路徑",
-    "description": "從編碼格式到狀態樹的完整數據流",
+    "description": "從編碼格式到各種 Trie 結構的完整數據流",
     "color": "#22d3ee",
     "steps": [
-      { "title": "Merkle Tree", "href": "/fundamentals/data-structures/merkle-tree/" },
       { "title": "RLP 編碼", "href": "/ethereum/data-structures/rlp-encoding/" },
+      { "title": "SSZ 編碼", "href": "/ethereum/data-structures/ssz-encoding/" },
+      { "title": "ABI 編碼", "href": "/ethereum/data-structures/abi-encoding/" },
       { "title": "Merkle Patricia Trie", "href": "/ethereum/data-structures/merkle-patricia-trie/" },
       { "title": "State Trie", "href": "/ethereum/data-structures/state-trie/" },
-      { "title": "狀態轉換", "href": "/ethereum/transaction-lifecycle/state-transition/" }
+      { "title": "Storage Trie", "href": "/ethereum/data-structures/storage-trie/" },
+      { "title": "Transaction Trie", "href": "/ethereum/data-structures/transaction-trie/" },
+      { "title": "Receipt Trie", "href": "/ethereum/data-structures/receipt-trie/" },
+      { "title": "Bloom Filter", "href": "/ethereum/data-structures/bloom-filter/" }
     ]
   },
   {
     "id": "consensus",
-    "title": "共識路徑",
-    "description": "Proof of Stake 共識機制全貌",
+    "title": "區塊與共識路徑",
+    "description": "Proof of Stake 共識機制與區塊結構全貌",
     "color": "#f87171",
     "steps": [
       { "title": "Beacon Chain", "href": "/ethereum/consensus/beacon-chain/" },
-      { "title": "Validators", "href": "/ethereum/consensus/validators/" },
-      { "title": "Casper FFG", "href": "/ethereum/consensus/casper-ffg/" },
+      { "title": "區塊結構", "href": "/ethereum/consensus/block-structure/" },
+      { "title": "區塊 Header", "href": "/ethereum/consensus/block-header/" },
+      { "title": "Validators 驗證者", "href": "/ethereum/consensus/validators/" },
+      { "title": "RANDAO", "href": "/ethereum/consensus/randao/" },
+      { "title": "Attestation", "href": "/ethereum/consensus/attestation/" },
       { "title": "LMD GHOST", "href": "/ethereum/consensus/lmd-ghost/" },
-      { "title": "共識與最終性", "href": "/ethereum/transaction-lifecycle/consensus-finality/" }
+      { "title": "Casper FFG", "href": "/ethereum/consensus/casper-ffg/" },
+      { "title": "Slashing 罰沒", "href": "/ethereum/consensus/slashing/" },
+      { "title": "Ethash（歷史）", "href": "/ethereum/consensus/ethash/" }
     ]
   },
   {
     "id": "advanced",
-    "title": "進階路徑",
-    "description": "Danksharding 與下一代狀態結構",
+    "title": "進階主題路徑",
+    "description": "Danksharding、零知識證明與下一代狀態結構",
     "color": "#f472b6",
     "steps": [
-      { "title": "EIP-4844", "href": "/ethereum/advanced/eip-4844/" },
+      { "title": "Precompiled Contracts", "href": "/ethereum/advanced/precompiled-contracts/" },
+      { "title": "EIP-4844 Proto-Danksharding", "href": "/ethereum/advanced/eip-4844/" },
       { "title": "KZG Commitments", "href": "/ethereum/advanced/kzg-commitments/" },
       { "title": "Verkle Trees", "href": "/ethereum/advanced/verkle-trees/" },
-      { "title": "zkSNARKs 支援", "href": "/ethereum/advanced/zksnarks/" }
-    ]
-  },
-  {
-    "id": "bitcoin-fundamentals",
-    "title": "Bitcoin 基礎路徑",
-    "description": "從 UTXO 模型到 Nakamoto 共識的完整基礎",
-    "color": "#f59e0b",
-    "steps": [
-      { "title": "UTXO 模型", "href": "/bitcoin/data-structures/utxo-model/" },
-      { "title": "區塊結構", "href": "/bitcoin/data-structures/bitcoin-block-structure/" },
-      { "title": "SHA-256d", "href": "/bitcoin/cryptography/sha-256d/" },
-      { "title": "Nakamoto 共識", "href": "/bitcoin/consensus/nakamoto-consensus/" },
-      { "title": "PoW / Hashcash", "href": "/bitcoin/consensus/pow-hashcash/" },
-      { "title": "難度調整", "href": "/bitcoin/consensus/difficulty-adjustment/" },
-      { "title": "Bitcoin Script", "href": "/bitcoin/data-structures/bitcoin-script/" },
-      { "title": "P2PKH", "href": "/bitcoin/transactions/p2pkh/" },
-      { "title": "交易生命週期", "href": "/bitcoin/transactions/transaction-lifecycle-btc/" }
-    ]
-  },
-  {
-    "id": "bitcoin-segwit-taproot",
-    "title": "SegWit 到 Taproot 演進路徑",
-    "description": "Bitcoin 協議升級與密碼學演進",
-    "color": "#fb923c",
-    "steps": [
-      { "title": "交易可塑性", "href": "/bitcoin/transactions/transaction-malleability/" },
-      { "title": "SegWit 序列化", "href": "/bitcoin/transactions/segwit-serialization/" },
-      { "title": "Witness Data", "href": "/bitcoin/data-structures/witness-data/" },
-      { "title": "P2WPKH / P2WSH", "href": "/bitcoin/transactions/p2wpkh-p2wsh/" },
-      { "title": "Schnorr Signatures", "href": "/bitcoin/cryptography/schnorr-signatures/" },
-      { "title": "Taproot Key Tweaking", "href": "/bitcoin/cryptography/taproot-key-tweaking/" },
-      { "title": "P2TR", "href": "/bitcoin/transactions/p2tr/" },
-      { "title": "Tapscript", "href": "/bitcoin/advanced/tapscript/" }
-    ]
-  },
-  {
-    "id": "bitcoin-lightning",
-    "title": "Lightning Network 路徑",
-    "description": "Layer 2 與進階 Bitcoin 可程式性",
-    "color": "#ef4444",
-    "steps": [
-      { "title": "Timelocks", "href": "/bitcoin/advanced/timelocks/" },
-      { "title": "Payment Channels", "href": "/bitcoin/advanced/payment-channels/" },
-      { "title": "HTLC", "href": "/bitcoin/advanced/htlc/" },
-      { "title": "Lightning Network", "href": "/bitcoin/advanced/lightning-network/" },
-      { "title": "BOLT 規範", "href": "/bitcoin/advanced/bolt-specifications/" },
-      { "title": "PSBT", "href": "/bitcoin/advanced/psbt/" },
-      { "title": "Miniscript", "href": "/bitcoin/advanced/miniscript/" },
-      { "title": "BitVM", "href": "/bitcoin/advanced/bitvm/" }
-    ]
-  },
-  {
-    "id": "solana-dev",
-    "title": "Solana 開發者路徑",
-    "description": "從 Ethereum 開發者視角理解 Solana",
-    "color": "#14b8a6",
-    "steps": [
-      { "title": "帳戶模型概述", "href": "/solana/account-model/account-model-overview/" },
-      { "title": "Programs", "href": "/solana/account-model/programs/" },
-      { "title": "PDA", "href": "/solana/account-model/pda/" },
-      { "title": "Token Accounts", "href": "/solana/account-model/token-accounts/" },
-      { "title": "交易結構", "href": "/solana/transactions/transaction-anatomy/" },
-      { "title": "Instructions", "href": "/solana/transactions/instructions/" },
-      { "title": "SVM / Sealevel", "href": "/solana/runtime/svm-sealevel/" },
-      { "title": "CPI", "href": "/solana/runtime/cpi/" },
-      { "title": "手續費與優先權", "href": "/solana/transactions/fees-priority/" }
-    ]
-  },
-  {
-    "id": "solana-protocol",
-    "title": "Solana 協議深潛路徑",
-    "description": "從 PoH 到 Tower BFT 的共識全貌",
-    "color": "#059669",
-    "steps": [
-      { "title": "SHA-256 與 PoH", "href": "/solana/cryptography/sha256-poh/" },
-      { "title": "Proof of History", "href": "/solana/consensus/proof-of-history/" },
-      { "title": "Tower BFT", "href": "/solana/consensus/tower-bft/" },
-      { "title": "Leader Schedule", "href": "/solana/consensus/leader-schedule/" },
-      { "title": "Gulf Stream", "href": "/solana/consensus/gulf-stream/" },
-      { "title": "Turbine", "href": "/solana/consensus/turbine/" },
-      { "title": "Validators 與 Staking", "href": "/solana/consensus/validators-staking/" },
-      { "title": "Alpenglow", "href": "/solana/consensus/alpenglow/" }
-    ]
-  },
-  {
-    "id": "solana-scaling",
-    "title": "Solana 擴展與進階路徑",
-    "description": "平行執行、高效能驗證器與前沿技術",
-    "color": "#0891b2",
-    "steps": [
-      { "title": "SVM / Sealevel", "href": "/solana/runtime/svm-sealevel/" },
-      { "title": "BPF / SBF", "href": "/solana/runtime/bpf-sbf/" },
-      { "title": "Compute Units", "href": "/solana/runtime/compute-units/" },
-      { "title": "Banking Stage", "href": "/solana/runtime/banking-stage/" },
-      { "title": "Firedancer", "href": "/solana/advanced/firedancer/" },
-      { "title": "State Compression", "href": "/solana/advanced/state-compression/" },
-      { "title": "ZK Compression", "href": "/solana/advanced/zk-compression/" },
-      { "title": "Token Extensions", "href": "/solana/advanced/token-extensions/" }
+      { "title": "zkSNARKs", "href": "/ethereum/advanced/zksnarks/" }
     ]
   }
 ]

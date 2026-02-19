@@ -2,6 +2,8 @@
 title: "Slashing"
 description: "Slashing, 罰沒, Slash"
 tags: [ethereum, consensus, pos, slashing, penalty]
+sidebar:
+  order: 9
 ---
 
 # Slashing

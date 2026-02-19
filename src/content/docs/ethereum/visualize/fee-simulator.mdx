@@ -1,0 +1,15 @@
+---
+title: "EIP-1559 Fee Simulator"
+description: "Interactive simulation of EIP-1559 base fee dynamics, gas usage patterns, and fee burning mechanism"
+tableOfContents: false
+sidebar:
+  order: 5
+---
+
+import FeeSimulator from '../../../../components/visualizations/FeeSimulator'
+
+# EIP-1559 Fee Simulator
+
+> 模擬 EIP-1559 base fee 動態調整機制。Base fee 根據區塊 gas 使用率自動調整：超過 15M target 則上升，低於則下降，每個區塊最多變動 12.5%。Base fee 被銷毀（burned），只有 priority fee（tip）歸驗證者。可透過預設情境觀察壅塞高峰、穩態運行與恢復過程中 base fee 的變化趨勢。
+
+<FeeSimulator client:load />

@@ -2,6 +2,8 @@
 title: "Receipt Trie"
 description: "Receipt Trie, Receipts Trie, receiptsRoot, Transaction Receipt"
 tags: [ethereum, data-structure, trie, receipt, logs]
+sidebar:
+  order: 8
 ---
 
 # Receipt Trie

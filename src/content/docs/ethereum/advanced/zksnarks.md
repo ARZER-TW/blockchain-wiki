@@ -2,6 +2,8 @@
 title: "zkSNARKs 支援"
 description: "zkSNARKs, zk-SNARKs, Zero Knowledge Proofs, 零知識證明"
 tags: [ethereum, cryptography, zero-knowledge, zk-snark, proof-system]
+sidebar:
+  order: 5
 ---
 
 # zkSNARKs 支援
